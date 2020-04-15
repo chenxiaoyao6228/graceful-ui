@@ -1,0 +1,49 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.14.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/airbnb-js-shims/-/airbnb-js-shims-2.2.1.tgz: ENOENT: no such file or directory, open '/Users/mac/Library/Caches/Yarn/v6/npm-airbnb-js-shims-2.2.1-db481102d682b98ed1daa4c5baa697a05ce5c040-integrity/node_modules/airbnb-js-shims/.yarn-tarball.tgz'
+
+npm manifest: 
+  {
+    "name": "graceful-ui",
+    "version": "1.0.0",
+    "description": "vue graceful ui component collections",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "storybook": "start-storybook -p 6006",
+      "build-storybook": "build-storybook"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+      "@babel/core": "^7.9.0",
+      "@storybook/addon-actions": "^5.3.18",
+      "@storybook/addon-links": "^5.3.18",
+      "@storybook/addons": "^5.3.18",
+      "@storybook/vue": "^5.3.18",
+      "babel-loader": "^8.1.0",
+      "babel-preset-vue": "^2.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
