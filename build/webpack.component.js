@@ -1,7 +1,7 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base.js");
-const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin");
+// const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const glob = require("glob");
 
@@ -31,8 +31,8 @@ module.exports = merge(webpackBaseConfig, {
   output: {
     path: path.resolve(__dirname, "../lib"),
     filename: "[name]/index.js",
-    library: "gracefului",
-    libraryTarget: "var",
+    library: "graceful-ui",
+    libraryTarget: "umd",
     // umdNamedDefine: true,
     // libraryExport: "default",
     globalObject: "this",
@@ -46,7 +46,7 @@ module.exports = merge(webpackBaseConfig, {
     ],
   },
   plugins: [
-    new EsmWebpackPlugin(),
+    // new EsmWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "theme/[name].css",
     }),

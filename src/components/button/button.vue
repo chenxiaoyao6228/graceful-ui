@@ -34,3 +34,25 @@ export default {
   },
 };
 </script>
+<style lang="less">
+@import "../../styles/variables/index";
+.g-button {
+  color: white;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  &:focus {
+    cursor: pointer;
+  }
+  &--primary {
+    background-color: @color-primary;
+  }
+  &--disabled {
+    background-color: @color-disabled;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &--round {
+    border-radius: 20px;
+  }
+}
+</style>
