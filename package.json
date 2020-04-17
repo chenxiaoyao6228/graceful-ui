@@ -2,7 +2,7 @@
   "name": "graceful-ui",
   "version": "1.0.0",
   "description": "vue graceful ui component collections",
-  "main": "lib/graceful-ui.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "lint": "pretty-quick --staged && eslint --ext .js,.vue src",

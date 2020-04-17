@@ -1,6 +1,7 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base.js");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(webpackBaseConfig, {
   entry: {
@@ -8,7 +9,7 @@ module.exports = merge(webpackBaseConfig, {
   },
   output: {
     path: path.resolve(__dirname, "../lib"),
-    filename: "graceful-ui.js",
+    filename: "index.js",
     library: "graceful-ui",
     libraryTarget: "umd",
     libraryExport: "default",
@@ -19,8 +20,14 @@ module.exports = merge(webpackBaseConfig, {
     rules: [
       {
         test: /\.less$/,
-        use: ["vue-style-loader", "css-loader", "less-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
       },
     ],
   },
+  plugins: [
+    // new EsmWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "theme/[name].css",
+    }),
+  ],
 });

@@ -20,9 +20,9 @@ const install = function (Vue) {
 };
 
 // 自动加载, 使用Vue.use(GracefulUI)的时候就自动注册了所有的组件
-if (typeof window !== "undefined" && window.Vue) {
-  install(window.Vue);
-}
+// if (typeof window !== "undefined" && window.Vue) {
+//   install(window.Vue);
+// }
 
 // TODO
 // 实现$Alert的组件在Vue实例上的直接使用
