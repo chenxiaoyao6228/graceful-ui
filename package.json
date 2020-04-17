@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "pretty-quick --staged && eslint --ext .js,.vue src",
+    "lint": "pretty-quick --staged && eslint --ext .js,.vue src --fix",
     "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook -c .storybook -o dist",
     "build": "rimraf lib && yarn build:web && yarn build:com && rimraf lib/base",
