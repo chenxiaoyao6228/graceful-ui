@@ -1,6 +1,7 @@
 <template>
-  <button class="g-button" :class="classes">
-    <Icon v-if="icon" class="icon" :type="icon" />
+  <button class="g-button" :class="classes" @click="$emit('click')">
+    <Icon v-if="icon && !loading" class="icon" :type="icon" />
+    <Icon v-if="loading" class="icon loading" type="loading" />
     <div class="content">
       <slot />
     </div>
@@ -24,6 +25,10 @@ export default {
       type: String,
       default: "",
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
     iconPosition: {
       type: String,
       // validator(value) {
@@ -42,6 +47,9 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {};
+  },
   computed: {
     classes() {
       return [
@@ -52,10 +60,25 @@ export default {
       ];
     },
   },
+  methods: {
+    handleClick() {
+      this.emit("g-button-click");
+      // this.loading = true;
+    },
+  },
 };
 </script>
 <style lang="less">
 @import "../../styles/variables/index";
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .g-button {
   display: inline-flex;
   align-items: center;
@@ -88,6 +111,9 @@ export default {
   }
 
   // icon
+  .loading {
+    animation: spin 1s infinite linear;
+  }
   &.icon-right {
     .icon {
       order: 2;
