@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "pretty-quick --staged && eslint --ext .js,.vue src --fix",
     "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook -c .storybook -o dist",
@@ -18,7 +19,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "babel-core": "^7.0.0-bridge.0",
     "@purtuga/esm-webpack-plugin": "^1.2.1",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
