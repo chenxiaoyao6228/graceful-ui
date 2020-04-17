@@ -69,7 +69,7 @@ export default {
 };
 </script>
 <style lang="less">
-@import "../../styles/variables/index";
+@import "../../styles/index";
 
 @keyframes spin {
   0% {
