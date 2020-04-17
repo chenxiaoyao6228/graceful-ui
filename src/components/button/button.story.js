@@ -9,7 +9,7 @@ storiesOf("Button", module).add(
       <Button type="primary">Primary</Button>
       <Button disabled>Disabled</Button>
       <Button round>Round</Button>
-      <Button icon="download">Icon</Button>
+      <Button icon="setting">Icon</Button>
       <Button icon="download" iconPosition="left">IconPosition Left</Button>
       <Button icon="download" iconPosition="right">IconPosition Right</Button>
     </div>`,
