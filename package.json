@@ -8,7 +8,8 @@
     "lint": "pretty-quick --staged && eslint --ext .js,.vue src",
     "dev": "start-storybook -p 6006",
     "build:storybook": "build-storybook -c .storybook -o dist",
-    "build": "webpack --mode production --config build/webpack.config.js",
+    "build": "rimraf lib && yarn build:web && yarn build:com && rimraf lib/base",
+    "build:web": "webpack --mode production --config build/webpack.config.js",
     "build:com": "webpack --mode production --config build/webpack.component.js",
     "build:com:dev": "webpack --mode development --config build/webpack.component.js"
   },
@@ -18,6 +19,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@purtuga/esm-webpack-plugin": "^1.2.1",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addon-notes": "^5.3.18",

@@ -1,11 +1,15 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base.js");
+const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const glob = require("glob");
 
 const entry = Object.assign(
   {},
+  {
+    base: path.resolve(__dirname, "../src/styles/index.less"),
+  },
   glob
     .sync("./src/components/**/index.js")
     .map((item) => {
@@ -20,15 +24,17 @@ const entry = Object.assign(
     }, {})
 );
 
+console.log(entry);
+
 module.exports = merge(webpackBaseConfig, {
   entry: entry,
   output: {
     path: path.resolve(__dirname, "../lib"),
     filename: "[name]/index.js",
-    library: "graceful-ui",
-    libraryTarget: "umd",
-    umdNamedDefine: true,
-    libraryExport: "default",
+    library: "gracefului",
+    libraryTarget: "var",
+    // umdNamedDefine: true,
+    // libraryExport: "default",
     globalObject: "this",
   },
   module: {
@@ -40,6 +46,7 @@ module.exports = merge(webpackBaseConfig, {
     ],
   },
   plugins: [
+    new EsmWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "theme/[name].css",
     }),
