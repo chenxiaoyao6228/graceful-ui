@@ -10,7 +10,17 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    for (let child of this.$el.children) {
+      if (child.nodeName.toLowerCase() !== "button") {
+        console.warn(
+          `ButtonGroup的子元素只允许Button元素, 当前子元素为${child.nodeName.toLowerCase()}`
+        );
+      }
+    }
+  },
 };
+1;
 </script>
 
 <style lang="less" scoped>
