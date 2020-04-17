@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable -->
   <button class="g-button" :class="btnClass">
     <slot />
   </button>
@@ -8,7 +7,7 @@
 <script>
 const prefix = "g-button";
 export default {
-  name: "GButton",
+  name: "Button",
   props: {
     type: {
       type: String,
@@ -37,11 +36,19 @@ export default {
 <style lang="less">
 @import "../../styles/variables/index";
 .g-button {
-  color: white;
-  font-size: 14px;
-  padding: 12px 20px;
-  border-radius: 5px;
+  font-size: @font-size;
+  color: @font-color;
+  padding: @padding;
+  border-radius: @border-radius;
+  background: @button-bg;
+  &:hover {
+    border-color: @border-color-hover;
+  }
+  &:active {
+    background-color: @button-bg-active;
+  }
   &:focus {
+    outline: none;
     cursor: pointer;
   }
   &--primary {
@@ -52,7 +59,7 @@ export default {
     color: rgba(255, 255, 255, 0.8);
   }
   &--round {
-    border-radius: 20px;
+    border-radius: @border-radius-round;
   }
 }
 </style>
