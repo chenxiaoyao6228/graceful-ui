@@ -14,7 +14,10 @@
     "build:com": "webpack --mode production --config build/webpack.component.js",
     "build:com:dev": "webpack --mode development --config build/webpack.component.js"
   },
-  "keywords": [],
+  "keywords": [
+    "Vue",
+    "UI Toolkit"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {},

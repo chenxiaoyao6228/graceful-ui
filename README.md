@@ -19,19 +19,19 @@ TODO
 
 ### Install
 
-1. Npm
+**Npm**
 
 ```js
 npm install graceful-ui --save
 ```
 
-2. Yarn
+**Yarn**
 
 ```js
 yarn add graceful-ui --save
 ```
 
-3. Script tag
+**Script tag**
 
 ```html
 <script type="text/javascript" src="graceful-ui.min.js"></script>
@@ -40,7 +40,7 @@ yarn add graceful-ui --save
 
 ### Usage
 
-1. Registration all in one
+**Registration all in one**
 
 You can register all the components brought with `graceful-ui` with the following command
 
@@ -50,7 +50,7 @@ import { GracefulUI } from "graceful-ui";
 Vue.use(GracefulUI);
 ```
 
-2. Partial registration
+**Partial registration**
 
 With help of [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-component), you can import components needed in your project.
 
