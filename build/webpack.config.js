@@ -27,7 +27,7 @@ module.exports = merge(webpackBaseConfig, {
   plugins: [
     // new EsmWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "theme/[name].css",
+      filename: "theme/index.css",
     }),
   ],
 });
