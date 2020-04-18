@@ -1,6 +1,6 @@
 {
   "name": "graceful-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "vue graceful ui component collections",
   "main": "lib/index.js",
   "scripts": {
@@ -59,7 +59,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "pre-commit": "yarn lint && yarn test"
     }
   },
   "eslintConfig": {
