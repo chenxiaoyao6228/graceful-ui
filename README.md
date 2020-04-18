@@ -9,6 +9,8 @@ GracefulUI
     <h3>A Graceful UI Toolkit built on Vue</h3>
 </h1>
 
+[![](https://circleci.com/gh/chenxiaoyao6228/graceful-ui.svg?style=shield)]()
+
 ## Demo
 
 TODO
