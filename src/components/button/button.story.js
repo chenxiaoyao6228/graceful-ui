@@ -23,7 +23,6 @@ storiesOf("Button", module).add(
       <div style="margin-top: 10px">
        <ButtonGroup>
         <Button icon="left">上一页</Button>
-        <div>lll</div>
         <Button icon="right" iconPosition="right">下一页</Button>
        </ButtonGroup>
       </div>

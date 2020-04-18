@@ -31,11 +31,6 @@ export default {
     },
     iconPosition: {
       type: String,
-      // validator(value) {
-      //   if (!(value === 'left' || value === 'right' || value === '')) {
-      //     console.warn('请输入正确的参数');
-      //   }
-      // },
       default: "",
     },
     disabled: {
@@ -53,17 +48,12 @@ export default {
   computed: {
     classes() {
       return [
-        `${prefix}--${this.type}`,
-        this.disabled ? `${prefix}--disabled` : "",
-        this.round ? `${prefix}--round` : "",
+        `${prefix}-${this.type}`,
+        this.disabled ? `${prefix}-disabled` : "",
+        this.round ? `${prefix}-round` : "",
         this.iconPosition ? `icon-${this.iconPosition}` : "",
+        this.loading ? `loading` : "",
       ];
-    },
-  },
-  methods: {
-    handleClick() {
-      this.emit("g-button-click");
-      // this.loading = true;
     },
   },
 };
@@ -99,14 +89,14 @@ export default {
     outline: none;
     cursor: pointer;
   }
-  &--primary {
+  &-primary {
     background-color: @color-primary;
   }
-  &--disabled {
+  &-disabled {
     background-color: @color-disabled;
     color: rgba(255, 255, 255, 0.8);
   }
-  &--round {
+  &-round {
     border-radius: @border-radius-round;
   }
 
