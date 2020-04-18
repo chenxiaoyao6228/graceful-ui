@@ -2,20 +2,27 @@
 import "./styles/index.less";
 
 import Button from "./components/button";
+import Icon from "./components/Icon";
 
 const components = {
   Button,
+  Icon,
 };
 
-const GracefulUI = {
-  ...components,
-};
+Object.keys(components).forEach((key) => {
+  components[key].install = function (Vue) {
+    console.log("注册了button组件.............");
+    Vue.component(key, components[key]);
+    // Vue.component('G' + key, components[key]);
+  };
+});
 
 const install = function (Vue) {
   if (install.installed) return;
 
-  Object.keys(GracefulUI).forEach((key) => {
+  Object.keys(components).forEach((key) => {
     Vue.component(key, components[key]);
+    // Vue.component('G' + key, components[key]);
   });
 };
 

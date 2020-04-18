@@ -15,7 +15,8 @@ const entry = Object.assign(
       return item.split("/")[3];
     })
     .reduce((acc, cur) => {
-      acc[`g-${cur}`] = path.resolve(
+      acc[`${cur}`] = path.resolve(
+        // acc[`g-${cur}`] = path.resolve(
         __dirname,
         `../src/components/${cur}/index.js`
       );
