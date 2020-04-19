@@ -101,14 +101,6 @@ plugins: [
   ]
 ```
 
-### CDN fonts
-
-Add the following script to your document head to use fonts.
-
-```html
-<script src="https://at.alicdn.com/t/font_1763207_7o3xiq5n9rp.js"></script>
-```
-
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)

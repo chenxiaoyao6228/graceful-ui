@@ -4,7 +4,7 @@
   </svg>
 </template>
 <script>
-// const prefix = 'g-icon';
+import "../../styles/iconfont";
 export default {
   name: "Icon",
   props: {

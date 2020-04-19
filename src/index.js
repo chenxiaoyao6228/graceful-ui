@@ -11,7 +11,6 @@ const components = {
 
 Object.keys(components).forEach((key) => {
   components[key].install = function (Vue) {
-    console.log("注册了button组件.............");
     Vue.component(key, components[key]);
     // Vue.component('G' + key, components[key]);
   };
