@@ -15,11 +15,6 @@ addParameters({
     url: repository,
     sidebarAnimations: true,
   },
-  // https://www.npmjs.com/package/@storybook/addon-viewport
-  viewport: {
-    viewports: newViewports,
-    defaultViewport: "iphone6",
-  },
   docs: {
     container: DocsContainer,
     page: DocsPage,
