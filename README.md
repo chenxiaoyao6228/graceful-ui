@@ -101,6 +101,15 @@ plugins: [
   ]
 ```
 
+### cdn fonts
+
+Considering the size of webpack bundle file, fonts are hosted on aliyun cdn,
+to use them, just add the following script to your index.html file
+
+```js
+<script type="text/script" src="http://at.alicdn.com/t/font_1763207_6x64wnqzqnc.js">
+```
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)

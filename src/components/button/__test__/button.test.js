@@ -1,6 +1,5 @@
 import { render, fireEvent } from "@testing-library/vue";
-import Button from "./button.vue";
-// import Icon from "../icon/icon.vue";
+import Button from "../button.vue";
 
 const prefix = "g-button";
 

@@ -1,6 +1,6 @@
 import { render } from "@testing-library/vue";
-import ButtonGroup from "./button-group.vue";
-import Button from "./button.vue";
+import ButtonGroup from "../button-group.vue";
+import Button from "../button.vue";
 
 describe("ButtonGroup", () => {
   let ButtonGroupTester = {
