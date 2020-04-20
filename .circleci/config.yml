@@ -9,7 +9,7 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm run install
+            - run: npm install
             - run: npm run test
             - run: npm run build:storybook
             - run: npm run deploy:storybook

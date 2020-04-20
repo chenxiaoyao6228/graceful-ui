@@ -13,6 +13,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-storysource",
     "@storybook/addon-options",
+    "@storybook/addon-viewport/register",
   ],
   // Modify webpack to remove babel-preset-vue from .mdx loaders
   webpack: async (config) => {
