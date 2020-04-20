@@ -3,7 +3,11 @@
 
 import "../src/styles/index.less";
 import "../src/styles/storybook/index.less";
-import { configure, addParameters } from "@storybook/vue";
+
+import { addParameters } from "@storybook/vue";
+import { name, version, repository } from "../package.json";
+import { configureActions } from "@storybook/addon-actions";
+import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
 
 addParameters({
   options: {
@@ -14,17 +18,13 @@ addParameters({
 });
 
 addParameters({
-  docs: { inlineStories: true },
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+    inlineStories: true,
+  },
 });
-
-function loadStories() {
-  const req = require.context("../src", true, /\.stories.mdx$/);
-  // const req = require.context("../src", true, /\.story\.js$/);
-  req.keys().forEach((filename) => req(filename));
-}
 
 configureActions({
   depth: 100,
 });
-
-configure(loadStories, module);

@@ -5,6 +5,7 @@ const filterRules = (filters) => (rule) => {
 };
 
 module.exports = {
+  stories: ["../stories/*.stories.(js|mdx)"],
   presets: ["@storybook/addon-docs"],
   addons: [
     "@storybook/addon-actions",
@@ -12,7 +13,6 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-storysource",
     "@storybook/addon-options",
-    "@storybook/addon-notes",
   ],
   // Modify webpack to remove babel-preset-vue from .mdx loaders
   webpack: async (config) => {

@@ -1,0 +1,26 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+import Icon from "../src/components/icon/icon.vue";
+
+<Meta title="图标" component={Icon} />
+
+# Icon
+
+<Preview>
+  <Story name="类型">
+    {{
+      components: { Icon },
+      template: `<div style="font-size: 24px">
+        <Icon type="download" />
+        <Icon type="setting" />
+        <Icon type="loading" />
+        </div>`,
+    }}
+  </Story>
+</Preview>
+
+## Icon Attribute
+
+| 参数 | 说明     | 类型   | 可选值                | 默认值 |
+| ---- | -------- | ------ | --------------------- | ------ |
+| type | 按钮类型 | string | setting, download ... | -      |

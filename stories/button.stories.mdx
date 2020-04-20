@@ -1,0 +1,110 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import Button from "../src/components/button/button.vue";
+import ButtonGroup from "../src/components/button/button-group.vue";
+
+<Meta title="按钮" component={Button} />
+
+# Button
+
+### 类别
+
+<Preview>
+  <Story name="类别">
+    {{
+      components: { Button },
+      template: `
+        <div>
+            <Button type="primary">主色</Button> 
+            <Button type="primary">主色</Button> 
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+### 禁用
+
+<Preview>
+  <Story name="禁用">
+    {{
+      components: { Button },
+      template: `<Button disabled>禁用</Button>`,
+    }}
+  </Story>
+</Preview>
+
+### 圆角
+
+<Preview>
+  <Story name="圆角">
+    {{
+      components: { Button },
+      template: `<Button round>圆角</Button>`,
+    }}
+  </Story>
+</Preview>
+
+### 图标
+
+<Preview>
+  <Story name="图标">
+    {{
+      components: { Button },
+      template: `<Button icon="setting">图标</Button>`,
+    }}
+  </Story>
+</Preview>
+
+### 图标位置
+
+<Preview>
+  <Story name="图标位置">
+    {{
+      components: { Button },
+      template: `
+      <Button icon="download" iconPosition="left">图标在左</Button>
+      <Button icon="download" iconPosition="right">图标在右</Button>`,
+    }}
+  </Story>
+</Preview>
+
+### 加载状态
+
+<Preview>
+  <Story name="加载状态">
+    {{
+      components: { Button },
+      data() {
+        return { loading: false };
+      },
+      template: `<Button :loading="loading" @click="loading = !loading">点击显示加载状态</Button>`,
+    }}
+  </Story>
+</Preview>
+
+### 按钮组
+
+<Preview>
+  <Story name="按钮组">
+    {{
+      components: { Button },
+      template: ` <ButtonGroup> <Button icon="left">上一页</Button> <Button icon="right" iconPosition="right">下一页</Button> </ButtonGroup>`,
+    }}
+  </Story>
+</Preview>
+
+## Props 列表
+
+| 参数         | 说明     | 类型    | 可选值      | 默认值  |
+| ------------ | -------- | ------- | ----------- | ------- |
+| type         | 按钮类型 | string  | primary     | primary |
+| disabled     | 是否禁用 | boolean | -           | false   |
+| round        | 是否圆角 | boolean | -           | false   |
+| icon         | 按钮     | string  | -           | -       |
+| iconPosition | 按钮     | string  | left, right | -       |
+
+## 按钮事件
+
+| 参数 | 说明     | 类型   | 可选值  | 默认值  |
+| ---- | -------- | ------ | ------- | ------- |
+| type | 按钮类型 | string | primary | primary |

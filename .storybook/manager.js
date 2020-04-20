@@ -57,7 +57,7 @@ addons.setConfig({
   /**
    * theme storybook, see link below
    */
-  theme: themes.dark,
+  theme: undefined,
 
   /**
    * id to select an addon panel
