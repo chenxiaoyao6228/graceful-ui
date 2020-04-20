@@ -1,7 +1,19 @@
 <template>
-  <button class="g-button" :class="classes" @click="$emit('click')">
-    <Icon v-if="icon && !loading" class="icon" :type="icon" />
-    <Icon v-if="loading" class="icon loading" type="loading" />
+  <button
+    class="g-button"
+    :class="classes"
+    @click="$emit('click')"
+  >
+    <Icon
+      v-if="icon && !loading"
+      class="icon"
+      :type="icon"
+    />
+    <Icon
+      v-if="loading"
+      class="icon loading"
+      type="loading"
+    />
     <div class="content">
       <slot />
     </div>

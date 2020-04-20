@@ -1,6 +1,9 @@
 <template>
   <svg class="g-icon">
-    <use :xlink:href="`#icon-${type}`" aria-hidden="true" />
+    <use
+      :xlink:href="`#icon-${type}`"
+      aria-hidden="true"
+    />
   </svg>
 </template>
 <script>
