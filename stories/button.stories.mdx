@@ -61,9 +61,10 @@ import ButtonGroup from "../src/components/button/button-group.vue";
   <Story name="图标位置">
     {{
       components: { Button },
-      template: `
-      <Button icon="download" iconPosition="left">图标在左</Button>
-      <Button icon="download" iconPosition="right">图标在右</Button>`,
+      template: `<div>
+        <Button icon="download" iconPosition="left">图标在左</Button>
+        <Button icon="download" iconPosition="right">图标在右</Button>
+      </div>`,
     }}
   </Story>
 </Preview>
@@ -87,7 +88,7 @@ import ButtonGroup from "../src/components/button/button-group.vue";
 <Preview>
   <Story name="按钮组">
     {{
-      components: { Button },
+      components: { Button, ButtonGroup },
       template: ` <ButtonGroup> <Button icon="left">上一页</Button> <Button icon="right" iconPosition="right">下一页</Button> </ButtonGroup>`,
     }}
   </Story>
