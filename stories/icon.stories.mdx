@@ -10,17 +10,22 @@ import Icon from "../src/components/icon/icon.vue";
   <Story name="类型">
     {{
       components: { Icon },
-      template: `<div style="font-size: 24px">
-        <Icon type="download" />
-        <Icon type="setting" />
-        <Icon type="loading" />
+      template: `
+        <div style="font-size: 24px">
+          <Icon type="download" />
+          <Icon type="setting" />
+          <Icon type="loading" />
         </div>`,
     }}
   </Story>
 </Preview>
 
-## Icon Attribute
+## Api
+
+## Props 列表
 
 | 参数 | 说明     | 类型   | 可选值                | 默认值 |
 | ---- | -------- | ------ | --------------------- | ------ |
 | type | 按钮类型 | string | setting, download ... | -      |
+
+## Events 列表

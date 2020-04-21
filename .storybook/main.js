@@ -5,7 +5,8 @@ const filterRules = (filters) => (rule) => {
 };
 
 module.exports = {
-  stories: ["../stories/*.stories.(js|mdx)"],
+  // stories: ["../stories/*.stories.(js|mdx)"],
+  stories: ["../stories/input.stories.(js|mdx)"],
   presets: ["@storybook/addon-docs"],
   addons: [
     "@storybook/addon-actions",

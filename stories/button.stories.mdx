@@ -15,7 +15,6 @@ import ButtonGroup from "../src/components/button/button-group.vue";
       template: `
         <div>
             <Button type="primary">主色</Button> 
-            <Button type="primary">主色</Button> 
         </div>
       `,
     }}
@@ -75,10 +74,10 @@ import ButtonGroup from "../src/components/button/button-group.vue";
   <Story name="加载状态">
     {{
       components: { Button },
+      template: `<Button :loading="loading" @click="loading = !loading">点击显示加载状态</Button>`,
       data() {
         return { loading: false };
       },
-      template: `<Button :loading="loading" @click="loading = !loading">点击显示加载状态</Button>`,
     }}
   </Story>
 </Preview>
@@ -94,7 +93,9 @@ import ButtonGroup from "../src/components/button/button-group.vue";
   </Story>
 </Preview>
 
-## Props 列表
+## API
+
+### Props 列表
 
 | 参数         | 说明     | 类型    | 可选值      | 默认值  |
 | ------------ | -------- | ------- | ----------- | ------- |
@@ -104,7 +105,7 @@ import ButtonGroup from "../src/components/button/button-group.vue";
 | icon         | 按钮     | string  | -           | -       |
 | iconPosition | 按钮     | string  | left, right | -       |
 
-## 按钮事件
+### Events 列表
 
 | 参数 | 说明     | 类型   | 可选值  | 默认值  |
 | ---- | -------- | ------ | ------- | ------- |

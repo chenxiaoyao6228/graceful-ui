@@ -1,0 +1,59 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+import Input from "../src/components/input/input.vue";
+
+<Meta title="输入框" component={Input} />
+
+## 基础用法
+
+可以使用`v-model`来实现数据的双向绑定
+
+<Preview>
+  <Story name="类型">
+    {{
+      components: { Input },
+      template: `
+            <form>
+                <Input v-model="value" placeholder="请输入内容..."></Input>
+            </form>
+      `,
+      data() {
+        return {
+          value: "",
+        };
+      },
+    }}
+  </Story>
+</Preview>
+
+## 尺寸
+
+可以通过`size`参数来设置输入框的大小, 可选参数为`large`,`default`,`small`, 默认为 `default`
+
+<Preview>
+  <Story name="尺寸">
+    {{
+      components: { Input },
+      template: `
+            <form style="display:flex">
+                <Input v-model="value1" size="large" placeholder="请输入内容..." ></Input>
+                <Input v-model="value2" size="default" placeholder="请输入内容..." ></Input>
+                <Input v-model="value3" size="small" placeholder="请输入内容..." ></Input>
+            </form>
+      `,
+      data() {
+        return {
+          value1: "",
+          value2: "",
+          value3: "",
+        };
+      },
+    }}
+  </Story>
+</Preview>
+
+## API
+
+### Props 列表
+
+TODO: 自动生成 markdown 表格

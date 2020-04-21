@@ -1,10 +1,5 @@
 // manage.js: renders the UI of addons, the navigator and toolbar.
-import { themes } from "@storybook/theming/create";
 import { addons } from "@storybook/addons";
-
-// addons.setConfig({
-//   theme: themes.dark,
-// });
 
 addons.setConfig({
   /**
@@ -34,7 +29,7 @@ addons.setConfig({
    * where to show the addon panel
    * @type {('bottom'|'right')}
    */
-  panelPosition: "bottom",
+  panelPosition: "right",
 
   /**
    * sidebar tree animations
