@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { oneOf } from "../../utils/tools.js";
 import Icon from "../icon";
 const prefix = "g-button";
 export default {
@@ -20,6 +21,18 @@ export default {
     type: {
       type: String,
       default: "default",
+      validator: function (value) {
+        return oneOf(value, [
+          "primary",
+          "warning",
+          "info",
+          "error",
+          "success",
+          "disabled",
+          "dashed",
+          "default",
+        ]);
+      },
     },
     size: {
       type: String,

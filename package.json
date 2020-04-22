@@ -1,7 +1,7 @@
 {
   "name": "graceful-ui",
   "version": "0.0.1",
-  "description": "vue graceful ui component collections",
+  "description": "A graceful ui component collections built on Vue.js",
   "repository": "https://github.com/chenxiaoyao6228/graceful-ui.git",
   "main": "lib/index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "@purtuga/esm-webpack-plugin": "^1.2.1",
     "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
