@@ -1,0 +1,30 @@
+.g-button-hover(@color: @default-color, @lighten: 5%, @font-color: #fff) {
+  color: @font-color;
+  background-color: @color;
+  border: 1px solid @color;
+  &:not(.g-button-disabled):not(.g-button-default):not(.g-button-dashed):not(.g-button-hollow) {
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid @color;
+      background-color: lighten(@color, @lighten);
+      color: lighten(@font-color, @lighten);
+    }
+  }
+  &.g-button-default {
+    &:active,
+    &:focus {
+      border: 1px solid @primary-color;
+      color: lighten(@primary-color, @lighten);
+    }
+  }
+  &.g-button-dashed {
+    border: 1px dashed @border-color;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: lighten(@color, @lighten);
+      color: lighten(@font-color, @lighten);
+    }
+  }
+}

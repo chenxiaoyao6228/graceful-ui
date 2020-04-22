@@ -1,19 +1,7 @@
 <template>
-  <button
-    class="g-button"
-    :class="classes"
-    @click="$emit('click')"
-  >
-    <Icon
-      v-if="icon && !loading"
-      class="icon"
-      :type="icon"
-    />
-    <Icon
-      v-if="loading"
-      class="icon loading"
-      type="loading"
-    />
+  <button class="g-button" :class="classes" @click="$emit('click')">
+    <Icon v-if="icon && !loading" class="icon" :type="icon" />
+    <Icon v-if="loading" class="icon loading" type="loading" />
     <div class="content">
       <slot />
     </div>
@@ -31,11 +19,15 @@ export default {
   props: {
     type: {
       type: String,
-      default: "primary",
+      default: "default",
+    },
+    size: {
+      type: String,
+      default: "default",
     },
     icon: {
       type: String,
-      default: "",
+      default: "default",
     },
     loading: {
       type: Boolean,
@@ -49,10 +41,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    round: {
-      type: Boolean,
-      default: false,
-    },
   },
   data() {
     return {};
@@ -61,6 +49,7 @@ export default {
     classes() {
       return [
         `${prefix}-${this.type}`,
+        `${prefix}-size-${this.size}`,
         this.disabled ? `${prefix}-disabled` : "",
         this.round ? `${prefix}-round` : "",
         this.iconPosition ? `icon-${this.iconPosition}` : "",
@@ -73,36 +62,57 @@ export default {
 <style lang="less">
 @import "../../styles/index";
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .g-button {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: @button-padding;
   vertical-align: middle;
+  text-align: center;
   font-size: @font-size;
-  color: @font-color;
-  padding: @padding;
+  color: @color;
   border-radius: @border-radius;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+  outline: none;
   background: @button-bg;
-  &:hover {
-    border-color: @border-color-hover;
+  text-shadow: @text-shadow;
+  // type =>
+  // .button-type();
+  &-size {
+    &-default {
+      height: @button-height;
+    }
+    &-small {
+      height: @button-height-small;
+    }
+    &-large {
+      height: @button-height-large;
+    }
   }
-  &:active {
-    background-color: @button-bg-active;
-  }
-  &:focus {
-    outline: none;
-    cursor: pointer;
+  &-default {
+    border-color: @border-color;
+    color: @color-inverted;
   }
   &-primary {
     background-color: @color-primary;
+  }
+  &-warning {
+    background-color: @color-warning;
+  }
+  &-error {
+    background-color: @color-error;
+  }
+  &-info {
+    background-color: @color-info;
+  }
+  &-success {
+    background-color: @color-success;
+  }
+  &-dashed {
+    color: @color-inverted;
+    border: 1px dashed @border-color;
   }
   &-disabled {
     background-color: @color-disabled;
@@ -114,7 +124,7 @@ export default {
 
   // icon
   .loading {
-    animation: spin 1s infinite linear;
+    animation: g-spin 1s infinite linear;
   }
   &.icon-right {
     .icon {

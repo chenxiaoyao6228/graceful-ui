@@ -4,7 +4,13 @@ import ButtonGroup from "../src/components/button/button-group.vue";
 
 <Meta title="按钮" component={Button} />
 
-# Button
+# Button 按钮
+
+### 引入组件
+
+```js
+import { Button } from "graceful-ui";
+```
 
 ### 类别
 
@@ -15,41 +21,56 @@ import ButtonGroup from "../src/components/button/button-group.vue";
       template: `
         <div>
             <Button type="primary">主色</Button> 
+            <Button type="warning">警告</Button> 
+            <Button type="error">错误</Button> 
+            <Button type="success">成功</Button> 
+            <Button type="info">信息</Button> 
+            <Button type="disabled">禁用</Button> 
+            <Button type="dashed">虚线框</Button> 
+            <Button>默认</Button> 
         </div>
       `,
     }}
   </Story>
 </Preview>
 
-### 禁用
+### 大小
 
-<Preview>
-  <Story name="禁用">
-    {{
-      components: { Button },
-      template: `<Button disabled>禁用</Button>`,
-    }}
-  </Story>
-</Preview>
-
-### 圆角
+`size`参数可以用来指定按钮形状,可选参数为`large`,`small`, 默认为`default`
 
 <Preview>
   <Story name="圆角">
     {{
       components: { Button },
-      template: `<Button round>圆角</Button>`,
+      template: `
+        <div>
+            <Button type="primary" size="large">主色</Button> 
+            <Button type="warning">警告</Button> 
+            <Button type="error" size="small">错误</Button> 
+            <Button type="success" size="large">成功</Button> 
+            <Button type="info">信息</Button> 
+            <Button type="disabled" size="small">禁用</Button> 
+            <Button type="dashed">虚线框</Button> 
+            <Button>默认</Button> 
+        </div>
+      `,
     }}
   </Story>
 </Preview>
 
-### 图标
+### 图标类型
 
 <Preview>
-  <Story name="图标">
+  <Story name="图标类型">
     {{
       components: { Button },
-      template: `<Button icon="setting">图标</Button>`,
+      template: `
+        <div>
+          <Button icon="setting">设置</Button>
+          <Button icon="download">下载</Button>
+          <Button icon="loading">加载</Button>
+        </div>
+      `,
     }}
   </Story>
 </Preview>
@@ -107,6 +128,6 @@ import ButtonGroup from "../src/components/button/button-group.vue";
 
 ### Events 列表
 
-| 参数 | 说明     | 类型   | 可选值  | 默认值  |
-| ---- | -------- | ------ | ------- | ------- |
-| type | 按钮类型 | string | primary | primary |
+| 参数  | 说明         | 类型 | 可选值 | 默认值 |
+| ----- | ------------ | ---- | ------ | ------ |
+| click | 鼠标点击事件 | -    | -      | -      |

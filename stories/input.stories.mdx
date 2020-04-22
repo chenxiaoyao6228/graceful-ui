@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
 import Input from "../src/components/input/input.vue";
+import "../src/styles/storybook/index.less";
 
 <Meta title="输入框" component={Input} />
 
@@ -36,8 +37,8 @@ import Input from "../src/components/input/input.vue";
       components: { Input },
       template: `
             <form style="display:flex">
-                <Input v-model="value1" size="large" placeholder="请输入内容..." ></Input>
-                <Input v-model="value2" size="default" placeholder="请输入内容..." ></Input>
+                <Input v-model="value1" size="large" placeholder="请输入内容..." class="mr10"></Input>
+                <Input v-model="value2"  placeholder="请输入内容..." class="mr10"></Input>
                 <Input v-model="value3" size="small" placeholder="请输入内容..." ></Input>
             </form>
       `,
@@ -46,6 +47,28 @@ import Input from "../src/components/input/input.vue";
           value1: "",
           value2: "",
           value3: "",
+        };
+      },
+    }}
+  </Story>
+</Preview>
+
+## 清除输入内容
+
+可通过设置`clearable`属性来开启清空按钮
+
+<Preview>
+  <Story name="清除输入">
+    {{
+      components: { Input },
+      template: `
+            <form style="display:flex">
+                <Input v-model="value" placeholder="请输入内容..." clearable></Input>
+            </form>
+      `,
+      data() {
+        return {
+          value: "",
         };
       },
     }}

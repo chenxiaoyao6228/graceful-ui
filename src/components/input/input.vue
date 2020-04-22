@@ -1,5 +1,13 @@
 <template>
   <div class="g-input-wrapper" :class="wrapperClasses">
+    <Icon
+      type="clear"
+      class="g-input-icon-clearable"
+      :class="[
+        clearable && value.length > 0 ? `g-input-icon-clearable-show` : '',
+      ]"
+      @click="handleClear"
+    />
     <input
       :type="type"
       :placeholder="placeholder"
@@ -11,9 +19,11 @@
 </template>
 
 <script>
+import Icon from "../icon/icon.vue";
 const prefix = "g-input";
 export default {
   name: "Input",
+  components: { Icon },
   model: {
     prop: "value",
     event: "input",
@@ -33,7 +43,11 @@ export default {
     },
     size: {
       type: String,
-      default: "medium",
+      default: "default",
+    },
+    clearable: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -41,10 +55,20 @@ export default {
   },
   computed: {
     wrapperClasses() {
-      return [`${prefix}-wrapper-${this.size}`];
+      return [
+        `${prefix}-wrapper`,
+        this.clearable && this.value.length > 0
+          ? `${prefix}-wrapper-clearable`
+          : "",
+      ];
     },
     classes() {
-      return [`${prefix}-${this.size}`];
+      return [`${prefix}`, `${prefix}-${this.size}`];
+    },
+  },
+  methods: {
+    handleClear() {
+      this.$emit("input", "");
     },
   },
 };
@@ -53,28 +77,40 @@ export default {
 <style lang="less" scoped>
 @import "../../styles/index.less";
 
-.g-input-wrapper {
-  font-size: @font-size;
-  & > input {
-    height: @input-height;
-    border: 1px solid @border-color;
-    border-radius: @border-radius;
-    padding: 0 8px;
-    &:hover {
-    }
-    &:focus {
-    }
-    &:disabled {
-    }
+.g-input {
+  &-wrapper {
+    position: relative;
+    font-size: @font-size;
+  }
+  height: @input-height;
+  padding: @input-padding;
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: @color-primary;
+    outline: none;
+    // box-shadow: @input-box-shadow;
   }
   &-large {
-    & > input {
-      height: @input-height-large;
-    }
+    height: @input-height-large;
   }
   &-small {
-    & > input {
-      height: @input-height-small;
+    height: @input-height-small;
+  }
+  &-icon-clearable {
+    position: absolute;
+    display: none;
+    width: @input-height / 2;
+    height: @input-height / 2;
+    right: 6px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    color: #808695;
+    &-show {
+      display: block;
     }
   }
 }
