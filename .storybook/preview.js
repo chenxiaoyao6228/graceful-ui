@@ -4,10 +4,13 @@
 import "../src/styles/index.less";
 import "../src/styles/storybook/index.less";
 
-import { addParameters } from "@storybook/vue";
-import { name, version, repository } from "../package.json";
+import { addParameters, addDecorator } from "@storybook/vue";
 import { configureActions } from "@storybook/addon-actions";
+import { withA11y } from "@storybook/addon-a11y";
 import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
+import { name, version, repository } from "../package.json";
+
+addDecorator(withA11y);
 
 addParameters({
   options: {

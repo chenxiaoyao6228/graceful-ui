@@ -1,10 +1,18 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 
 import Icon from "../src/components/icon/icon.vue";
 
-<Meta title="图标" component={Icon} />
+<Meta title="通用|图标" component={Icon} />
 
 # Icon
+
+### 引入组件
+
+```js
+import { Icon } from "graceful-ui";
+```
+
+### 类型
 
 <Preview>
   <Story name="类型">
@@ -20,12 +28,6 @@ import Icon from "../src/components/icon/icon.vue";
   </Story>
 </Preview>
 
-## Api
+## API
 
-## Props 列表
-
-| 参数 | 说明     | 类型   | 可选值                | 默认值 |
-| ---- | -------- | ------ | --------------------- | ------ |
-| type | 按钮类型 | string | setting, download ... | -      |
-
-## Events 列表
+<Props of={Icon} />

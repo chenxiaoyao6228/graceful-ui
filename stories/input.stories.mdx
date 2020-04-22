@@ -1,16 +1,17 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { withKnobs, select, boolean } from "@storybook/addon-knobs";
 
 import Input from "../src/components/input/input.vue";
 import "../src/styles/storybook/index.less";
 
-<Meta title="输入框" component={Input} />
+<Meta title="数据录入|输入框" component={Input} />
 
 ## 基础用法
 
 可以使用`v-model`来实现数据的双向绑定
 
 <Preview>
-  <Story name="类型">
+  <Story name="类型" parameters={{ decorators: [withKnobs] }}>
     {{
       components: { Input },
       template: `
@@ -77,6 +78,4 @@ import "../src/styles/storybook/index.less";
 
 ## API
 
-### Props 列表
-
-TODO: 自动生成 markdown 表格
+<Props of={Input} />

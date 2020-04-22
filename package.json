@@ -26,8 +26,10 @@
   "dependencies": {},
   "devDependencies": {
     "@purtuga/esm-webpack-plugin": "^1.2.1",
+    "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-docs": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addon-notes": "^5.3.18",
     "@storybook/addon-options": "^5.3.18",

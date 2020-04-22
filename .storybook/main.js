@@ -5,9 +5,14 @@ const filterRules = (filters) => (rule) => {
 };
 
 module.exports = {
-  stories: ["../stories/*.stories.(js|mdx)"],
+  stories: [
+    "../src/components/Intro.stories.mdx",
+    "../stories/*.stories.(js|mdx)",
+  ],
   presets: ["@storybook/addon-docs"],
   addons: [
+    "@storybook/addon-knobs/register",
+    "@storybook/addon-a11y",
     "@storybook/addon-actions",
     "@storybook/addon-docs",
     "@storybook/addon-links",

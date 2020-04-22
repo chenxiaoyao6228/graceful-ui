@@ -94,8 +94,8 @@ plugins: [
     [
       "component",
       {
-        libraryName: "graceful-ui",
-        styleLibraryName: "theme"
+        "libraryName": "graceful-ui",
+        "styleLibraryName": "theme"
       }
     ]
   ]
