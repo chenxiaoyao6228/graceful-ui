@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup match snapshots 1`] = `
+<div>
+  <div
+    class="g-button-group"
+  >
+    <button
+      class="g-button g-button-default g-button-size-default"
+    >
+      <svg
+        class="g-icon icon"
+      >
+        <use
+          aria-hidden="true"
+          xlink:href="#icon-left"
+        />
+      </svg>
+       
+      <!---->
+       
+      <div
+        class="content"
+      >
+        上一页
+      </div>
+    </button>
+    <button
+      class="g-button g-button-default g-button-size-default icon-right"
+    >
+      <svg
+        class="g-icon icon"
+      >
+        <use
+          aria-hidden="true"
+          xlink:href="#icon-right"
+        />
+      </svg>
+       
+      <!---->
+       
+      <div
+        class="content"
+      >
+        下一页
+      </div>
+    </button>
+  </div>
+</div>
+`;

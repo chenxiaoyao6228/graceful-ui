@@ -8,8 +8,6 @@ describe("Icon", () => {
         type: "download",
       },
     });
-    expect(container.innerHTML).toBe(
-      '<svg class="g-icon"><use xlink:href="#icon-download" aria-hidden="true"></use></svg>'
-    );
+    expect(container.innerHTML).toMatchSnapshot();
   });
 });

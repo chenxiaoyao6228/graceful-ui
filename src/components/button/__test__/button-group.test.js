@@ -12,4 +12,8 @@ describe("ButtonGroup", () => {
     const { container } = render(ButtonGroupTester, {});
     expect(container.childNodes[0].childNodes.length).toBe(2);
   });
+  test("match snapshots", () => {
+    const { container } = render(ButtonGroupTester, {});
+    expect(container).toMatchSnapshot();
+  });
 });

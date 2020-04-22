@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:update": "yarn test -u",
     "lint": "pretty-quick --staged && eslint --ext .js,.vue src --fix",
     "dev": "start-storybook -p 6006 ",
     "dev:docs": "start-storybook -p 6006 --docs",
