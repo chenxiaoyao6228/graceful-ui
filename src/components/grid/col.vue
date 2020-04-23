@@ -37,12 +37,6 @@ export default {
       };
     },
   },
-  created() {
-    console.log("gutter", this.gutter);
-  },
-  mounted() {
-    console.log("gutter", this.gutter);
-  },
 };
 </script>
 

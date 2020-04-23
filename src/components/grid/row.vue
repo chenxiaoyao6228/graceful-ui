@@ -15,7 +15,7 @@ export default {
   computed: {
     styles() {
       let { gutter } = this;
-      return this.gutter
+      return gutter
         ? {
             marginLeft: -(gutter / 2) + "px",
             marginRight: -(gutter / 2) + "px",

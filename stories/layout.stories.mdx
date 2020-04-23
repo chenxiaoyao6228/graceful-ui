@@ -1,0 +1,67 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+
+import Layout from "../src/components/layout/layout.vue";
+import Header from "../src/components/layout/header.vue";
+import Content from "../src/components/layout/content.vue";
+import Footer from "../src/components/layout/footer.vue";
+import Sider from "../src/components/layout/sider.vue";
+
+// import '../src/styles/storybook/layout.less';
+
+<Meta title="布局/Layout 布局" component={Layout} />
+
+# Layout 布局
+
+### 引入组件
+
+```js
+import { Layout, Header, Content, Footer, Sider } from "graceful-ui";
+```
+
+### 基本布局
+
+<Preview>
+  <Story name="基本布局">
+    {{
+      components: { Layout, Header, Content, Footer, Sider },
+      template: `
+        <div class="g-layout-demo">
+          <Layout>
+            <Header>Header</Header>
+            <Sider>Sider</Sider>
+            <Content>Content</Content>
+            <Footer>Footer</Footer>
+          </Layout>
+          <Layout>
+            <Header>Header</Header>
+            <Layout>
+              <Sider>Sider</Sider>
+              <Content>Content</Content>
+            </Layout>
+            <Footer>Footer</Footer>
+          </Layout>
+          <Layout>
+            <Header>Header</Header>
+            <Layout>
+              <Content>Content</Content>
+              <Sider>Sider</Sider>
+            </Layout>
+            <Footer>Footer</Footer>
+          </Layout>
+          <Layout>
+            <Sider>Sider</Sider>
+            <Layout>
+              <Header>Header</Header>
+              <Content>Content</Content>
+              <Footer>Footer</Footer>
+            </Layout>
+          </Layout>
+        </div>`,
+    }}
+
+  </Story>
+</Preview>
+
+## API
+
+<Props of={(Layout, Header, Content, Sider, Footer)} />
