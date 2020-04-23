@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid match Snapshot 1`] = `
+<div>
+  <div
+    class="g-row"
+    style="margin-left: -2px; margin-right: -2px;"
+  >
+    <div
+      class="g-col g-col-span-8 g-col-offset-2"
+      style="padding-left: 0px; padding-right: 0px;"
+    >
+      <div>
+        这里是内容1
+      </div>
+    </div>
+     
+    <div
+      class="g-col g-col-span-8 g-col-offset-2"
+      style="padding-left: 0px; padding-right: 0px;"
+    >
+      <div>
+        这里是内容2
+      </div>
+    </div>
+  </div>
+</div>
+`;

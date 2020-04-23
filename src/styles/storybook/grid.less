@@ -1,0 +1,21 @@
+@import "../variables/var.less";
+.g-grid-demo {
+  .g-row {
+    margin-bottom: 5px;
+  }
+  .g-col {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    &:nth-child(n) {
+      & > div {
+        background: @color-primary;
+      }
+    }
+    &:nth-child(2n) {
+      & > div {
+        background-color: @color-info;
+      }
+    }
+  }
+}

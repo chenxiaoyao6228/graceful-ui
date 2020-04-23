@@ -1,0 +1,108 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+
+import Row from "../src/components/row";
+import Col from "../src/components/col";
+
+import "../src/styles/storybook/index.less";
+import "../src/styles/storybook/grid.less";
+
+<Meta title="布局/ 网格" component={(Row, Col)} />
+
+# 网格布局
+
+栅格系统使用 24 等分分割的形式
+
+### 引入组件
+
+```js
+import { Row, Col } from "graceful-ui";
+```
+
+### 基本使用
+
+通过`span`参数来确定网格的宽度
+
+<Preview>
+  <Story name="span 间隔">
+    {{
+      components: { Row, Col },
+      template: `
+        <div class="g-grid-demo">
+            <Row>
+              <Col span="12"><div>12</div></Col>
+              <Col span="12"><div>12</div></Col>
+            </Row>
+            <Row>
+              <Col span="4"><div>4</div></Col>
+              <Col span="20"><div>20</div></Col>
+            </Row>
+            <Row>
+              <Col span="6"><div>6</div></Col>
+              <Col span="6"><div>6</div></Col>
+              <Col span="6"><div>6</div></Col>
+              <Col span="6"><div>6</div></Col>
+            </Row>
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+### offset 间隔
+
+可以通过`offset`来设置每个单元格左边的偏移量, `offset`的大小比例和`span`一致
+
+<Preview>
+  <Story name="offset 偏移">
+    {{
+      components: { Row, Col },
+      template: `
+        <div class="g-grid-demo">
+            <Row>
+              <Col span="8" offset="2"><div>span-8-offset-2</div></Col>
+              <Col span="6" offset="2"><div>span-6-offset-2</div></Col>
+              <Col span="4" offset="2"><div>offset-2</div></Col>
+            </Row>
+            <Row>
+              <Col span="8"><div>span-8</div></Col>
+              <Col span="8" offset="8"><div>span-8-offset-8</div></Col>
+            </Row>
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+### gutter
+
+通过给`row`的`gutter`属性，可以给下属的`col`添加间距，推荐使用(16+8n)px 作为栅格间隔。
+
+<Preview>
+  <Story name="gutter 间隔">
+    {{
+      components: { Row, Col },
+      template: `
+        <div class="g-grid-demo">
+            <Row :gutter="16">
+              <Col span="8"><div>span-8</div></Col>
+              <Col span="6"><div>span-6</div></Col>
+            </Row>
+            <Row :gutter="24">
+              <Col span="8"><div>span-8</div></Col>
+              <Col span="8"><div>span-8</div></Col>
+            </Row>
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+### API
+
+Row
+
+<Props of={Row} />
+
+Col
+
+<Props of={Col} />
