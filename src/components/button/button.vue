@@ -19,7 +19,7 @@ export default {
   },
   props: {
     type: {
-      type: String,
+      type: [String, Boolean],
       default: "default",
       validator: function (value) {
         return oneOf(value, [
@@ -31,6 +31,7 @@ export default {
           "disabled",
           "dashed",
           "default",
+          false,
         ]);
       },
     },

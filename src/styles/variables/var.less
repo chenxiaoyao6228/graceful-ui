@@ -18,6 +18,10 @@
 @font-size: 14px;
 @font-color: @color;
 
+// animations
+@animation-time: 0.5s;
+@animation-type: cubic-bezier(0.08, 0.82, 0.17, 1);
+
 // button
 @button-height: 32px;
 @button-height-large: 40px;
@@ -36,3 +40,23 @@
 @input-height-small: 24px;
 @input-padding: 4px 10px;
 //@input-box-shadow:
+
+// switch
+@switch-height: 22px;
+@switch-width: 44px;
+@switch-inner-radius: 20px;
+@switch-offset-left: (@switch-height - @switch-inner-radius);
+
+@switch-height-small: 16px;
+@switch-width-small: 32px;
+@switch-inner-radius-small: 14px;
+
+@switch-height-large: 30px;
+@switch-width-large: 60px;
+@switch-inner-radius-large: 28px;
+
+@switch-border-radius: 44px;
+@switch-border-radius-small: 50%;
+
+@switch-color-checked: @color-primary;
+@switch-color-disabled: @color-disabled;

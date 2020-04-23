@@ -2,7 +2,7 @@ import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 import Button from "../src/components/button/button.vue";
 import ButtonGroup from "../src/components/button/button-group.vue";
 
-<Meta title="通用|按钮" component={Button} />
+<Meta title="通用/Button 按钮" component={Button} />
 
 # Button 按钮
 
@@ -15,7 +15,7 @@ import { Button } from "graceful-ui";
 ### 类别
 
 <Preview>
-  <Story name="类别">
+  <Story name="type 类别">
     {{
       components: { Button },
       template: `
@@ -39,7 +39,7 @@ import { Button } from "graceful-ui";
 `size`参数可以用来指定按钮形状,可选参数为`large`,`small`, 默认为`default`
 
 <Preview>
-  <Story name="圆角">
+  <Story name="size 大小">
     {{
       components: { Button },
       template: `
@@ -61,7 +61,7 @@ import { Button } from "graceful-ui";
 ### 图标类型
 
 <Preview>
-  <Story name="图标类型">
+  <Story name="icon 图标">
     {{
       components: { Button },
       template: `
@@ -78,7 +78,7 @@ import { Button } from "graceful-ui";
 ### 图标位置
 
 <Preview>
-  <Story name="图标位置">
+  <Story name="iconPosition 图标位置">
     {{
       components: { Button },
       template: `<div>
@@ -92,7 +92,7 @@ import { Button } from "graceful-ui";
 ### 加载状态
 
 <Preview>
-  <Story name="加载状态">
+  <Story name="loading 加载状态">
     {{
       components: { Button },
       template: `<Button :loading="loading" @click="loading = !loading">点击显示加载状态</Button>`,
@@ -106,7 +106,7 @@ import { Button } from "graceful-ui";
 ### 按钮组
 
 <Preview>
-  <Story name="按钮组">
+  <Story name="buttonGroup 按钮组">
     {{
       components: { Button, ButtonGroup },
       template: ` <ButtonGroup> <Button icon="left">上一页</Button> <Button icon="right" iconPosition="right">下一页</Button> </ButtonGroup>`,

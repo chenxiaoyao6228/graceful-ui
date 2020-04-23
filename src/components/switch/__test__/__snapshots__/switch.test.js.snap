@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should match snapshots 1`] = `
+<div>
+  <label
+    class="g-switch g-switch g-switch-default"
+    data-testid="test"
+  >
+    <input
+      type="hidden"
+      value="false"
+    />
+     
+    <span
+      class="g-switch-inner"
+    />
+  </label>
+</div>
+`;

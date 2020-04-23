@@ -11,13 +11,15 @@ import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
 import "@storybook/addon-console";
 
 import { version, name, repository } from "../package.json";
+import Logo from "../assets/logo.png";
 
 addDecorator(withA11y);
 
 addParameters({
   options: {
-    name: `${name} v${version}`,
-    url: repository,
+    brandTitle: `${name} v${version}`,
+    brandUrl: repository,
+    brandImage: Logo,
     sidebarAnimations: true,
   },
   docs: {
@@ -30,3 +32,8 @@ addParameters({
 configureActions({
   depth: 100,
 });
+
+// // 全局注册组件
+// import Vue from 'vue'
+// import  Switch  from '../src/components/switch/switch.vue';
+// Vue.component('GSwitch', Switch)

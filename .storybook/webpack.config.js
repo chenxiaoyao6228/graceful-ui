@@ -7,7 +7,7 @@ module.exports = async ({ config, mode }) => {
     include: path.resolve(__dirname, "../"),
   });
   config.module.rules.push({
-    test: /\.story\.js?$/,
+    test: /\.stories\.js?$/,
     loaders: [require.resolve("@storybook/addon-storysource/loader")],
     enforce: "pre",
   });

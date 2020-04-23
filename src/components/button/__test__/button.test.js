@@ -10,12 +10,12 @@ describe("Button", () => {
         default: ["按钮"],
       },
       propsData: {
-        type: "danger",
+        type: "error",
       },
     });
     expect(getByText("按钮")).toBeTruthy();
     expect(
-      container.childNodes[0].classList.contains(`${prefix}-danger`)
+      container.childNodes[0].classList.contains(`${prefix}-error`)
     ).toBeTruthy();
   });
 
