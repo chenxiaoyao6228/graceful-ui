@@ -1,8 +1,3 @@
-<template>
-  <div :class="classes">
-    <slot />
-  </div>
-</template>
 <script>
 const prefixCls = "g-layout";
 export default {
@@ -19,7 +14,6 @@ export default {
   },
   mounted() {
     this.$children.forEach((vm) => {
-      console.log(vm.$options.name);
       if (vm.$options.name === "Sider") {
         this.hasSider = true;
       }
@@ -27,6 +21,12 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div :class="classes">
+    <slot />
+  </div>
+</template>
 
 <style lang="less" scoped>
 @import "../../styles/variables/var.less";

@@ -1,23 +1,3 @@
-<template>
-  <div class="g-input-wrapper" :class="wrapperClasses">
-    <Icon
-      type="clear"
-      class="g-input-icon-clearable"
-      :class="[
-        clearable && value.length > 0 ? `g-input-icon-clearable-show` : '',
-      ]"
-      @click="handleClear"
-    />
-    <input
-      :type="type"
-      :placeholder="placeholder"
-      :value="value"
-      :class="classes"
-      @input="$emit('input', $event.target.value)"
-    />
-  </div>
-</template>
-
 <script>
 import Icon from "../icon/icon.vue";
 const prefix = "g-input";
@@ -73,6 +53,26 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="g-input-wrapper" :class="wrapperClasses">
+    <Icon
+      type="clear"
+      class="g-input-icon-clearable"
+      :class="[
+        clearable && value.length > 0 ? `g-input-icon-clearable-show` : '',
+      ]"
+      @click="handleClear"
+    />
+    <input
+      :type="type"
+      :placeholder="placeholder"
+      :value="value"
+      :class="classes"
+      @input="$emit('input', $event.target.value)"
+    />
+  </div>
+</template>
 
 <style lang="less" scoped>
 @import "../../styles/index.less";

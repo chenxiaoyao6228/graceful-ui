@@ -43,7 +43,8 @@ describe("Button", () => {
 
     let buttonElement = getByTestId(testId);
     expect(buttonElement.classList.contains("loading")).toBeTruthy();
-    expect(buttonElement.querySelector("use").getAttribute("xlink:href")).toBe(
+    expect(buttonElement.querySelector("use")).toHaveAttribute(
+      "xlink:href",
       "#icon-loading"
     );
   });

@@ -1,11 +1,13 @@
 {
-    "env": {
-        "node": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:jest/recommended",
-        "plugin:vue/recommended",
-        "prettier"
-    ]
+  "env": {
+    "node": true
+  },
+  "plugins": ["jest-dom"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:vue/recommended",
+    "prettier"
+  ]
 }

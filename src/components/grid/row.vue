@@ -1,8 +1,3 @@
-<template>
-  <div class="g-row" :style="styles">
-    <slot />
-  </div>
-</template>
 <script>
 export default {
   name: "Row",
@@ -30,6 +25,12 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="g-row" :style="styles">
+    <slot />
+  </div>
+</template>
 
 <style lang="less" scoped>
 .g-row {

@@ -1,14 +1,3 @@
-<template>
-  <label
-    class="g-switch"
-    :class="classes"
-    @click="toggle"
-    @keydown.space="toggle"
-  >
-    <input type="hidden" value="false" />
-    <span class="g-switch-inner" />
-  </label>
-</template>
 <script>
 const prefix = "g-switch";
 export default {
@@ -46,6 +35,17 @@ export default {
   },
 };
 </script>
+<template>
+  <label
+    class="g-switch"
+    :class="classes"
+    @click="toggle"
+    @keydown.space="toggle"
+  >
+    <input type="hidden" value="false" />
+    <span class="g-switch-inner" />
+  </label>
+</template>
 
 <style lang="less" scoped>
 @import '../../styles/index.less';

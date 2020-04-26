@@ -1,8 +1,3 @@
-<template>
-  <div :class="classes">
-    <slot />
-  </div>
-</template>
 <script>
 const prefixCls = "g-layout-footer";
 
@@ -15,6 +10,11 @@ export default {
   },
 };
 </script>
+<template>
+  <div :class="classes">
+    <slot />
+  </div>
+</template>
 
 <style lang="less" scoped>
 @import "../../styles/variables/var.less";

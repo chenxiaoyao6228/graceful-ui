@@ -1,8 +1,3 @@
-<template>
-  <div :class="classes" :style="styles">
-    <slot />
-  </div>
-</template>
 <script>
 const prefixCls = "g-col";
 export default {
@@ -39,6 +34,12 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div :class="classes" :style="styles">
+    <slot />
+  </div>
+</template>
 
 <style lang="less" scoped>
 @import "../../styles/variables/var.less";

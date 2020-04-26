@@ -1,8 +1,3 @@
-<template>
-  <svg class="g-icon" @click="$emit('click', $event)">
-    <use :xlink:href="`#icon-${type}`" aria-hidden="true" />
-  </svg>
-</template>
 <script>
 export default {
   name: "Icon",
@@ -17,6 +12,12 @@ export default {
   },
 };
 </script>
+
+<template>
+  <svg class="g-icon" @click="$emit('click', $event)">
+    <use :xlink:href="`#icon-${type}`" aria-hidden="true" />
+  </svg>
+</template>
 
 <style lang="less" scoped>
 .g-icon {

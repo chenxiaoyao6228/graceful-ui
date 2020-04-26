@@ -1,13 +1,3 @@
-<template>
-  <button class="g-button" :class="classes" @click="$emit('click')">
-    <Icon v-if="icon && !loading" class="icon" :type="icon" />
-    <Icon v-if="loading" class="icon loading" type="loading" />
-    <div class="content">
-      <slot />
-    </div>
-  </button>
-</template>
-
 <script>
 import { oneOf } from "../../utils/tools.js";
 import Icon from "../icon";
@@ -73,6 +63,16 @@ export default {
   },
 };
 </script>
+<template>
+  <button class="g-button" :class="classes" @click="$emit('click')">
+    <Icon v-if="icon && !loading" class="icon" :type="icon" />
+    <Icon v-if="loading" class="icon loading" type="loading" />
+    <div class="content">
+      <slot />
+    </div>
+  </button>
+</template>
+
 <style lang="less">
 @import "../../styles/index";
 

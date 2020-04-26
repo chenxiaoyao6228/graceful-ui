@@ -1,9 +1,3 @@
-<template>
-  <div class="g-button-group">
-    <slot />
-  </div>
-</template>
-
 <script>
 export default {
   name: "ButtonGroup",
@@ -22,6 +16,12 @@ export default {
 };
 1;
 </script>
+
+<template>
+  <div class="g-button-group">
+    <slot />
+  </div>
+</template>
 
 <style lang="less" scoped>
 @import "../../styles/variables/index";

@@ -32,8 +32,3 @@ addParameters({
 configureActions({
   depth: 100,
 });
-
-// // 全局注册组件
-// import Vue from 'vue'
-// import  Switch  from '../src/components/switch/switch.vue';
-// Vue.component('GSwitch', Switch)
