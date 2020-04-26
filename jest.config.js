@@ -7,7 +7,7 @@ module.exports = {
     ".*\\.(vue)$": "vue-jest",
     "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx",
   },
-  setupFiles: ["<rootDir>/.storybook/storyshots-setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/tests/setup.js", "<rootDir>/tests/storyshots-setup.js"],
   snapshotSerializers: ["jest-serializer-vue"],
   moduleNameMapper: {
     "^.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":

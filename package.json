@@ -5,7 +5,7 @@
   "repository": "https://github.com/chenxiaoyao6228/graceful-ui.git",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:update": "yarn test -u",
     "lint": "eslint --ext .js,.vue src --fix",
