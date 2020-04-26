@@ -55,7 +55,10 @@ export default {
 </script>
 
 <template>
-  <div class="g-input-wrapper" :class="wrapperClasses">
+  <div
+    class="g-input-wrapper"
+    :class="wrapperClasses"
+  >
     <Icon
       type="clear"
       class="g-input-icon-clearable"
@@ -70,7 +73,7 @@ export default {
       :value="value"
       :class="classes"
       @input="$emit('input', $event.target.value)"
-    />
+    >
   </div>
 </template>
 

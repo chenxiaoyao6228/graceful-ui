@@ -14,8 +14,14 @@ export default {
 </script>
 
 <template>
-  <svg class="g-icon" @click="$emit('click', $event)">
-    <use :xlink:href="`#icon-${type}`" aria-hidden="true" />
+  <svg
+    class="g-icon"
+    @click="$emit('click', $event)"
+  >
+    <use
+      :xlink:href="`#icon-${type}`"
+      aria-hidden="true"
+    />
   </svg>
 </template>
 

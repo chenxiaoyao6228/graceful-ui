@@ -1,13 +1,13 @@
+// reference: https://prettier.io/docs/en/integrating-with-linters.html
 {
   "env": {
     "node": true
   },
-  "plugins": ["jest-dom"],
+  "plugins": ["jest-dom", "vue", "jest"],
   "extends": [
     "eslint:recommended",
     "plugin:jest/recommended",
     "plugin:jest-dom/recommended",
-    "plugin:vue/recommended",
-    "prettier"
+    "plugin:vue/recommended"
   ]
 }

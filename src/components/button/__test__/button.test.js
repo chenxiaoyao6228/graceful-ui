@@ -30,42 +30,6 @@ describe("Button", () => {
     );
   });
 
-  test("loading state", () => {
-    const testId = "g-button-loading";
-    const { getByTestId } = render(Button, {
-      propsData: {
-        loading: true,
-      },
-      attrs: {
-        "data-testid": testId,
-      },
-    });
-
-    let buttonElement = getByTestId(testId);
-    expect(buttonElement.classList.contains("loading")).toBeTruthy();
-    expect(buttonElement.querySelector("use")).toHaveAttribute(
-      "xlink:href",
-      "#icon-loading"
-    );
-  });
-
-  // TODO test iconPosition
-  // test('iconPosition', () => {
-  //   let buttonTester = {
-  //     template: `<div>
-  //       <Button data-testid="button-position-1"><Icon type="setting" />按钮1</Button>
-  //       <Button data-testid="button-position-2" icon-position="right"><Icon type="setting" />按钮2</Button>
-  //     </div>`,
-  //     components: {Icon}
-  //   }
-  //   let { getByTestId } = render(buttonTester)
-  //   let svg_left = getByTestId('button-position-1').querySelector('svg')
-  //   let svg_right = getByTestId('button-position-2').querySelector('svg')
-
-  //   console.log(svg_right.outerHTML);
-
-  // })
-
   test("click event", async () => {
     const testId = "g-button-click";
     const spy = jest.fn();

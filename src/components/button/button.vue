@@ -1,37 +1,37 @@
 <script>
-import { oneOf } from "../../utils/tools.js";
-import Icon from "../icon";
-const prefix = "g-button";
+import { oneOf } from '../../utils/tools.js';
+import Icon from '../icon';
+const prefix = 'g-button';
 export default {
-  name: "Button",
+  name: 'Button',
   components: {
     Icon,
   },
   props: {
     type: {
       type: [String, Boolean],
-      default: "default",
+      default: 'default',
       validator: function (value) {
         return oneOf(value, [
-          "primary",
-          "warning",
-          "info",
-          "error",
-          "success",
-          "disabled",
-          "dashed",
-          "default",
+          'primary',
+          'warning',
+          'info',
+          'error',
+          'success',
+          'disabled',
+          'dashed',
+          'default',
           false,
         ]);
       },
     },
     size: {
       type: String,
-      default: "default",
+      default: 'default',
     },
     icon: {
       type: String,
-      default: "default",
+      default: 'default',
     },
     loading: {
       type: Boolean,
@@ -39,7 +39,7 @@ export default {
     },
     iconPosition: {
       type: String,
-      default: "",
+      default: '',
     },
     disabled: {
       type: Boolean,
@@ -54,19 +54,31 @@ export default {
       return [
         `${prefix}-${this.type}`,
         `${prefix}-size-${this.size}`,
-        this.disabled ? `${prefix}-disabled` : "",
-        this.round ? `${prefix}-round` : "",
-        this.iconPosition ? `icon-${this.iconPosition}` : "",
-        this.loading ? `loading` : "",
+        this.disabled ? `${prefix}-disabled` : '',
+        this.round ? `${prefix}-round` : '',
+        this.iconPosition ? `icon-${this.iconPosition}` : '',
+        this.loading ? `loading` : '',
       ];
     },
   },
 };
 </script>
 <template>
-  <button class="g-button" :class="classes" @click="$emit('click')">
-    <Icon v-if="icon && !loading" class="icon" :type="icon" />
-    <Icon v-if="loading" class="icon loading" type="loading" />
+  <button
+    class="g-button"
+    :class="classes"
+    @click="$emit('click')"
+  >
+    <Icon
+      v-if="icon && !loading"
+      class="icon"
+      :type="icon"
+    />
+    <Icon
+      v-if="loading"
+      class="icon loading"
+      type="loading"
+    />
     <div class="content">
       <slot />
     </div>
@@ -74,7 +86,7 @@ export default {
 </template>
 
 <style lang="less">
-@import "../../styles/index";
+@import '../../styles/index';
 
 .g-button {
   display: inline-flex;

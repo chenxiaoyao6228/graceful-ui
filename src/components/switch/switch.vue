@@ -42,7 +42,10 @@ export default {
     @click="toggle"
     @keydown.space="toggle"
   >
-    <input type="hidden" value="false" />
+    <input
+      type="hidden"
+      value="false"
+    >
     <span class="g-switch-inner" />
   </label>
 </template>
