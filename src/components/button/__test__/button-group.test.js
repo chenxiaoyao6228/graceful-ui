@@ -4,16 +4,17 @@ import Button from "../button.vue";
 
 describe("ButtonGroup", () => {
   let ButtonGroupTester = {
-    template: `
-        <ButtonGroup><Button icon="left">上一页</Button><Button icon="right" iconPosition="right">下一页</Button></ButtonGroup>`,
     components: { ButtonGroup, Button },
+    template: `
+        <ButtonGroup data-testid="button-group"><Button icon="left">上一页</Button><Button icon="right" iconPosition="right">下一页</Button></ButtonGroup>`,
   };
-  test("validate child", () => {
-    const { container } = render(ButtonGroupTester, {});
-    expect(container.childNodes[0].childNodes.length).toBe(2);
-  });
   test("match snapshots", () => {
     const { container } = render(ButtonGroupTester, {});
     expect(container).toMatchSnapshot();
+  });
+
+  test("validate child", () => {
+    const { getByTestId } = render(ButtonGroupTester);
+    expect(getByTestId('button-group').childNodes.length).toBe(2);
   });
 });

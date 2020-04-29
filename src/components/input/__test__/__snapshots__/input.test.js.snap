@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input snapshots 1`] = `
+<div>
+  <form>
+    <div
+      class="g-input-wrapper g-input-wrapper"
+      data-testid="input"
+    >
+      <svg
+        class="g-icon g-input-icon-clearable"
+      >
+        <use
+          aria-hidden="true"
+          xlink:href="#icon-clear"
+        />
+      </svg>
+       
+      <input
+        class="g-input g-input-default"
+        placeholder="请输入内容..."
+        type="text"
+      />
+    </div>
+     
+    <span
+      data-testid="content"
+    >
+      1
+    </span>
+  </form>
+</div>
+`;

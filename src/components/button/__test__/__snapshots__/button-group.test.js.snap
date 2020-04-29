@@ -4,6 +4,7 @@ exports[`ButtonGroup match snapshots 1`] = `
 <div>
   <div
     class="g-button-group"
+    data-testid="button-group"
   >
     <button
       class="g-button g-button-default g-button-size-default"

@@ -18,11 +18,11 @@ describe("Switch", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("toggle properly", () => {
+  it("toggle properly", async() => {
     const { getByTestId } = render(Component);
     let Switch = getByTestId("test");
 
-    fireEvent.click(Switch);
+    await fireEvent.click(Switch);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });

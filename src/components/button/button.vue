@@ -31,7 +31,7 @@ export default {
     },
     icon: {
       type: String,
-      default: 'default',
+      default: '',
     },
     loading: {
       type: Boolean,
@@ -52,6 +52,7 @@ export default {
   computed: {
     classes() {
       return [
+        `${prefix}`,
         `${prefix}-${this.type}`,
         `${prefix}-size-${this.size}`,
         this.disabled ? `${prefix}-disabled` : '',
@@ -63,9 +64,9 @@ export default {
   },
 };
 </script>
+
 <template>
   <button
-    class="g-button"
     :class="classes"
     @click="$emit('click')"
   >
@@ -109,12 +110,15 @@ export default {
   &-size {
     &-default {
       height: @button-height;
+      padding: @button-padding;
     }
     &-small {
       height: @button-height-small;
+      padding: @button-padding-small;
     }
     &-large {
       height: @button-height-large;
+      padding: @button-padding-large;
     }
   }
   &-default {

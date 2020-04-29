@@ -3,11 +3,18 @@
   "env": {
     "node": true
   },
-  "plugins": ["jest-dom", "vue", "jest"],
+  "plugins": [
+    "vue",
+    "jest",
+    "jest-dom",
+    "testing-library"
+  ],
   "extends": [
     "eslint:recommended",
+    "plugin:vue/recommended",
     "plugin:jest/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:vue/recommended"
+    "plugin:testing-library/recommended",
+    "plugin:testing-library/vue",
+    "plugin:jest-dom/recommended"
   ]
 }

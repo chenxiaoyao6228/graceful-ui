@@ -4,19 +4,56 @@ import Button from "../button.vue";
 const prefix = "g-button";
 
 describe("Button", () => {
-  test("button type", () => {
-    const { container, getByText } = render(Button, {
-      slots: {
-        default: ["按钮"],
-      },
-      propsData: {
-        type: "error",
+  
+  test("iconPosition", () => {
+    const { getByTestId } = render({
+      components: {Button},
+      template: `
+        <Button data-testid="button" icon="download" iconPosition="right">按钮</Button>
+      `
+    });
+    let button = getByTestId('button')
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveClass('icon-right') // 使用flex => order:2来进行定位
+  });
+
+  test("disabled", () => {
+    const { getByTestId } = render({
+      components: {Button},
+      template: `
+        <Button disabled data-testid="button">按钮</Button>
+      `
+    });
+    let button = getByTestId('button')
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveClass(`${prefix}-disabled`);
+  });
+
+  test("loading", async() => {
+    const {getByTestId} = render({
+      components: { Button },
+      template: `<Button data-testid="button" :loading="loading" @click="loading = !loading">按钮</Button>`,
+      data() {
+        return { loading: false };
       },
     });
-    expect(getByText("按钮")).toBeTruthy();
-    expect(
-      container.childNodes[0].classList.contains(`${prefix}-error`)
-    ).toBeTruthy();
+    let button = getByTestId('button')
+    expect(button).toBeInTheDocument();
+    expect(button).not.toHaveClass('loading')
+    await fireEvent.click(button)
+    expect(button).toHaveClass('loading')
+  });
+
+  test("button type", () => {
+    const { getByTestId } = render({
+      components:{Button},
+      template: `
+        <Button type="error" data-testid="button">按钮</Button>
+      `
+    });
+    let button = getByTestId('button')
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveClass(`${prefix}-error`);
   });
 
   test("icon type", () => {

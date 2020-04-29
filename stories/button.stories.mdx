@@ -1,6 +1,6 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
-import Button from "../src/components/button/button.vue";
-import ButtonGroup from "../src/components/button/button-group.vue";
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Button from '../src/components/button/button.vue';
+import ButtonGroup from '../src/components/button/button-group.vue';
 
 <Meta title="通用/Button 按钮" component={Button} />
 
@@ -9,7 +9,7 @@ import ButtonGroup from "../src/components/button/button-group.vue";
 ### 引入组件
 
 ```js
-import { Button } from "graceful-ui";
+import { Button } from 'graceful-ui';
 ```
 
 ### 类别
@@ -81,10 +81,12 @@ import { Button } from "graceful-ui";
   <Story name="iconPosition 图标位置">
     {{
       components: { Button },
-      template: `<div>
-        <Button icon="download" iconPosition="left">图标在左</Button>
-        <Button icon="download" iconPosition="right">图标在右</Button>
-      </div>`,
+      template: `
+        <div>
+          <Button icon="download" iconPosition="left">图标在左</Button>
+          <Button icon="download" iconPosition="right">图标在右</Button>
+        </div>
+      `,
     }}
   </Story>
 </Preview>
@@ -109,7 +111,11 @@ import { Button } from "graceful-ui";
   <Story name="buttonGroup 按钮组">
     {{
       components: { Button, ButtonGroup },
-      template: ` <ButtonGroup> <Button icon="left">上一页</Button> <Button icon="right" iconPosition="right">下一页</Button> </ButtonGroup>`,
+      template: ` 
+        <ButtonGroup>
+          <Button icon="left">上一页</Button> 
+          <Button icon="right" iconPosition="right">下一页</Button>
+        </ButtonGroup>`,
     }}
   </Story>
 </Preview>
