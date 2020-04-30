@@ -1,0 +1,65 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Alert from '../src/components/alert/alert.vue';
+import Button from '../src/components/button/button.vue';
+
+<Meta title="反馈/Alert 弹窗" component={Alert} />
+
+# Alert 弹窗
+
+### 引入组件
+
+```js
+import { Alert } from 'graceful-ui';
+```
+
+### 直接调用
+
+`Alert`组件默认挂在到了`Vue.prototype`上, 因此可以通过`this.$Alert.info`的方式进行调用, 也可以通过`type`参数来声明
+<Preview>
+  <Story name="直接调用">
+    {{
+      components: { Button },
+      template: `
+        <div>
+            <Button type="primary" @click="handleShowInfo">点击弹出info</Button>
+            <Button type="warning" @click="handleShowWarning">点击弹出warning</Button>
+            <Button type="error" @click="handleShowError">点击弹出error</Button>
+            <Button type="success" @click="handleShowSuccess">点击弹出success</Button>
+        </div>
+      `,
+      methods: { 
+        handleShowInfo(){
+          this.$Alert.info({
+            content: '这是一条提示信息',
+            duration: 3
+          })
+        },
+        handleShowWarning(){
+          this.$Alert.warning({
+            content: '这是一条提示信息',
+            duration: 3
+          })
+        },
+        handleShowError(){
+          this.$Alert({
+            type: 'error',
+            content: '这是一条提示信息',
+            duration: 3
+          })
+        },
+        handleShowSuccess(){
+          this.$Alert({
+            type: 'success',
+            content: '这是一条提示信息',
+            duration: 3
+          })
+        }
+      }
+    }}
+  </Story>
+</Preview>
+
+
+## API
+
+<Props of={Alert} />

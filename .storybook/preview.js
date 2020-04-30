@@ -4,6 +4,11 @@
 import "../src/styles/index.less";
 import "../src/styles/storybook/index.less";
 
+// 全局注册组件
+import Vue from 'vue'
+import alert from '../src/components/alert/alert.js';
+Vue.prototype.$Alert = alert
+
 import { addParameters, addDecorator } from "@storybook/vue";
 import { configureActions } from "@storybook/addon-actions";
 import { withA11y } from "@storybook/addon-a11y";
