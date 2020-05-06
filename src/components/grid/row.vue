@@ -1,28 +1,28 @@
 <script>
 export default {
-  name: "Row",
+  name: 'Row',
   props: {
     gutter: {
       type: Number,
-      default: 0,
-    },
+      default: 0
+    }
   },
   computed: {
     styles() {
-      let { gutter } = this;
+      const { gutter } = this;
       return gutter
         ? {
-            marginLeft: -(gutter / 2) + "px",
-            marginRight: -(gutter / 2) + "px",
-          }
+          marginLeft: `${-(gutter / 2)}px`,
+          marginRight: `${-(gutter / 2)}px`
+        }
         : {};
-    },
+    }
   },
   mounted() {
     this.$children.forEach((vm) => {
       vm.gutter = this.gutter;
     });
-  },
+  }
 };
 </script>
 

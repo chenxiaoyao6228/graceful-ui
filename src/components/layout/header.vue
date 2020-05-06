@@ -1,12 +1,12 @@
 <script>
-const prefixCls = "g-layout-header";
+const prefixCls = 'g-layout-header';
 export default {
-  name: "Header",
+  name: 'Header',
   computed: {
     classes() {
       return [`${prefixCls}`];
-    },
-  },
+    }
+  }
 };
 </script>
 <template>

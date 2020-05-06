@@ -1,37 +1,37 @@
 <script>
-const prefixCls = "g-col";
+const prefixCls = 'g-col';
 export default {
-  name: "Col",
+  name: 'Col',
   props: {
     span: {
       type: [String, Number],
-      default: "12",
+      default: '12'
     },
     offset: {
       type: [String, Number],
-      default: 0,
-    },
+      default: 0
+    }
   },
   data() {
     return {
-      gutter: 0,
+      gutter: 0
     };
   },
   computed: {
     classes() {
       return [
         `${prefixCls}`,
-        this.span ? `${prefixCls}-span-${this.span}` : "",
-        this.offset ? `${prefixCls}-offset-${this.offset}` : "",
+        this.span ? `${prefixCls}-span-${this.span}` : '',
+        this.offset ? `${prefixCls}-offset-${this.offset}` : ''
       ];
     },
     styles() {
       return {
-        paddingLeft: this.gutter / 2 + "px",
-        paddingRight: this.gutter / 2 + "px",
+        paddingLeft: `${this.gutter / 2}px`,
+        paddingRight: `${this.gutter / 2}px`
       };
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -1,17 +1,18 @@
 <script>
-import { oneOf } from '../../utils/tools.js';
+import oneOf from '../../utils/tools';
 import Icon from '../icon';
+
 const prefix = 'g-button';
 export default {
   name: 'Button',
   components: {
-    Icon,
+    Icon
   },
   props: {
     type: {
       type: [String, Boolean],
       default: 'default',
-      validator: function (value) {
+      validator(value) {
         return oneOf(value, [
           'primary',
           'warning',
@@ -21,30 +22,30 @@ export default {
           'disabled',
           'dashed',
           'default',
-          false,
+          false
         ]);
-      },
+      }
     },
     size: {
       type: String,
-      default: 'default',
+      default: 'default'
     },
     icon: {
       type: String,
-      default: '',
+      default: ''
     },
     loading: {
       type: Boolean,
-      default: false,
+      default: false
     },
     iconPosition: {
       type: String,
-      default: '',
+      default: ''
     },
     disabled: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {};
@@ -58,10 +59,10 @@ export default {
         this.disabled ? `${prefix}-disabled` : '',
         this.round ? `${prefix}-round` : '',
         this.iconPosition ? `icon-${this.iconPosition}` : '',
-        this.loading ? `loading` : '',
+        this.loading ? 'loading' : ''
       ];
-    },
-  },
+    }
+  }
 };
 </script>
 

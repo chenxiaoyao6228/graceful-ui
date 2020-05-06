@@ -1,19 +1,19 @@
 <script>
-const prefix = "g-switch";
+const prefix = 'g-switch';
 export default {
   model: {
-    prop: "isChecked",
-    event: "input",
+    prop: 'isChecked',
+    event: 'input'
   },
   props: {
     isChecked: {
       type: Boolean,
-      default: false,
+      default: false
     },
     size: {
       type: String,
-      default: "default",
-    },
+      default: 'default'
+    }
   },
   data() {
     return {};
@@ -23,16 +23,16 @@ export default {
       return [
         `${prefix}`,
         `${prefix}-${this.size}`,
-        this.isChecked ? `${prefix}-checked` : "",
+        this.isChecked ? `${prefix}-checked` : ''
       ];
-    },
+    }
   },
   methods: {
     toggle() {
-      this.$emit("input", !this.isChecked); // 实现双向绑定
-      this.$emit("on-change", !this.isChecked); // 让外层组件执行相应的回调
-    },
-  },
+      this.$emit('input', !this.isChecked); // 实现双向绑定
+      this.$emit('on-change', !this.isChecked); // 让外层组件执行相应的回调
+    }
+  }
 };
 </script>
 <template>

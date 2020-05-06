@@ -1,5 +1,6 @@
-import Alert from "./toast.vue";
+import Alert from './alert.vue';
+
 Alert.install = (Vue) => {
-  Vue.component("Alert", Alert);
+  Vue.component('Alert', Alert);
 };
 export default Alert;

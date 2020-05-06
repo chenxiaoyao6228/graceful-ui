@@ -1,12 +1,12 @@
 <script>
-const prefixCls = "g-layout-sider";
+const prefixCls = 'g-layout-sider';
 export default {
-  name: "Sider",
+  name: 'Sider',
   computed: {
     classes() {
       return [`${prefixCls}`];
-    },
-  },
+    }
+  }
 };
 </script>
 <template>

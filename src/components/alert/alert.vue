@@ -1,57 +1,56 @@
 <script>
-const prefixCls = 'g-alert'
-let seed = 0
-function getUuid(){
-  return 'alert_' + (seed++);
+const prefixCls = 'g-alert';
+let seed = 0;
+function getUuid() {
+  seed += 1;
+  return `alert-${seed}`;
 }
 
 export default {
-  props:{
+  props: {
     type: {
       type: String,
       default: 'info'
     }
   },
-  data () {
+  data() {
     return {
       notices: []
+    };
+  },
+  computed: {
+    classes() {
+      return [`${prefixCls}`, `${prefixCls}-${this.type}`];
     }
   },
-  computed:{
-    classes(){
-      return [
-        `${prefixCls}`,
-        `${prefixCls}-${this.type}`
-      ]
-    }
-  },
-  methods:{
-    add(notice){
-      let vm = this
-      const name = getUuid()
+  methods: {
+    add(noticeParams) {
+      const vm = this;
+      const name = getUuid();
 
-      let _notice = Object.assign({ 
-        name: name
-      }, notice)
+      const notices = {
+        name,
+        ...noticeParams
+      };
 
-      this.notices.push(_notice)
+      this.notices.push(notices);
 
-      const duration = notice.duration;
-      setTimeout(()=>{
+      const { duration } = notices;
+      setTimeout(() => {
         vm.remove(name);
-      }, duration * 1000)
+      }, duration * 1000);
     },
-    remove(name){
-      const notices = this.notices
-      for(let i = 0, len = notices.length; i < len; i++){
-        if(notices[i].name === name){
+    remove(name) {
+      const { notices } = this;
+      for (let i = 0, len = notices.length; i < len; i++) {
+        if (notices[i].name === name) {
           this.notices.splice(i, 1);
           break;
         }
       }
     }
   }
-}
+};
 </script>
 <template>
   <div :class="classes">
@@ -67,5 +66,5 @@ export default {
   </div>
 </template>
 <style lang="less" scoped>
-@import "./alert.less";
+@import './alert.less';
 </style>

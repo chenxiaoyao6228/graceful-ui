@@ -1,20 +1,20 @@
 <script>
 export default {
-  name: "ButtonGroup",
+  name: 'ButtonGroup',
   data() {
     return {};
   },
   mounted() {
-    for (let child of this.$el.children) {
-      if (child.nodeName.toLowerCase() !== "button") {
+    for (let i = 0, len = this.$el.children; i < len; i++) {
+      const child = this.$el.children[i];
+      if (child.nodeName.toLowerCase() !== 'button') {
         console.warn(
           `ButtonGroup的子元素只允许Button元素, 当前子元素为${child.nodeName.toLowerCase()}`
         );
       }
     }
-  },
+  }
 };
-1;
 </script>
 
 <template>
@@ -24,7 +24,7 @@ export default {
 </template>
 
 <style lang="less" scoped>
-@import "../../styles/variables/index";
+@import '../../styles/variables/index';
 
 .g-button-group {
   display: inline-flex;

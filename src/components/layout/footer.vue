@@ -1,13 +1,13 @@
 <script>
-const prefixCls = "g-layout-footer";
+const prefixCls = 'g-layout-footer';
 
 export default {
-  name: "Footer",
+  name: 'Footer',
   computed: {
     classes() {
       return [`${prefixCls}`];
-    },
-  },
+    }
+  }
 };
 </script>
 <template>

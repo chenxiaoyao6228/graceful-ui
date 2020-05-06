@@ -8,9 +8,19 @@ module.exports = async ({ config, mode }) => {
   });
   config.module.rules.push({
     test: /\.stories\.js?$/,
-    loaders: [require.resolve("@storybook/addon-storysource/loader")],
+    loaders: [
+      require.resolve("@storybook/addon-storysource/loader"),
+    ],
     enforce: "pre",
   });
+  // config.module.rules.push({
+  //   test: /\.(vue|js)?$/,
+  //   exclude: /node_modules/,
+  //   loaders: [
+  //     'eslint-loader'
+  //   ],
+  //   enforce: "pre",
+  // });
   // Return the altered config
   return config;
 };

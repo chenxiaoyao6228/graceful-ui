@@ -1,24 +1,24 @@
 <script>
-const prefixCls = "g-layout";
+const prefixCls = 'g-layout';
 export default {
-  name: "Layout",
+  name: 'Layout',
   data() {
     return {
-      hasSider: false,
+      hasSider: false
     };
   },
   computed: {
     classes() {
-      return [`${prefixCls}`, this.hasSider ? `${prefixCls}-has-sider` : ""];
-    },
+      return [`${prefixCls}`, this.hasSider ? `${prefixCls}-has-sider` : ''];
+    }
   },
   mounted() {
     this.$children.forEach((vm) => {
-      if (vm.$options.name === "Sider") {
+      if (vm.$options.name === 'Sider') {
         this.hasSider = true;
       }
     });
-  },
+  }
 };
 </script>
 

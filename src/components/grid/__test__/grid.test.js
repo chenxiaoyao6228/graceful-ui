@@ -1,10 +1,10 @@
-import { render } from "@testing-library/vue";
-import Col from "../col.vue";
-import Row from "../row.vue";
+import { render } from '@testing-library/vue';
+import Col from '../col.vue';
+import Row from '../row.vue';
 
-describe("Grid", () => {
-  it("match Snapshot", () => {
-    let testComponent = {
+describe('Grid', () => {
+  it('match Snapshot', () => {
+    const testComponent = {
       components: { Row, Col },
       template: `
         <Row :gutter="4">
@@ -15,7 +15,7 @@ describe("Grid", () => {
             <div>这里是内容2</div>
           </Col>
         </Row>
-      `,
+      `
     };
     const { container } = render(testComponent);
     expect(container).toMatchSnapshot();

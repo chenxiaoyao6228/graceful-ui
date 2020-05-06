@@ -1,5 +1,6 @@
-import Icon from "./icon.vue";
+import Icon from './icon.vue';
+
 Icon.install = (Vue) => {
-  Vue.component("Icon", Icon);
+  Vue.component('Icon', Icon);
 };
 export default Icon;

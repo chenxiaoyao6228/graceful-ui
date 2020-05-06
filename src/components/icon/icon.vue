@@ -1,15 +1,15 @@
 <script>
 export default {
-  name: "Icon",
+  name: 'Icon',
   props: {
     type: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
   data() {
     return {};
-  },
+  }
 };
 </script>
 

@@ -1,20 +1,32 @@
 // reference: https://prettier.io/docs/en/integrating-with-linters.html
 {
   "env": {
+    "browser": true,
     "node": true
   },
-  "plugins": [
-    "vue",
-    "jest",
-    "jest-dom",
-    "testing-library"
-  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["vue", "jest", "jest-dom", "testing-library"],
   "extends": [
     "eslint:recommended",
     "plugin:vue/recommended",
+    "airbnb-base",
     "plugin:jest/recommended",
     "plugin:testing-library/recommended",
     "plugin:testing-library/vue",
     "plugin:jest-dom/recommended"
-  ]
+  ],
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-underscore-dangle": ["error", { "allow": ["__place"] }],
+    "no-console": "off",
+    "no-param-reassign": [2, { "props": false }]
+  }
 }

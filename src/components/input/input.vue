@@ -1,34 +1,35 @@
 <script>
-import Icon from "../icon/icon.vue";
-const prefix = "g-input";
+import Icon from '../icon/icon.vue';
+
+const prefix = 'g-input';
 export default {
-  name: "Input",
+  name: 'Input',
   components: { Icon },
   model: {
-    prop: "value",
-    event: "input",
+    prop: 'value',
+    event: 'input'
   },
   props: {
     value: {
       type: String,
-      default: "",
+      default: ''
     },
     type: {
       type: String,
-      default: "text",
+      default: 'text'
     },
     placeholder: {
       type: String,
-      default: "",
+      default: ''
     },
     size: {
       type: String,
-      default: "default",
+      default: 'default'
     },
     clearable: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {};
@@ -39,18 +40,18 @@ export default {
         `${prefix}-wrapper`,
         this.clearable && this.value.length > 0
           ? `${prefix}-wrapper-clearable`
-          : "",
+          : ''
       ];
     },
     classes() {
       return [`${prefix}`, `${prefix}-${this.size}`];
-    },
+    }
   },
   methods: {
     handleClear() {
-      this.$emit("input", "");
-    },
-  },
+      this.$emit('input', '');
+    }
+  }
 };
 </script>
 
