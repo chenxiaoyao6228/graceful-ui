@@ -8,6 +8,7 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:update": "yarn test -u",
+    "stylelint": "stylelint 'src/**/*.less' --syntax less --fix",
     "lint": "eslint --ext .js,.vue src --fix",
     "dev": "start-storybook -p 6006 ",
     "dev:docs": "start-storybook -p 6006 --docs",
@@ -83,6 +84,8 @@
     "react": "^16.13.1",
     "react-is": "^16.13.1",
     "style-loader": "^1.1.3",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
     "vue-jest": "^3.0.5",
     "vue-loader": "^15.9.1",
     "vue-style-loader": "^4.1.2",
@@ -92,8 +95,13 @@
   },
   "lint-staged": {
     "*.{js, vue}": [
-      "yarn lint",
-      "yarn test"
+      "eslint --fix",
+      "yarn test",
+      "git add"
+    ],
+    "*.less": [
+      "stylelint --syntax less --fix",
+      "git add"
     ]
   },
   "husky": {
