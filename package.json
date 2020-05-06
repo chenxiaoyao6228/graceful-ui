@@ -8,7 +8,7 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:update": "yarn test -u",
-    "stylelint": "stylelint 'src/**/*.less' --syntax less --fix",
+    "stylelint": "stylelint --syntax less --fix",
     "lint": "eslint --ext .js,.vue src --fix",
     "dev": "start-storybook -p 6006 ",
     "dev:docs": "start-storybook -p 6006 --docs",

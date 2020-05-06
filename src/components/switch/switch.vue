@@ -20,11 +20,7 @@ export default {
   },
   computed: {
     classes() {
-      return [
-        `${prefix}`,
-        `${prefix}-${this.size}`,
-        this.isChecked ? `${prefix}-checked` : ''
-      ];
+      return [`${prefix}`, `${prefix}-${this.size}`, this.isChecked ? `${prefix}-checked` : ''];
     }
   },
   methods: {
@@ -51,59 +47,5 @@ export default {
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/index.less';
-@prefixCls: g-switch ;
-
-.@{prefixCls}{
-  display: inline-block;
-  position: relative;
-  width: @switch-width;
-  height: @switch-height;
-  line-height: @switch-height;
-  vertical-align: middle;
-  background-color: @switch-color-disabled;
-  border-radius: @switch-border-radius;
-  cursor: pointer;
-  user-select: none;
-  transition: all @animation-type @animation-time;
-  &-checked {
-    background: @switch-color-checked;
-    &  .@{prefixCls}-inner {
-      left:100% ;
-      margin-left: -@switch-offset-left;
-      transform: translateX(-100%);
-    }
-  }
-  &-small{
-    width:@switch-width-small;
-    height:@switch-height-small;
-    line-height:@switch-height-small;
-    & .@{prefixCls}-inner{
-      height: @switch-inner-radius-small;
-      width: @switch-inner-radius-small;
-    }
-  }
-  &-large {
-    width:@switch-width-large;
-    height:@switch-height-large;
-    line-height:@switch-height-large;
-    & .@{prefixCls}-inner{
-      height: @switch-inner-radius-large;
-      width: @switch-inner-radius-large;
-    }
-  }
-  &-inner {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    left: @switch-offset-left;
-    width: @switch-inner-radius;
-    height: @switch-inner-radius;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: all @animation-type @animation-time;
-  }
-
-}
+@import './switch.less';
 </style>

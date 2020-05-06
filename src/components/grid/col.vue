@@ -45,20 +45,5 @@ export default {
 </template>
 
 <style lang="less" scoped>
-@import "../../styles/variables/var.less";
-
-@prefixCls: g-col;
-
-@iterations: @max-col-num;
-.grid-span-offset-loop (@index) when (@index > 0) {
-  .@{prefixCls}-span-@{index} {
-    width: percentage(@index / @iterations);
-  }
-  .@{prefixCls}-offset-@{index} {
-    margin-left: percentage(@index / @iterations);
-  }
-  .grid-span-offset-loop(@index - 1);
-}
-
-.grid-span-offset-loop(@iterations);
+@import './col.less';
 </style>

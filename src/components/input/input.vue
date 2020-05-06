@@ -38,9 +38,7 @@ export default {
     wrapperClasses() {
       return [
         `${prefix}-wrapper`,
-        this.clearable && this.value.length > 0
-          ? `${prefix}-wrapper-clearable`
-          : ''
+        this.clearable && this.value.length > 0 ? `${prefix}-wrapper-clearable` : ''
       ];
     },
     classes() {
@@ -63,9 +61,7 @@ export default {
     <Icon
       type="clear"
       class="g-input-icon-clearable"
-      :class="[
-        clearable && value.length > 0 ? `g-input-icon-clearable-show` : '',
-      ]"
+      :class="[clearable && value.length > 0 ? `g-input-icon-clearable-show` : '']"
       @click="handleClear"
     />
     <input
@@ -79,43 +75,5 @@ export default {
 </template>
 
 <style lang="less" scoped>
-@import "../../styles/index.less";
-
-.g-input {
-  &-wrapper {
-    position: relative;
-    font-size: @font-size;
-  }
-  height: @input-height;
-  padding: @input-padding;
-  border: 1px solid @border-color;
-  border-radius: @border-radius;
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: @color-primary;
-    outline: none;
-    // box-shadow: @input-box-shadow;
-  }
-  &-large {
-    height: @input-height-large;
-  }
-  &-small {
-    height: @input-height-small;
-  }
-  &-icon-clearable {
-    position: absolute;
-    display: none;
-    width: @input-height / 2;
-    height: @input-height / 2;
-    right: 6px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    color: #808695;
-    &-show {
-      display: block;
-    }
-  }
-}
+@import './input.less';
 </style>
