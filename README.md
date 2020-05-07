@@ -45,7 +45,7 @@ yarn add graceful-ui --save
 You can register all the components brought with `graceful-ui` with the following command
 
 ```js
-import { GracefulUI } from "graceful-ui";
+import { GracefulUI } from 'graceful-ui';
 
 Vue.use(GracefulUI);
 ```
@@ -55,7 +55,7 @@ Vue.use(GracefulUI);
 With help of [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-component), you can import components needed in your project.
 
 ```js
-import { Button } from "graceful-ui";
+import { Button } from 'graceful-ui';
 
 Vue.use(Button);
 ```
@@ -67,9 +67,9 @@ You can also use imported component on your component template
   <button type="primary" icon="download"></button>
 </template>
 <script>
-  import { Button } from "graceful-ui";
+  import { Button } from 'graceful-ui';
   export default {
-    name: "myComponent",
+    name: 'myComponent',
     components: {
       Button,
     },
@@ -107,7 +107,7 @@ Considering the size of webpack bundle file, fonts are hosted on aliyun cdn,
 to use them, just add the following script to your index.html file
 
 ```js
-<script src="http://at.alicdn.com/t/font_1763207_sovevg462rr.js"></script>
+<script src="http://at.alicdn.com/t/font_1763207_9f1wiwjq4dr.js"></script>
 ```
 
 ## License

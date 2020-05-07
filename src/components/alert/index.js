@@ -1,6 +1,6 @@
-import Alert from './alert.vue';
+import alert from './alert';
 
-Alert.install = (Vue) => {
-  Vue.component('Alert', Alert);
+alert.install = (Vue) => {
+  Vue.prototype.$Alert = alert;
 };
-export default Alert;
+export default alert;

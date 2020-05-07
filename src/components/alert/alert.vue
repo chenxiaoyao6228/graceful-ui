@@ -1,5 +1,8 @@
 <script>
+import Icon from '../icon/icon.vue';
+
 const prefixCls = 'g-alert';
+
 let seed = 0;
 function getUuid() {
   seed += 1;
@@ -7,21 +10,12 @@ function getUuid() {
 }
 
 export default {
-  props: {
-    type: {
-      type: String,
-      default: 'info'
-    }
-  },
+  components: { Icon },
   data() {
     return {
+      prefixCls,
       notices: []
     };
-  },
-  computed: {
-    classes() {
-      return [`${prefixCls}`, `${prefixCls}-${this.type}`];
-    }
   },
   methods: {
     add(noticeParams) {
@@ -53,14 +47,19 @@ export default {
 };
 </script>
 <template>
-  <div :class="classes">
+  <div :class="[`${prefixCls}`]">
     <div
       v-for="item in notices"
       :key="item.name"
-      class="g-alert-main"
+      :class="[`${prefixCls}-wrapper`, `${prefixCls}-wrapper-${item.type}`]"
     >
       <div class="g-alert-content">
-        {{ item.content }}
+        <i class="g-alert-icon">
+          <Icon :type="item.type" />
+        </i>
+        <p class="g-alert-text">
+          {{ item.content }}
+        </p>
       </div>
     </div>
   </div>

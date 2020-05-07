@@ -1,16 +1,17 @@
 import Notification from './notification';
 
-let messageInstance;
+let messageInstance; // 唯一实例
 
 function getMessageInstance() {
   messageInstance = messageInstance || Notification.newInstance();
   return messageInstance;
 }
 
-function notice({ duration = 1.5, content = '' }) {
+function notice({ duration = 1.5, content = '', type = 'info' }) {
   const instance = getMessageInstance();
 
   instance.add({
+    type,
     content,
     duration
   });

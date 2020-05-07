@@ -1,33 +1,66 @@
-@import "../../styles/variables/var.less";
-@prefixCls: ~"@{css-prefix}-alert";
+@import '../../styles/variables/var.less';
+@import '../../styles/mixin/index.less';
+@prefixCls: ~'@{css-prefix}-alert';
 
-.@{prefixCls}{
+.@{prefixCls} {
   position: fixed;
   width: 100%;
   top: 16px;
   left: 0;
   text-align: center;
   pointer-events: none;
-    &-info{
-        & > .@{prefixCls}-content{
-            border-color: @alert-info-color;
-        }
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-info {
+      & .@{prefixCls}-content {
+        border-color: @alert-info-color;
+      }
+      & .@{prefixCls}-icon {
+        color: @alert-info-color;
+      }
     }
-    &-warning{
+
+    &-warning {
+      & .@{prefixCls}-content {
         border-color: @alert-warning-color;
+      }
+      & .@{prefixCls}-icon {
+        color: @alert-warning-color;
+      }
     }
-    &-error{
+
+    &-error {
+      & .@{prefixCls}-content {
         border-color: @alert-error-color;
+      }
+      & .@{prefixCls}-icon {
+        color: @alert-error-color;
+      }
     }
-    &-success{
+
+    &-success {
+      & .@{prefixCls}-content {
         border-color: @alert-success-color;
+      }
+      & .@{prefixCls}-icon {
+        color: @alert-success-color;
+      }
     }
-    &-content{
-    display: inline-block;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 8px 16px;
-    background: #fff;
-    border-radius: 3px;
+    margin-bottom: 10px;
     border: 1px solid transparent;
-    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 6px;
+    color: @font-color;
   }
 }

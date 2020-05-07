@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Alert from './alert.vue';
 
 Alert.newInstance = (properties) => {
+  console.log(properties);
   const props = properties || {};
 
   const Instance = new Vue({
