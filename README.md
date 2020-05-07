@@ -11,6 +11,12 @@ GracefulUI
 
 [![](https://circleci.com/gh/chenxiaoyao6228/graceful-ui.svg?style=shield)]()
 
+## Anouncement
+
+This project is build for better understand basic usage and magic tricks of Vue.js, and should not be used in production environment. Implementation details will be recorded as blog posts series.
+
+> 该项目旨为深入理解学习 Vue.js, 不建议在生产环境中使用, 具体的实现细节届时会总结成相应的博文。
+
 ## Online Demo
 
 [https://chenxiaoyao6228.github.io/graceful-ui](https://chenxiaoyao6228.github.io/graceful-ui)
@@ -109,6 +115,16 @@ to use them, just add the following script to your index.html file
 ```js
 <script src="http://at.alicdn.com/t/font_1763207_9f1wiwjq4dr.js"></script>
 ```
+
+## Reference
+
+Great thanks to the following awesome ui libraries
+
+[Gulu](https://yuyuye958.github.io/GuLu-UI/)
+[iview](https://www.iviewui.com/docs/introduce)
+[elementui](https://element.eleme.cn/#/zh-CN/component)
+[ant-design-vue](https://www.antdv.com/docs/vue/introduce-cn/)
+[react-suite](https://rsuitejs.com/components)
 
 ## License
 

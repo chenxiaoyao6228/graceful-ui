@@ -100,12 +100,10 @@
   "lint-staged": {
     "*.{js, vue}": [
       "eslint --fix",
-      "yarn test",
-      "git add"
+      "yarn test"
     ],
     "*.less": [
-      "stylelint --syntax less --fix",
-      "git add"
+      "stylelint --syntax less --fix"
     ]
   },
   "husky": {
