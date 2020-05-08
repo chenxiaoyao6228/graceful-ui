@@ -31,7 +31,7 @@ export default {
   vertical-align: middle;
   > .g-button {
     border-radius: 0;
-    &:first-child {
+    &:first-of-type {
       border-top-left-radius: @border-radius;
       border-bottom-left-radius: @border-radius;
     }

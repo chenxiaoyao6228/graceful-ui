@@ -1,0 +1,61 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Button from '../src/components/button/button.vue';
+import Tab from '../src/components/tab/tab.vue';
+import TabHead from '../src/components/tab/tab-head.vue';
+import TabBody from '../src/components/tab/tab-body.vue';
+import TabItem from '../src/components/tab/tab-item.vue';
+import TabPanel from '../src/components/tab/tab-panel.vue';
+
+<Meta title="数据展示/Tab 选项卡" component={Tab} />
+
+# Tab
+
+### 引入组件
+
+```js
+import { Tab, TabHead, TabBody, TabItem, TabPanel } from 'graceful-ui';
+```
+
+### 基本使用
+
+<Preview>
+  <Story name="basic 基本使用">
+    {{
+      components: { Tab, TabHead, TabBody, TabItem, TabPanel, Button },
+      template: `
+          <div>
+            <Tab :selected.sync="selectedTab">
+              <TabHead>
+                <TabItem name="tab1">tab1</TabItem>
+                <TabItem name="tab2">tab2</TabItem>
+                <TabItem name="tab3">tab3</TabItem>
+                <template v-slot:actions>
+                 <Button>ExtraActions</Button>
+                </template>
+              </TabHead>
+              <TabBody>
+                <TabPanel>panel1</TabPanel>
+                <TabPanel>panel2</TabPanel>
+                <TabPanel>panel3</TabPanel>
+              </TabBody>
+            </Tab>
+          </div>
+        `,
+      data() {
+        return {
+          selectedTab: 'tab2',
+        };
+      },
+      created() {},
+    }}
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Tab} />
+<Props of={TabHead} />
+<Props of={TabBody} />
+<Props of={TabItem} />
+<Props of={TabPanel} />
