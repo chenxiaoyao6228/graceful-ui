@@ -1,5 +1,5 @@
 <script>
-const prefixCls = 'g-tab';
+const prefixCls = 'g-tab-head';
 export default {
   name: 'TabHead',
   inject: ['eventBus'],
@@ -7,15 +7,14 @@ export default {
     return {
       prefixCls
     };
-  },
-  created() {}
+  }
 };
 </script>
 
 <template>
-  <div :class="[`${prefixCls}-head`]">
+  <div :class="[`${prefixCls}`]">
     <slot />
-    <div :class="[`${prefixCls}-head-actions`]">
+    <div :class="[`${prefixCls}-actions`]">
       <slot name="actions" />
     </div>
   </div>
@@ -29,7 +28,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border: 1px solid red;
+  margin-bottom: 16px;
+  position: relative;
+  border-bottom: 1px solid @tab-disabled-color;
   &-actions {
     margin-left: auto;
   }

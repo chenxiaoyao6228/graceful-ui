@@ -1,11 +1,32 @@
 <script>
+const prefixCls = 'g-tab-panel';
 export default {
-  name: 'TabPanel'
+  name: 'TabPanel',
+  inject: ['selected'],
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  },
+  data() {
+    return {
+      prefixCls
+    };
+  },
+  computed: {
+    active() {
+      return this.selected();
+    }
+  }
 };
 </script>
 
 <template>
-  <div>
+  <div
+    v-if="name === active"
+    :class="[`${prefixCls}`]"
+  >
     <slot />
   </div>
 </template>
@@ -15,6 +36,6 @@ export default {
 @prefixCls: ~'@{css-prefix}-tab-panel';
 
 .@{prefixCls} {
-  background: red;
+  line-height: 1.5;
 }
 </style>

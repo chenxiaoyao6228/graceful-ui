@@ -7,6 +7,10 @@ export default {
     name: {
       type: [String, Number],
       required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -19,9 +23,6 @@ export default {
       return this.selected();
     }
   },
-  updated() {
-    console.log('updatedItem selected should change', this.selected);
-  },
   methods: {
     handleItemClick() {
       this.eventBus.$emit('update:selected', this.name);
@@ -32,7 +33,10 @@ export default {
 
 <template>
   <div
-    :class="[`${prefixCls}-item`, active == name ? `${prefixCls}-item-active` : '']"
+    :class="[
+      `${prefixCls}-item`,
+      active == name ? `${prefixCls}-item-active` : '',
+      disabled ? `${prefixCls}-item-disabled` : '']"
     @click="handleItemClick"
   >
     <slot />
@@ -45,14 +49,30 @@ export default {
 
 .@{prefixCls} {
   flex-shrink: 0;
-  padding: 0 3em;
+  margin-bottom: -2px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  margin-right: 32px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  &-active {
-    background: red;
-  }
+  border: 2px solid transparent;
   &:hover {
     cursor: pointer;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+  &-active {
+    font-weight: bold;
+    color: @tab-active-color;
+    border-bottom-color:  @tab-active-color;
+  }
+  &-disabled{
+    color: @tab-disabled-color;
+    &:hover{
+      cursor: not-allowed;
+    }
   }
 }
 </style>

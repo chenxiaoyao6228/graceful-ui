@@ -39,12 +39,31 @@ export default {
     this.eventBus.$on('update:selected', (name) => {
       this.$emit('update:selected', name);
     });
+  },
+  mounted() {
+    this.$children.forEach((item) => {
+      if (item.$options.name === 'TabHead') {
+        item.$children.forEach((subItem) => {
+          if (subItem.$options.name === 'TabItem' && subItem.name === this.selected) {
+            this.eventBus.$emit('update:selected', this.selected, subItem);
+          }
+        });
+      }
+    });
+  },
+  methods: {
+    handleTabChange() {
+      console.log(1111);
+    }
   }
 };
 </script>
 
 <template>
-  <div :class="[`${prefixCls}`]">
+  <div
+    :class="[`${prefixCls}`]"
+    @xxx="handleTabChange"
+  >
     <slot />
   </div>
 </template>

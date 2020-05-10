@@ -30,21 +30,18 @@ import { Tab, TabHead, TabBody, TabItem, TabPanel } from 'graceful-ui';
                 <TabItem name="tab1">tab1</TabItem>
                 <TabItem name="tab2">tab2</TabItem>
                 <TabItem name="tab3">tab3</TabItem>
-                <template v-slot:actions>
-                 <Button>ExtraActions</Button>
-                </template>
               </TabHead>
               <TabBody>
-                <TabPanel>panel1</TabPanel>
-                <TabPanel>panel2</TabPanel>
-                <TabPanel>panel3</TabPanel>
+                <TabPanel name="tab1">panel1</TabPanel>
+                <TabPanel name="tab2">panel2</TabPanel>
+                <TabPanel name="tab3">panel3</TabPanel>
               </TabBody>
             </Tab>
           </div>
         `,
       data() {
         return {
-          selectedTab: 'tab2',
+          selectedTab: 'tab1',
         };
       },
       created() {},
@@ -52,10 +49,58 @@ import { Tab, TabHead, TabBody, TabItem, TabPanel } from 'graceful-ui';
   </Story>
 </Preview>
 
+### 禁用
+
+禁用某一项
+
+<Preview>
+  <Story name="disabled 禁用">
+    {{
+      components: { Tab, TabHead, TabBody, TabItem, TabPanel, Button },
+      template: `
+          <div>
+            <Tab :selected.sync="selectedTab">
+              <TabHead>
+                <TabItem name="tab1">tab1</TabItem>
+                <TabItem name="tab2" disabled>tab2</TabItem>
+                <TabItem name="tab3">tab3</TabItem>
+              </TabHead>
+              <TabBody>
+                <TabPanel name="tab1">panel1</TabPanel>
+                <TabPanel name="tab2">panel2</TabPanel>
+                <TabPanel name="tab3">panel3</TabPanel>
+              </TabBody>
+            </Tab>
+          </div>
+        `,
+      data() {
+        return {
+          selectedTab: 'tab1',
+        };
+      },
+      created() {},
+    }}
+  </Story>
+</Preview>
+
+### 方向
+
+更改 tab 方向,可以设为`horizontal`和`vertical`
+
+### 回调
+
+tab 切换时触发的回调
+
 ## API
 
+Tab
+
 <Props of={Tab} />
+TabHead
 <Props of={TabHead} />
+TabBody
 <Props of={TabBody} />
+TabItem
 <Props of={TabItem} />
+TabPanel
 <Props of={TabPanel} />
