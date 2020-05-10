@@ -15,13 +15,6 @@ export default {
     selected: {
       type: [String, Number],
       required: true
-    },
-    direction: {
-      type: String,
-      default: 'horizontal',
-      validator(value) {
-        return oneOf(value, ['horizontal', 'vertical']);
-      }
     }
   },
   data() {
@@ -50,19 +43,13 @@ export default {
         });
       }
     });
-  },
-  methods: {
-    handleTabChange() {
-      console.log(1111);
-    }
   }
 };
 </script>
 
 <template>
   <div
-    :class="[`${prefixCls}`]"
-    @xxx="handleTabChange"
+    :class="[`${prefixCls}`, this.horizontal ? `${prefixCls}-horizontal` : '']"
   >
     <slot />
   </div>
@@ -75,5 +62,8 @@ export default {
 .@{prefixCls} {
   display: flex;
   flex-direction: column;
+  &-horizontal{
+    flex-direction: row;
+  }
 }
 </style>
