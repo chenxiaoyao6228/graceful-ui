@@ -1,6 +1,5 @@
 <script>
 import Vue from 'vue';
-import oneOf from '../../utils/tools';
 
 const prefixCls = 'g-tab';
 export default {

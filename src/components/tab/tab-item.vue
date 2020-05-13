@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     handleItemClick() {
+      if (this.disabled) return;
       this.eventBus.$emit('update:selected', this.name);
     }
   }
