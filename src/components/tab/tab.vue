@@ -48,7 +48,7 @@ export default {
 
 <template>
   <div
-    :class="[`${prefixCls}`, this.horizontal ? `${prefixCls}-horizontal` : '']"
+    :class="[`${prefixCls}`, horizontal ? `${prefixCls}-horizontal` : '']"
   >
     <slot />
   </div>

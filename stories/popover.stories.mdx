@@ -1,0 +1,41 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import '../src/styles/storybook/popover.less';
+import Popover from '../src/components/popover/popover.vue';
+import Button from '../src/components/button/button.vue';
+
+<Meta title="数据展示/Popover 气泡卡片" component={Popover} />
+
+# Popover 气泡卡片
+
+### 引入组件
+
+```js
+import { Popover } from 'graceful-ui';
+```
+
+### 基本使用
+
+<Preview>
+  <Story name="Basic 基本使用">
+    {{
+      components: { Popover, Button },
+      template: `
+        <div class="g-popover-demo">
+          <Popover title="Title">
+            <template slot="content">
+              <p>Content</p>
+              <p>Content</p>
+            </template>
+            <Button type="primary">
+              Click me
+            </Button>
+          </Popover>
+        </div>`,
+    }}
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Popover} />
