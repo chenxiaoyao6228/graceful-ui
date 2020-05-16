@@ -1,4 +1,8 @@
 const path = require("path");
+const StylelintPlugin = require('stylelint-webpack-plugin');
+const stylelintOptions = {
+  fix: true
+}
 
 module.exports = async ({ config, mode }) => {
   config.module.rules.push({

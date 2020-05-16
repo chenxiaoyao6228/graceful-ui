@@ -1,8 +1,11 @@
 module.exports = {
   plugins: {
-    "postcss-import": {},
-    "postcss-preset-env": {},
+    'postcss-import': {},
+    'postcss-preset-env': {},
+    stylelint: {
+      fix: true
+    },
     autoprefixer: {},
-    cssnano: {},
-  },
+    cssnano: {}
+  }
 };
