@@ -10,6 +10,18 @@
   text-align: center;
   pointer-events: none;
 
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    background: #fff;
+    border-radius: 6px;
+    color: @font-color;
+  }
+
   &-wrapper {
     display: flex;
     justify-content: center;
@@ -50,17 +62,5 @@
         color: @alert-success-color;
       }
     }
-  }
-
-  &-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    margin-bottom: 10px;
-    border: 1px solid transparent;
-    background: #fff;
-    border-radius: 6px;
-    color: @font-color;
   }
 }

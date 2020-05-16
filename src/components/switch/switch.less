@@ -14,6 +14,19 @@
   user-select: none;
   transition: all @animation-type @animation-time;
 
+  &-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: @switch-offset-left;
+    width: @switch-inner-radius;
+    height: @switch-inner-radius;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all @animation-type @animation-time;
+  }
+
   &-checked {
     background: @switch-color-checked;
     & .@{prefixCls}-inner {
@@ -41,18 +54,5 @@
       height: @switch-inner-radius-large;
       width: @switch-inner-radius-large;
     }
-  }
-
-  &-inner {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    left: @switch-offset-left;
-    width: @switch-inner-radius;
-    height: @switch-inner-radius;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: all @animation-type @animation-time;
   }
 }

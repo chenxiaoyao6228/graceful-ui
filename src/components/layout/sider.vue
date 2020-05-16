@@ -18,4 +18,7 @@ export default {
 <style lang="less" scoped>
 @import "../../styles/variables/var.less";
 @prefixCls: ~"@{css-prefix}-layout-sider";
+.@{prefixCls}{
+  width: 100%;
+}
 </style>
