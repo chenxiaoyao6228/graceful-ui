@@ -1,0 +1,18 @@
+@import '../../styles/variables/var.less';
+
+@prefixCls: ~'@{css-prefix}-popover';
+
+.@{prefixCls} {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 100px 0 0 100px;
+
+  &-content {
+    &-wrapper {
+      position: absolute;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+      transform: translateY(-100%);
+    }
+  }
+}
