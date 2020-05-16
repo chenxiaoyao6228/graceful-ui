@@ -20,7 +20,6 @@ export default {
       };
       if (this.show) {
         this.$nextTick(() => {
-          console.log('nextTick被调用了');
           document.addEventListener('click', clickHandler);
         });
       } else {

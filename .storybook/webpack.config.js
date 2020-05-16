@@ -13,14 +13,15 @@ module.exports = async ({ config, mode }) => {
     ],
     enforce: "pre",
   });
-  // config.module.rules.push({
-  //   test: /\.(vue|js)?$/,
-  //   exclude: /node_modules/,
-  //   loaders: [
-  //     'eslint-loader'
-  //   ],
-  //   enforce: "pre",
-  // });
+  config.module.rules.push({
+    test: /\.(vue|js)?$/,
+    exclude: /node_modules/,
+    loaders: 'eslint-loader',
+    options: {
+      fix: true,
+    },
+    enforce: "pre",
+  });
   // Return the altered config
   return config;
 };
