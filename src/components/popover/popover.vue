@@ -29,19 +29,26 @@ export default {
         left, top, height, width
       } = getCoords(this.$refs.triggerWrapper);
       const contentWrapperWidth = getCoords(this.$refs.contentWrapper).width;
-      if (this.position === 'top') {
-        this.$refs.contentWrapper.style.left = `${left}px`;
-        this.$refs.contentWrapper.style.top = `${top}px`;
-      } else if (this.position === 'bottom') {
-        this.$refs.contentWrapper.style.left = `${left}px`;
-        this.$refs.contentWrapper.style.top = `${top + height}px`;
-      } else if (this.position === 'left') {
-        this.$refs.contentWrapper.style.left = `${left - contentWrapperWidth}px`;
-        this.$refs.contentWrapper.style.top = `${top}px`;
-      } else {
-        this.$refs.contentWrapper.style.left = `${left + width}px`;
-        this.$refs.contentWrapper.style.top = `${top}px`;
-      }
+      const positions = {
+        top: {
+          top: `${top}px`,
+          left: `${left}px`
+        },
+        left: {
+          top: `${top}px`,
+          left: `${left - contentWrapperWidth}px`
+        },
+        right: {
+          top: `${top}px`,
+          left: `${left + width}px`
+        },
+        bottom: {
+          top: `${top + height}px`,
+          left: `${left}px`
+        }
+      };
+      this.$refs.contentWrapper.style.left = positions[this.position].left;
+      this.$refs.contentWrapper.style.top = positions[this.position].top;
     },
     listenToDocument(event) {
       const isPopoverWrapper = this.$refs.popover && this.$refs.popover === event.target;
