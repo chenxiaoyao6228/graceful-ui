@@ -4,6 +4,17 @@
 
 .@{prefixCls} {
   &-demo {
-    border: 1px solid red;
+    &.position {
+      display: flex;
+      justify-content: center;
+      font-size: 0;
+      .top,
+      .left,
+      .bottom,
+      .right {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
   }
 }

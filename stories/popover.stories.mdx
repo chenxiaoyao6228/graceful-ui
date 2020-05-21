@@ -22,15 +22,72 @@ import { Popover } from 'graceful-ui';
       components: { Popover, Button },
       template: `
         <div class="g-popover-demo">
-          <Popover title="Title">
+          <Popover>
             <template slot="content">
-              <p>Content</p>
-              <p>Content</p>
+              <p>这里是提示内容</p>
+              <p>这里是提示内容</p>
             </template>
             <Button type="primary">
               Click me
             </Button>
           </Popover>
+        </div>`,
+    }}
+  </Story>
+</Preview>
+
+### 方位
+
+<Preview>
+  <Story name="Position 方位">
+    {{
+      components: { Popover, Button },
+      template: `
+        <div class="g-popover-demo position">
+          <div class="left">
+            <Popover position="left">
+              <template slot="content">
+                <p>这里是提示内容</p>
+                <p>这里是提示内容</p>
+              </template>
+              <Button type="primary">
+                左边显示
+              </Button>
+            </Popover>
+          </div>
+          <div class="top">
+            <Popover position="top">
+              <template slot="content">
+                <p>这里是提示内容</p>
+                <p>这里是提示内容</p>
+              </template>
+              <Button type="primary">
+                上方显示
+              </Button>
+          </Popover>
+          </div>
+          <div class="bottom">
+            <Popover position="bottom">
+              <template slot="content">
+                <p>这里是提示内容</p>
+                <p>这里是提示内容</p>
+              </template>
+              <Button type="primary">
+                底部显示
+              </Button>
+          </Popover>
+          </div>
+          <div class="right">
+            <Popover position="right">
+              <template slot="content">
+                <p>这里是提示内容</p>
+                <p>这里是提示内容</p>
+              </template>
+              <Button type="primary">
+                右边显示
+              </Button> 
+            </Popover>
+          </div>
         </div>`,
     }}
   </Story>

@@ -13,8 +13,10 @@ export function getCoords(elem) { // crossbrowser version
 
   const top = box.top + scrollTop - clientTop;
   const left = box.left + scrollLeft - clientLeft;
-
-  return { top, left };
+  const { width, height } = box;
+  return {
+    top, left, width, height
+  };
 }
 
 export default {};
