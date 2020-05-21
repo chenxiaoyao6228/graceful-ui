@@ -6,6 +6,13 @@ const prefixCls = 'g-popover';
 export default {
   name: 'Popover',
   props: {
+    trigger: {
+      type: String,
+      default: 'click',
+      validator(value) {
+        return oneOf(value, ['hover', 'click']);
+      }
+    },
     position: {
       type: String,
       default: 'top',
@@ -20,7 +27,29 @@ export default {
       show: false
     };
   },
+  computed: {
+    openEvent() {
+      return this.trigger === 'hover' ? 'mouseenter' : 'click';
+    },
+    closeEvent() {
+      return this.trigger === 'hover' ? 'mouseleave' : 'click';
+    }
+  },
   mounted() {
+    if (this.trigger === 'hover') {
+      this.$refs.popover.addEventListener('mouseenter', this.open);
+      this.$refs.popover.addEventListener('mouseleave', this.close);
+    } else {
+      this.$refs.popover.addEventListener('click', this.handleClick);
+    }
+  },
+  destroy() {
+    if (this.trigger === 'hover') {
+      this.$refs.popover.removeEventListener('mouseenter', this.open);
+      this.$refs.popover.removeEventListener('mouseleave', this.close);
+    } else {
+      document.removeEventListener('click', this.handleClick);
+    }
   },
   methods: {
     positionContent() {
@@ -62,20 +91,23 @@ export default {
       this.show = true;
       this.$nextTick(() => {
         this.positionContent();
-        document.addEventListener('click', this.listenToDocument);
+        if (this.trigger === 'click') {
+          document.addEventListener('click', this.listenToDocument);
+        }
       });
     },
     close() {
       this.show = false;
-      document.removeEventListener('click', this.listenToDocument);
+      if (this.trigger === 'click') {
+        document.removeEventListener('click', this.listenToDocument);
+      }
     },
     handleClick(e) {
       if (this.$refs.triggerWrapper.contains(e.target)) {
-        this.show = !this.show;
         if (this.show) {
-          this.open();
-        } else {
           this.close();
+        } else {
+          this.open();
         }
       }
     }
@@ -87,7 +119,7 @@ export default {
   <div
     ref="popover"
     :class="[`${prefixCls}`]"
-    @click.stop="handleClick"
+    @click.stop
   >
     <div
       v-if="show"

@@ -16,19 +16,30 @@ import { Popover } from 'graceful-ui';
 
 ### 基本使用
 
+支持`click`和`hover`两种方式触发, 默认为`click`
+
 <Preview>
   <Story name="Basic 基本使用">
     {{
       components: { Popover, Button },
       template: `
-        <div class="g-popover-demo">
+        <div class="g-popover-demo basic">
           <Popover>
-            <template slot="content">
+            <template slot="content" >
               <p>这里是提示内容</p>
               <p>这里是提示内容</p>
             </template>
             <Button type="primary">
               Click弹出
+            </Button>
+          </Popover>
+          <Popover trigger="hover">
+            <template slot="content">
+              <p>这里是提示内容</p>
+              <p>这里是提示内容</p>
+            </template>
+            <Button type="primary">
+              Hover弹出
             </Button>
           </Popover>
         </div>`,
@@ -38,6 +49,8 @@ import { Popover } from 'graceful-ui';
 
 ### 方位
 
+可自定义弹出位置, 可选`top`, `left`, `bottom`, `right`
+
 <Preview>
   <Story name="Position 方位">
     {{
@@ -45,7 +58,7 @@ import { Popover } from 'graceful-ui';
       template: `
         <div class="g-popover-demo position">
           <div class="left">
-            <Popover position="left">
+            <Popover position="left" trigger="hover">
               <template slot="content">
                 <p>这里是提示内容</p>
                 <p>这里是提示内容</p>
@@ -56,7 +69,7 @@ import { Popover } from 'graceful-ui';
             </Popover>
           </div>
           <div class="top">
-            <Popover position="top">
+            <Popover position="top"  trigger="hover">
               <template slot="content">
                 <p>这里是提示内容</p>
                 <p>这里是提示内容</p>
@@ -67,7 +80,7 @@ import { Popover } from 'graceful-ui';
           </Popover>
           </div>
           <div class="bottom">
-            <Popover position="bottom">
+            <Popover position="bottom"  trigger="hover">
               <template slot="content">
                 <p>这里是提示内容</p>
                 <p>这里是提示内容</p>
@@ -78,7 +91,7 @@ import { Popover } from 'graceful-ui';
           </Popover>
           </div>
           <div class="right">
-            <Popover position="right">
+            <Popover position="right"  trigger="hover">
               <template slot="content">
                 <p>这里是提示内容</p>
                 <p>这里是提示内容</p>

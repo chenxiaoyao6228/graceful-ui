@@ -4,6 +4,15 @@
 
 .@{prefixCls} {
   &-demo {
+    &.basic {
+      display: flex;
+      justify-content: center;
+      & > div {
+        &:first-of-type {
+          margin-right: 50px;
+        }
+      }
+    }
     &.position {
       display: flex;
       justify-content: center;
