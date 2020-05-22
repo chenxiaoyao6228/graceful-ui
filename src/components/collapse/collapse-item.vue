@@ -9,16 +9,31 @@ export default {
       required: true
     }
   },
-  inject: ['eventBus'],
+  inject: ['eventBus', 'accordion', 'defaultSelected'],
   data() {
     return {
       prefixCls,
-      selectedName: ''
+      selectedName: '',
+      open: false
     };
   },
+  computed: {
+    show() {
+      if (this.accordion) {
+        return this.selectedName === this.name;
+      }
+      return this.open;
+    }
+  },
   created() {
+    this.selectedName = this.defaultSelected; // 仅仅在初次赋值的时候有用
+    this.open = this.selectedName === this.name;
     this.eventBus.$on('ItemClicked', (name) => {
-      this.selectedName = name;
+      if (this.accordion) {
+        this.selectedName = name;
+      } else if (this.name === name) {
+        this.open = !this.open;
+      }
     });
   },
   methods: {
@@ -38,7 +53,7 @@ export default {
       <slot />
     </div>
     <div
-      v-show="selectedName === name"
+      v-show="show"
       :class="[`${prefixCls}-content`]"
     >
       <slot name="content" />

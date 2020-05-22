@@ -8,11 +8,17 @@ export default {
     value: {
       type: [String, Number],
       required: true
+    },
+    accordion: {
+      type: Boolean,
+      default: false
     }
   },
   provide() {
     return {
-      eventBus: this.eventBus
+      eventBus: this.eventBus,
+      accordion: this.accordion,
+      defaultSelected: this.value
     };
   },
   data() {
