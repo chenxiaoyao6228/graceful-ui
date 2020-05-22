@@ -1,0 +1,49 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Collapse from '../src/components/collapse/collapse.vue';
+import CollapseItem from '../src/components/collapse/collapse-item.vue';
+
+<Meta title="数据展示/Collpase 折叠面板" component={Collapse} />
+
+# Collpase 折叠面板
+
+### 引入组件
+
+```js
+import { Collapse, CollapseItem } from 'graceful-ui';
+```
+
+### 基本使用
+
+<Preview>
+  <Story name="Basic 基本使用">
+    {{
+      components: { Collapse, CollapseItem },
+      template: `
+        <div class="g-collapse-demo basic">
+          <Collapse v-model="value1">
+            <CollapseItem name="1">
+              标题1
+              <p slot="content">这里是内容1这里是内容1这里是内容1这里是内容1这里是内容1这里是内容1这里是内容1这里是内容1</p>
+            </CollapseItem>
+            <CollapseItem name="2">
+              标题2
+              <p slot="content">这里是内容2这里是内容2这里是内容2这里是内容2这里是内容2这里是内容2这里是内容2这里是内容2</p>
+            </CollapseItem>
+            <CollapseItem name="3">
+              标题3
+              <p slot="content">这里是内容3这里是内容3这里是内容3这里是内容3这里是内容3这里是内容3这里是内容3这里是内容3</p>
+            </CollapseItem>
+          </Collapse>
+        </div>`,
+      data() {
+        return { value1: '1' };
+      },
+    }}
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Collapse} />
+<Props of={CollapseItem} />

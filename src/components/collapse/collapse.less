@@ -1,0 +1,31 @@
+@import '../../styles/variables/var.less';
+
+@prefixCls: ~'@{css-prefix}-collapse';
+
+.@{prefixCls} {
+  border-radius: 3px;
+  border: 1px solid @collapse-border-color;
+  border-bottom: none;
+
+  &-item {
+    font-size: @font-size;
+
+    &-title {
+      height: 38px;
+      line-height: 38px;
+      padding-left: 16px;
+      color: @collapse-title-color;
+      cursor: pointer;
+      position: relative;
+      background-color: @collapse-title-bg;
+      border-bottom: 1px solid @collapse-border-color;
+    }
+
+    &-content {
+      color: @collapse-content-color;
+      padding: 0 16px;
+      background-color: @collapse-content-bg;
+      border-bottom: 1px solid @collapse-border-color;
+    }
+  }
+}
