@@ -1,12 +1,12 @@
 <p align="center">
-    <a href="#">
-        <img width="200" src="./assets/logo.png">
-    </a>
+  <a href="#">
+    <img width="200" src="./assets/logo.png"></img>
+  </a>
 </p>
 
 <h1>
-GracefulUI
-    <h3>A Graceful UI Toolkit built on Vue</h3>
+  GracefulUI
+  <h3>A Graceful UI Toolkit built on Vue</h3>
 </h1>
 
 [![](https://circleci.com/gh/chenxiaoyao6228/graceful-ui.svg?style=shield)]()
@@ -19,7 +19,9 @@ This project is build for better understand basic usage and magic tricks of Vue.
 
 ## Online Demo
 
-[https://chenxiaoyao6228.github.io/graceful-ui](https://chenxiaoyao6228.github.io/graceful-ui)
+Hosted On 👉[Github Page](https://chenxiaoyao6228.github.io/graceful-ui)
+
+国内无法科学上网的用户请点击 👉[这里](https://chenxiaoyao6228.gitee.io/graceful-ui)
 
 ## Quick Start
 
