@@ -1,0 +1,117 @@
+@import '../../styles/variables/var.less';
+
+.g-carousel {
+  display: inline-block;
+  position: relative;
+
+  &-window {
+    overflow: hidden;
+  }
+
+  &-container {
+    display: flex;
+    position: relative;
+
+    & > * {
+      flex-shrink: 0;
+      width: 100%;
+    }
+  }
+
+  &-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+
+    &-outside {
+      bottom: -20px;
+    }
+
+    &-none {
+      display: none;
+    }
+  }
+
+  &-dot {
+    display: inline-block;
+    width: @carousel-dot-size;
+    height: @carousel-dot-size;
+    border-radius: @carousel-dot-size;
+    margin-left: @carousel-dot-size;
+    background: @carousel-dot-bg;
+    transition: 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: @carousel-dot-bg-hover;
+    }
+
+    &-active {
+      background: @carousel-dot-bg-active;
+      transform: scale(1.2);
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    font-size: 20px;
+    color: #fff;
+    background-color: @carousel-dot-bg;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.left {
+      left: 20px;
+    }
+
+    &.right {
+      right: 20px;
+    }
+  }
+}
+
+.carousel-leave-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-enter-active,
+.carousel-leave-active {
+  transition: all 1s;
+}
+
+.carousel-enter {
+  transform: translateX(100%);
+}
+
+.carousel-enter.first {
+  transform: translateX(0);
+}
+
+.carousel-enter.reverse {
+  transform: translateX(-100%);
+}
+
+.carousel-leave-to {
+  transform: translateX(-100%);
+}
+
+.carousel-leave-to.reverse {
+  transform: translateX(100%);
+}

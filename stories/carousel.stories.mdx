@@ -1,0 +1,110 @@
+import { Meta, Story, Props, Preview, style} from '@storybook/addon-docs/blocks';
+import Carousel  from '../src/components/carousel/carousel.vue';
+import CarouselItem  from '../src/components/carousel/carousel-item.vue';
+
+<Meta title="数据展示/carousel 轮播" component={Carousel} />
+
+# carousel 轮播
+
+### 引入组件
+
+```js
+import { Carousel,CarouselItem } from 'graceful-ui';
+```
+<style>{`
+    .demo{
+      text-align: center;
+    }
+    .box{ 
+        background: #8f8e94;
+        color: #fff;  
+        width: 600px;
+        font-size: 30px;
+        line-height: 200px;
+    }
+`}
+</style>
+
+
+### 直接调用
+使用`v-model`绑定当前轮播元素的索引, 默认从`0`开始, 点击下标可以进行切换
+<Preview>
+  <Story name="基本使用">
+    {{
+      components: { Carousel, CarouselItem },
+      template: `
+        <div class="demo">
+            <carousel v-model="value">
+                <carousel-item v-for="item in list" :key="item">
+                    <div class="box">{{item}}</div>
+                </carousel-item>
+            </carousel>
+        </div>
+      `,
+      data(){
+        return {
+          value: 2, 
+          list: [0,1,2, 3]
+         } 
+      }
+    }}
+  </Story>
+</Preview>
+
+
+### 自动播放
+
+使用`autoplay`可以实现自动轮播效果,`speed`与`loop`分别用于控制速度以及是否循环播放
+
+<Preview>
+  <Story name="自动播放">
+    {{
+      components: { Carousel, CarouselItem },
+      template: `
+        <div class="demo">
+            <carousel v-model="value" :autoplay="true" :loop="true">
+                <carousel-item v-for="item in list" :key="item">
+                    <div class="box">{{item}}</div>
+                </carousel-item>
+            </carousel>
+        </div>
+      `,
+      data(){
+        return {
+          value: 1, 
+          list: [0,1,2,3]
+         } 
+      }
+    }}
+  </Story>
+</Preview>
+
+### 指示器
+使用`dots`来控制底部指示器的显示,提供`inside`,`outside`,`none`三种方式, 默认为inside
+<Preview>
+  <Story name="指示器">
+    {{
+      components: { Carousel, CarouselItem },
+      template: `
+        <div class="demo">
+            <carousel v-model="value" :autoplay="true" :loop="true" dots="outside">
+                <carousel-item v-for="item in list" :key="item">
+                    <div class="box">{{item}}</div>
+                </carousel-item>
+            </carousel>
+        </div>
+      `,
+      data(){
+        return {
+          value: 0, 
+          list: [0,1,2, 3]
+         } 
+      }
+    }}
+  </Story>
+</Preview>
+
+
+## API
+
+<Props of={Carousel} />
