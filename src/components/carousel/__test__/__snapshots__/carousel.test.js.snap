@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel match snapshots 1`] = `
+<div>
+  <div
+    class="g-carousel"
+  >
+    <div
+      class="g-carousel-window"
+    >
+      <div
+        class="g-carousel-container"
+      >
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="g-carousel-dots"
+    />
+     
+    <!---->
+     
+    <!---->
+  </div>
+</div>
+`;

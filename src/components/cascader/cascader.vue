@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <div :class="[ `${prefixCls}`]">
+  <div :class="[`${prefixCls}`]">
     <div class="trigger">
       <slot />
     </div>

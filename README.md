@@ -141,6 +141,10 @@ plugins: [
 - [x] Input
 - [x] Switch
 
+## 设计规范
+
+参考[react-suite](https://rsuitejs.com/design/default/)
+
 ## 🔖 参考轮子
 
 [Gulu](https://yuyuye958.github.io/GuLu-UI/)
