@@ -1,13 +1,11 @@
 <p align="center">
   <a href="#">
-    <img width="200" src="./assets/logo.png"></img>
+    <img width="200" src="https://github.com/chenxiaoyao6228/graceful-ui/blob/master/assets/logo.png?raw=true" alt="logo.png" type="image/png">
   </a>
 </p>
 
-<h1>
-  GracefulUI
-  <h3>A Graceful UI Toolkit built on Vue</h3>
-</h1>
+<h1>GracefulUI</h1>
+<h3>A Graceful UI Toolkit built on Vue</h3>
 
 [![](https://circleci.com/gh/chenxiaoyao6228/graceful-ui.svg?style=shield)]() [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
@@ -140,6 +138,10 @@ plugins: [
 
 - [x] Input
 - [x] Switch
+
+## 更新日志
+
+[CHANGELOG](https://github.com/chenxiaoyao6228/graceful-ui/blob/master/CHANGELOG.md)
 
 ## 设计规范
 
