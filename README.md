@@ -109,7 +109,7 @@ plugins: [
 `Graceful-ui`使用的是`icon-font`,  使用的时候需要在index.html中引入相关的字体文件
 
 ```js
-<script src="http://at.alicdn.com/t/font_1763207_9f1wiwjq4dr.js"></script>
+<script src="https://at.alicdn.com/t/font_1763207_9f1wiwjq4dr.js"></script>
 ```
 
 ## 🍅 Done/Todo
