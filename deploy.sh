@@ -12,7 +12,7 @@ git config --global user.name "chenxiaoyao6228"
 
 git init
 git add -A
-git commit -m 'deploy-to-github'
+git commit -m 'deploy-to-github [ci skip]'
 
 git push -f https://${GITHUB_TOKEN}@github.com/chenxiaoyao6228/graceful-ui.git master:gh-pages
 
