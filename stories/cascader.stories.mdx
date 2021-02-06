@@ -1,0 +1,44 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Cascader from '../src/components/cascader/cascader.vue';
+import dataSource from './fixtures/cascader.data.js';
+
+<Meta title="数据录入|Cascader 级联选择" component={Cascader} />
+
+# Cascader 级联选择
+
+从一组相关联的数据集合中进行选择，常用于省市区、公司级层、事务分类等。
+
+### 引入组件
+
+```js
+import { Cascader } from 'graceful-ui';
+```
+
+### 基本用法
+
+<Preview>
+  <Story name="直接调用">
+    {{
+      components: { Cascader },
+      template: `
+        <div style="height: 300px;">
+            <cascader :source="dataSource">
+                <button>点击</button>
+            </cascader>
+        </div>
+      `,
+      data(){
+          return { 
+              dataSource
+          }
+      },
+      created(){ 
+          console.log('data',this.dataSource)
+      }
+    }}
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Cascader} />

@@ -1,39 +1,27 @@
 <script>
 import CascaderItem from './cascader-item.vue';
 
-const prefixCls = 'g-cascader';
-
 export default {
   name: 'Cascader',
   components: {
     CascaderItem
   },
   props: {
-    options: {
+    source: {
       type: Array,
       default: () => []
     }
-  },
-  data() {
-    return {
-      prefixCls
-    };
   }
 };
 </script>
 
 <template>
-  <div :class="[`${prefixCls}`]">
-    <div class="trigger">
+  <div class="g-cascader">
+    <div class="g-cascader-trigger">
       <slot />
     </div>
-    <div class="popover">
-      <div
-        v-for="item in options"
-        :key="item.name"
-      >
-        <CascaderItem :source="item" />
-      </div>
+    <div class="g-cascader-popover">
+      <CascaderItem :source="source" />
     </div>
   </div>
 </template>

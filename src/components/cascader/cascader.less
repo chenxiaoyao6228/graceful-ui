@@ -1,10 +1,56 @@
 @import '../../styles/variables/var.less';
 
-@prefixCls: ~'@{css-prefix}-cascader';
+@split-line: 1px;
 
-.@{prefixCls} {
+.g-cascader {
+  &-trigger {
+    position: relative;
+  }
+
+  &-popover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06), 0 4px 4px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+  }
+
   &-item {
-    border: 1px solid red;
-    margin: 10px;
+    display: flex;
+
+    &-left {
+      min-height: 200px;
+      min-width: 120px;
+      font-size: 14px;
+      color: @font-color;
+      line-height: 20px;
+      transition: color 0.3s linear, background-color 0.3s linear;
+      cursor: pointer;
+      text-decoration: none;
+      border-left: 1px solid #e5e5ea;
+
+      &:last-of-type {
+        border-right: 1px solid #e5e5ea;
+      }
+
+      &-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 8px 8px 12px;
+
+        &:hover {
+          background: #f2faff;
+          cursor: pointer;
+        }
+      }
+
+      &-icon {
+        font-size: 20px;
+        color: #8e8e93;
+      }
+    }
   }
 }

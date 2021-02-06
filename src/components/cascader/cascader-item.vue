@@ -1,35 +1,54 @@
 <script>
-const prefixCls = 'g-cascader-item';
+import Icon from '../icon/icon.vue';
+
 export default {
   name: 'CascaderItem',
+  components: { Icon },
   props: {
     source: {
-      type: Object,
-      default: () => {}
+      type: Array,
+      default: () => []
     }
   },
   data() {
     return {
-      prefixCls
+      leftSelected: null
     };
+  },
+  computed: {
+    rightItem() {
+      if (this.leftSelected && this.leftSelected.children) {
+        return this.leftSelected.children;
+      }
+      return null;
+    }
   }
 };
 </script>
 
 <template>
-  <div :class="[ `${prefixCls}`]">
-    <template v-if="source && source.name">
-      {{ source.name }}
-    </template>
-    <template
-      v-if="source && source.children"
-    >
-      <CascaderItem
-        v-for="item in source.children"
+  <div class="g-cascader-item">
+    <div class="g-cascader-item-left">
+      <div
+        v-for="item in source"
         :key="item.name"
-        :source="item"
-      />
-    </template>
+        class="g-cascader-item-left-label"
+        @click="leftSelected = item"
+      >
+        <div class="g-cascader-item-left-name">
+          {{ item.name }}
+        </div>
+        <span class="g-cascader-item-left-icon">
+          <Icon type="arrow-right" />
+        </span>
+      </div>
+    </div>
+    <div
+      v-if="rightItem"
+      class="g-cascader-item-right"
+    >
+      <CascaderItem :source="rightItem" />
+    </div>
   </div>
 </template>
 
