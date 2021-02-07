@@ -1,12 +1,57 @@
 @import '../../styles/variables/var.less';
 
 .g-cascader {
+  color: @font-color;
+
   &-trigger {
     height: 36px;
-    border: 1px solid red;
-    border-color: #e5e5ea;
+    width: 230px;
+    border: 1px solid #e5e5ea;
     border-radius: @border-radius;
+    overflow: hidden;
+    padding: 8px 0 8px 12px;
     box-sizing: border-box;
+    color: @font-color-primary;
+
+    &:hover {
+      cursor: pointer;
+      border-color: @color-primary;
+    }
+
+    &.active {
+      border-color: @color-primary;
+    }
+  }
+
+  &-select {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-placeholder {
+      color: @font-color;
+    }
+
+    &-caret {
+      color: @font-color;
+      font-size: 20px;
+
+      & > svg {
+        transition: all 0.2s linear;
+      }
+
+      &.active {
+        & > svg {
+          transform: rotate(180deg);
+          transform-origin: center;
+        }
+      }
+    }
+
+    &-clear {
+      color: @font-color;
+    }
   }
 
   &-popover {
@@ -47,10 +92,12 @@
         &:hover {
           background: #f2faff;
           cursor: pointer;
+          font-weight: bold;
         }
 
         &-active {
           background: #f2faff;
+          font-weight: bold;
         }
       }
 
@@ -60,4 +107,14 @@
       }
     }
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
