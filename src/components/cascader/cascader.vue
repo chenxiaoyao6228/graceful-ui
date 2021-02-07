@@ -18,33 +18,40 @@ export default {
   },
   data() {
     return {
-      selected: []
+      popoverVisible: false
     };
   },
-  // watch: {
-  //   value() {
-  //     // 根据选中的把重新转换selected
-  //   }
-  // },
   methods: {
     onUpdatedSelected(newSelected) {
-      this.selected = newSelected;
-      this.$emit('update:value', newSelected);
+      this.$emit('input', newSelected);
+    },
+    handlePopoverClose() {
+      this.popoverVisible = false;
     }
   }
 };
 </script>
 
 <template>
-  <div class="g-cascader">
-    <div class="g-cascader-trigger">
-      <slot />
+  <div
+    class="g-cascader"
+    @close-popover="handlePopoverClose"
+  >
+    <div
+      class="g-cascader-trigger"
+      @click="popoverVisible = true"
+    >
+      {{ value }}
     </div>
-    <div class="g-cascader-popover">
+    <div
+      v-if="popoverVisible"
+      class="g-cascader-popover"
+    >
       <CascaderItem
         :source="source"
-        :selected="selected"
+        :selected="value"
         :level="0"
+        @close-popover="handlePopoverClose"
         @update:selected="onUpdatedSelected"
       />
     </div>

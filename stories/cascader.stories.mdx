@@ -22,12 +22,13 @@ import { Cascader } from 'graceful-ui';
       components: { Cascader },
       template: `
         <div style="height: 300px;">
-            <cascader :source="dataSource"></cascader>
+            <cascader :source="dataSource" v-model="selected"></cascader>
         </div>
       `,
       data(){
           return { 
-              dataSource
+              dataSource, 
+              selected: ['广东', '广州', '天河']
           }
       }
     }}
