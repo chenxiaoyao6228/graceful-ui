@@ -1,16 +1,18 @@
 @import '../../styles/variables/var.less';
 
-@split-line: 1px;
-
 .g-cascader {
   &-trigger {
-    position: relative;
+    height: 36px;
+    border: 1px solid red;
+    border-color: #e5e5ea;
+    border-radius: @border-radius;
+    box-sizing: border-box;
   }
 
   &-popover {
     position: absolute;
+    top: 36px;
     left: 0;
-    top: 0;
     z-index: 1;
     background: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06), 0 4px 4px 0 rgba(0, 0, 0, 0.12);
@@ -19,9 +21,10 @@
 
   &-item {
     display: flex;
+    margin-top: 6px;
 
     &-left {
-      min-height: 200px;
+      height: 192px;
       min-width: 120px;
       font-size: 14px;
       color: @font-color;
@@ -44,6 +47,10 @@
         &:hover {
           background: #f2faff;
           cursor: pointer;
+        }
+
+        &-active {
+          background: #f2faff;
         }
       }
 

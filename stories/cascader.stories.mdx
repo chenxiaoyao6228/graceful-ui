@@ -17,23 +17,18 @@ import { Cascader } from 'graceful-ui';
 ### 基本用法
 
 <Preview>
-  <Story name="直接调用">
+  <Story name="基本用法">
     {{
       components: { Cascader },
       template: `
         <div style="height: 300px;">
-            <cascader :source="dataSource">
-                <button>点击</button>
-            </cascader>
+            <cascader :source="dataSource"></cascader>
         </div>
       `,
       data(){
           return { 
               dataSource
           }
-      },
-      created(){ 
-          console.log('data',this.dataSource)
       }
     }}
   </Story>

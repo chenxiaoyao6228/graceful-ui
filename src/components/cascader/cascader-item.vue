@@ -8,19 +8,34 @@ export default {
     source: {
       type: Array,
       default: () => []
+    },
+    selected: {
+      type: Array,
+      default: () => []
+    },
+    level: {
+      type: Number,
+      default: 0
     }
-  },
-  data() {
-    return {
-      leftSelected: null
-    };
   },
   computed: {
     rightItem() {
-      if (this.leftSelected && this.leftSelected.children) {
-        return this.leftSelected.children;
+      const currentSelected = this.selected[this.level];
+      if (currentSelected && currentSelected.children) {
+        return currentSelected.children;
       }
       return null;
+    }
+  },
+  methods: {
+    onLeftClick(item) {
+      const copy = JSON.parse(JSON.stringify(this.selected));
+      copy[this.level] = item;
+      copy.splice(this.level + 1); // 保留当前选中的,后面全部清空
+      this.$emit('update:selected', copy);
+    },
+    onUpdatedSelected(newSelected) {
+      this.$emit('update:selected', newSelected);
     }
   }
 };
@@ -33,7 +48,8 @@ export default {
         v-for="item in source"
         :key="item.name"
         class="g-cascader-item-left-label"
-        @click="leftSelected = item"
+        :class="selected[level] === item ? 'g-cascader-item-left-label-active': ''"
+        @click="onLeftClick(item)"
       >
         <div class="g-cascader-item-left-name">
           {{ item.name }}
@@ -47,7 +63,12 @@ export default {
       v-if="rightItem"
       class="g-cascader-item-right"
     >
-      <CascaderItem :source="rightItem" />
+      <CascaderItem
+        :source="rightItem"
+        :selected="selected"
+        :level="level+1"
+        @update:selected="onUpdatedSelected"
+      />
     </div>
   </div>
 </template>

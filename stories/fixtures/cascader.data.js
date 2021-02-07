@@ -1,21 +1,21 @@
 export default [
   {
-    name: '广东省',
+    name: '广东',
     children: [
       {
-        name: '广州市',
+        name: '广州',
         children: [
-          { name: '越秀区' },
-          { name: '天河区' },
-          { name: '荔湾区' }
+          { name: '越秀' },
+          { name: '天河' },
+          { name: '荔湾' }
         ]
       },
       {
-        name: '湛江市',
+        name: '湛江',
         children: [
-          { name: '霞山区' },
-          { name: '遂溪县' },
-          { name: '赤坎区' }
+          { name: '霞山' },
+          { name: '遂溪' },
+          { name: '赤坎' }
         ]
       },
       { name: '茂名' }
