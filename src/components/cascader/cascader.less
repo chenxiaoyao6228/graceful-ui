@@ -2,6 +2,7 @@
 
 .g-cascader {
   color: @font-color;
+  position: relative;
 
   &-trigger {
     height: 36px;
@@ -9,7 +10,7 @@
     border: 1px solid #e5e5ea;
     border-radius: @border-radius;
     overflow: hidden;
-    padding: 8px 0 8px 12px;
+    padding: 8px 12px 8px 12px;
     box-sizing: border-box;
     color: @font-color-primary;
 
@@ -58,7 +59,7 @@
     position: absolute;
     top: 36px;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     background: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06), 0 4px 4px 0 rgba(0, 0, 0, 0.12);
     border-radius: 6px;
@@ -66,12 +67,11 @@
 
   &-item {
     display: flex;
-    margin-top: 6px;
 
     &-left {
       height: 192px;
       min-width: 120px;
-      font-size: 14px;
+      font-size: @font-size;
       color: @font-color;
       line-height: 20px;
       transition: color 0.3s linear, background-color 0.3s linear;

@@ -14,23 +14,104 @@ import dataSource from './fixtures/cascader.data.js';
 import { Cascader } from 'graceful-ui';
 ```
 
+<style>{`
+   .demo {
+     height: 200px;
+   }
+`}</style>
+
 ### 基本用法
+
+省市区级联。使用`v-model`进行数据绑定, source数据需要遵循`name`, `key`,`children`的格式
 
 <Preview>
   <Story name="基本用法">
     {{
       components: { Cascader },
       template: `
-        <div style="height: 200px;">
-            <cascader :source="dataSource" v-model="selected"></cascader>
+        <div class="demo">
+            <cascader :source="dataSource" v-model="value"></cascader>
         </div>
       `,
       data(){
           return { 
-              dataSource, 
-              selected: ['广东', '广州', '天河']
+              value: [],
+              dataSource:  [
+                {
+                  name: '广东',
+                  key: 'guangdong',
+                  children: [
+                    {
+                      name: '广州',
+                      key: 'guangzhou',
+                      children: [
+                        { name: '越秀', key: 'yuexiu' },
+                        { name: '天河', key: 'tianhe' },
+                        { name: '荔湾', key: 'liwan' }
+                      ]
+                    },
+                    {
+                      name: '湛江',
+                      key: 'zhanjiang',
+                      children: [
+                        { name: '霞山', key: 'xiashan' },
+                        { name: '遂溪', key: 'suixi' },
+                        { name: '赤坎', key: 'chikan' }
+                      ]
+                    },
+                    { name: '茂名', key: 'maoming' }
+                  ]
+                }, 
+                {
+                  name: '浙江',
+                  key: 'zhejiang',
+                  children: [
+                    {
+                      name: '杭州',
+                      key: 'hangzhou',
+                      children: [
+                        { name: '上城', key: 'shangcheng' },
+                        { name: '下城', key: 'xiacheng' },
+                        { name: '嘉善', key: 'jiashan' }
+                      ]
+                    },
+                    {
+                      name: '嘉兴',
+                      key: 'jiaxing',
+                      children: [
+                        { name: '南湖', key: 'nanhu' },
+                        { name: '秀洲', key: 'xiuzhou' },
+                        { name: '沧江', key: 'changjiang' }
+                      ]
+                    }
+                  ]
+                }
+              ]
           }
       }
+    }}
+  </Story>
+</Preview>
+
+### 默认数据
+
+指定 value 默认值，组件会在初始化时选定数据。
+
+<Preview>
+  <Story name="默认数据">
+    {{
+      components: { Cascader },
+      template: `
+        <div class="demo">
+            <cascader :source="dataSource" v-model="value"></cascader>
+        </div>
+      `,
+      data() {
+        return {
+          dataSource,
+          value: ['广东', '广州', '天河'],
+        };
+      },
     }}
   </Story>
 </Preview>

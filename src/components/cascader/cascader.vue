@@ -63,7 +63,7 @@ export default {
           请选择
         </div>
         <div
-          v-show="(!popoverVisible && value.length)"
+          v-if="(!popoverVisible && value.length)"
           class="g-cascader-select-clear"
           @click.stop="handleClear"
         >
@@ -72,7 +72,7 @@ export default {
           />
         </div>
         <div
-          v-show="popoverVisible && value.length"
+          v-else
           class="g-cascader-select-caret"
           :class="popoverVisible ? 'active':''"
         >
