@@ -9,8 +9,12 @@
 
   &-item {
     font-size: @font-size;
+    line-height: @line-height-secondary;
+    border-radius: @border-radius;
+    overflow: hidden;
 
     &-title {
+      display: flex;
       height: 38px;
       line-height: 38px;
       padding-left: 16px;
@@ -19,6 +23,21 @@
       position: relative;
       background-color: @collapse-title-bg;
       border-bottom: 1px solid @collapse-border-color;
+
+      &-icon {
+        font-size: 20px;
+
+        & > svg {
+          transition: all 0.2s linear;
+        }
+
+        &.active {
+          & > svg {
+            transform: rotate(90deg);
+            transform-origin: center;
+          }
+        }
+      }
     }
 
     &-content {
@@ -28,4 +47,21 @@
       border-bottom: 1px solid @collapse-border-color;
     }
   }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: 0.2s linear;
+}
+
+.slide-enter-to,
+.slide-leave {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.slide-enter,
+.slide-leave-to {
+  overflow: hidden;
+  max-height: 0;
 }

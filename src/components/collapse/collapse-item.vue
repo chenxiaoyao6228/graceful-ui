@@ -1,8 +1,10 @@
 <script>
+import Icon from '../icon/icon.vue';
 
 const prefixCls = 'g-collapse-item';
 export default {
   name: 'CollpaseItem',
+  components: { Icon },
   props: {
     name: {
       type: String,
@@ -50,14 +52,24 @@ export default {
       :class="[`${prefixCls}-title`]"
       @click="handleClick"
     >
+      <span
+        :class="{
+          'g-collapse-item-title-icon': true,
+          'active': show
+        }"
+      >
+        <Icon type="arrow-right" />
+      </span>
       <slot />
     </div>
-    <div
-      v-show="show"
-      :class="[`${prefixCls}-content`]"
-    >
-      <slot name="content" />
-    </div>
+    <transition name="slide">
+      <div
+        v-show="show"
+        :class="[`${prefixCls}-content`]"
+      >
+        <slot name="content" />
+      </div>
+    </transition>
   </div>
 </template>
 
