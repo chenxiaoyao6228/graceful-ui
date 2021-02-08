@@ -43,11 +43,12 @@ export default {
       this.$refs.popover.addEventListener('click', this.handleClick);
     }
   },
-  destroy() {
+  beforeDestroy() {
     if (this.trigger === 'hover') {
       this.$refs.popover.removeEventListener('mouseenter', this.open);
       this.$refs.popover.removeEventListener('mouseleave', this.close);
     } else {
+      this.show = false;
       document.removeEventListener('click', this.handleClick);
     }
   },
@@ -124,6 +125,7 @@ export default {
     <div
       v-if="show"
       ref="contentWrapper"
+      key="00"
       :class="[
         `${prefixCls}-content-wrapper`,
         `${prefixCls}-content-wrapper-${position}`,

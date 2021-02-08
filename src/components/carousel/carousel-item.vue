@@ -1,7 +1,7 @@
 <template>
   <transition name="carousel">
     <div
-      v-if="visible"
+      v-show="visible"
       class="g-carousel-item"
       :class="{'reverse': reverse, 'first': first}"
     >

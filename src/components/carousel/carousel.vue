@@ -29,14 +29,14 @@
       class="g-carousel-arrow left"
       @click="goPrevPage"
     >
-      <Icon type="left" />
+      <Icon type="arrow-left" />
     </div>
     <div
       v-if="arrowVisible"
       class="g-carousel-arrow right"
       @click="goNextPage"
     >
-      <Icon type="right" />
+      <Icon type="arrow-right" />
     </div>
   </div>
 </template>

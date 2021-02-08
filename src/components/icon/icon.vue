@@ -29,7 +29,6 @@ export default {
 .g-icon {
   width: 1em;
   height: 1em;
-  margin-right: 0.3em;
   vertical-align: -0.15em;
   fill: currentColor;
 }

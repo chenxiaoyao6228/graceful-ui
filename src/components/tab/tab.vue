@@ -14,6 +14,10 @@ export default {
     selected: {
       type: [String, Number],
       required: true
+    },
+    horizontal: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
