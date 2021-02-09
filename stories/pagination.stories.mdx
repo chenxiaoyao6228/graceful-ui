@@ -1,0 +1,38 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Pagination from '../src/components/pagination/pagination.vue';
+
+<Meta title="数据展示|Pagination 分页" component={Pagination} />
+
+# Pagination 分页
+
+### 引入组件
+
+```js
+import { Pagination } from 'graceful-ui';
+```
+
+### 基本分页
+基本的分页，可以使用`current`指定当前页数,支持`.sync`修饰符, 也可以监听`on-change`事件
+
+<Preview>
+  <Story name="直接调用">
+    {{
+      components: { Pagination },
+      template: `
+        <div>
+            <Pagination :current.sync="current" :total="total"></Pagination>
+        </div>
+      `,
+      data(){
+          return { 
+              current: 1,
+              total: 10
+          }
+      }
+    }}
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Pagination} />

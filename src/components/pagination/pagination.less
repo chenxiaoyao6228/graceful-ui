@@ -1,0 +1,61 @@
+@import "../../styles/variables/var.less";
+
+.g-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &-prev,
+  &-item,
+  &-next {
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+  }
+
+  &-item {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: @font-size;
+    color: @font-color;
+    margin-right: 4px;
+
+    &:hover {
+      cursor: pointer;
+      border-color: @color-primary;
+      color: @color-primary;
+    }
+
+    &.active {
+      border-color: @color-primary;
+      color: @color-primary;
+    }
+  }
+
+  &-jump-prev,
+  &-jump-next {
+    font-size: 16px;
+    border: none;
+  }
+
+  &-prev,
+  &-next {
+    font-size: 24px;
+
+    &.disabled {
+      border-color: @color-disabled;
+      color: @color-disabled;
+
+      &:hover {
+        cursor: not-allowed;
+        border-color: @color-disabled;
+        color: @color-disabled;
+
+        & > svg {
+          fill: @color-disabled;
+        }
+      }
+    }
+  }
+}
