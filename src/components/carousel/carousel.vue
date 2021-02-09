@@ -1,39 +1,44 @@
 <template>
   <div
-    class="g-carousel"
+    :class="[`${prefixCls}`]"
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
-    <div class="g-carousel-window">
+    <div :class="[`${prefixCls}-window`]">
       <div
         ref="container"
-        class="g-carousel-container"
+        :class="[`${prefixCls}-container`]"
       >
         <slot />
       </div>
     </div>
     <div
-      class="g-carousel-dots"
-      :class="{'g-carousel-dots-outside': dots ==='outside'}"
+      :class="[
+        `${prefixCls}-dots`,
+        dots ==='outside' && `${prefixCls}-dots-outside`,
+      ]"
     >
       <span
         v-for="n in childrenLength"
         :key="n"
-        class="g-carousel-dot"
-        :class="{'g-carousel-dot-active': value === n - 1}"
+        :class="[
+          `${prefixCls}-dot`,
+          value === n - 1 && `${prefixCls}-dot-active`
+        ]"
         @click="select(n-1)"
       />
     </div>
     <div
       v-if="arrowVisible"
-      class="g-carousel-arrow left"
+      :class="[`${prefixCls}-arrow left`]"
       @click="goPrevPage"
     >
       <Icon type="arrow-left" />
     </div>
     <div
       v-if="arrowVisible"
-      class="g-carousel-arrow right"
+
+      :class="[`${prefixCls}-arrow right`]"
       @click="goNextPage"
     >
       <Icon type="arrow-right" />
@@ -45,6 +50,7 @@
 
 import Icon from '../icon';
 
+const prefixCls = 'g-carousel';
 export default {
   name: 'Carousel',
   components: { Icon },
@@ -75,6 +81,7 @@ export default {
   },
   data() {
     return {
+      prefixCls,
       arrowVisible: false,
       currentIndex: -1,
       lastIndex: -1,

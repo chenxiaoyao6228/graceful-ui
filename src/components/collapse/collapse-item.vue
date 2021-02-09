@@ -53,10 +53,7 @@ export default {
       @click="handleClick"
     >
       <span
-        :class="{
-          'g-collapse-item-title-icon': true,
-          'active': show
-        }"
+        :class="[`${prefixCls}-title-icon`, show && 'active']"
       >
         <Icon type="arrow-right" />
       </span>

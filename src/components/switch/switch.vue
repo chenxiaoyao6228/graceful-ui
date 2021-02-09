@@ -1,5 +1,5 @@
 <script>
-const prefix = 'g-switch';
+const prefixCls = 'g-switch';
 export default {
   model: {
     prop: 'isChecked',
@@ -12,15 +12,17 @@ export default {
     },
     size: {
       type: String,
-      default: 'default'
+      default: 'medium'
     }
   },
   data() {
-    return {};
+    return {
+      prefixCls
+    };
   },
   computed: {
     classes() {
-      return [`${prefix}`, `${prefix}-${this.size}`, this.isChecked ? `${prefix}-checked` : ''];
+      return [`${prefixCls}`, `${prefixCls}-${this.size}`, this.isChecked ? `${prefixCls}-checked` : ''];
     }
   },
   methods: {
@@ -33,7 +35,6 @@ export default {
 </script>
 <template>
   <label
-    class="g-switch"
     :class="classes"
     @click="toggle"
     @keydown.space="toggle"
@@ -42,7 +43,7 @@ export default {
       type="hidden"
       value="false"
     >
-    <span class="g-switch-inner" />
+    <span :class="[`${prefixCls}-inner`]" />
   </label>
 </template>
 

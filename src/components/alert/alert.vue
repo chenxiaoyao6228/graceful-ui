@@ -53,11 +53,11 @@ export default {
       :key="item.name"
       :class="[`${prefixCls}-wrapper`, `${prefixCls}-wrapper-${item.type}`]"
     >
-      <div class="g-alert-content">
-        <i class="g-alert-icon">
+      <div :class="[`${prefixCls}-content`]">
+        <i :class="[`${prefixCls}-icon`]">
           <Icon :type="item.type" />
         </i>
-        <p class="g-alert-text">
+        <p :class="[`${prefixCls}-text`]">
           {{ item.content }}
         </p>
       </div>

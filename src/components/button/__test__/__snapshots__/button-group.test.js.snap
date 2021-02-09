@@ -3,14 +3,14 @@
 exports[`ButtonGroup match snapshots 1`] = `
 <div>
   <div
-    class="g-button-group"
+    class="undefined-group"
     data-testid="button-group"
   >
     <button
-      class="g-button g-button-default g-button-size-default"
+      class="g-button g-button-default g-button-size-medium"
     >
       <svg
-        class="g-icon icon"
+        class="icon g-icon"
       >
         <use
           aria-hidden="true"
@@ -27,10 +27,10 @@ exports[`ButtonGroup match snapshots 1`] = `
       </div>
     </button>
     <button
-      class="g-button g-button-default g-button-size-default icon-right"
+      class="g-button g-button-default g-button-size-medium icon-right"
     >
       <svg
-        class="g-icon icon"
+        class="icon g-icon"
       >
         <use
           aria-hidden="true"

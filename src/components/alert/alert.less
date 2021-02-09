@@ -1,5 +1,4 @@
-@import '../../styles/variables/var.less';
-@import '../../styles/mixin/index.less';
+@import '../../styles/index.less';
 @prefixCls: ~'@{css-prefix}-alert';
 
 .@{prefixCls} {
@@ -14,12 +13,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 16px;
+    padding: @alert-padding;
     margin-bottom: 10px;
     border: 1px solid transparent;
     background: #fff;
-    border-radius: 6px;
+    border-radius: @border-radius;
     color: @font-color;
+  }
+
+  &-text {
+    margin-left: 4px;
   }
 
   &-wrapper {

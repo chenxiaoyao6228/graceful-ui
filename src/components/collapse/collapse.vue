@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <div :class="[ `${prefixCls}`]">
+  <div :class="[`${prefixCls}`]">
     <slot />
   </div>
 </template>

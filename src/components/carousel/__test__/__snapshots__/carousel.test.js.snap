@@ -11,10 +11,46 @@ exports[`Carousel match snapshots 1`] = `
       <div
         class="g-carousel-container"
       >
-        <!---->
-        <!---->
-        <!---->
-        <!---->
+        <div
+          class="g-carousel-item"
+          style="display: none;"
+        >
+          <div
+            class="box"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="g-carousel-item"
+          style="display: none;"
+        >
+          <div
+            class="box"
+          >
+            1
+          </div>
+        </div>
+        <div
+          class="g-carousel-item"
+          style="display: none;"
+        >
+          <div
+            class="box"
+          >
+            2
+          </div>
+        </div>
+        <div
+          class="g-carousel-item"
+          style="display: none;"
+        >
+          <div
+            class="box"
+          >
+            3
+          </div>
+        </div>
       </div>
     </div>
      

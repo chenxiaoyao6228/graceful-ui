@@ -62,7 +62,7 @@ describe('Button', () => {
       }
     });
     expect(container.innerHTML).toEqual(
-      '<button class="g-button g-button-default g-button-size-default"><svg class="g-icon icon"><use xlink:href="#icon-download" aria-hidden="true"></use></svg> <!----> <div class="content"></div></button>'
+      '<button class="g-button g-button-default g-button-size-medium"><svg class="icon g-icon"><use xlink:href="#icon-download" aria-hidden="true"></use></svg> <!----> <div class="content"></div></button>'
     );
   });
 
