@@ -21,14 +21,22 @@ export default {
           'success',
           'disabled',
           'dashed',
-          'default',
-          false
+          'text',
+          'default'
         ]);
       }
     },
     size: {
       type: String,
-      default: 'default'
+      default: 'medium',
+      validator(value) {
+        return oneOf(value, [
+          'large',
+          'medium',
+          'small',
+          'extra-small'
+        ]);
+      }
     },
     icon: {
       type: String,
@@ -45,6 +53,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    long: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -57,6 +69,7 @@ export default {
         `${prefix}-${this.type}`,
         `${prefix}-size-${this.size}`,
         this.disabled ? `${prefix}-disabled` : '',
+        this.long ? `${prefix}-long` : '',
         this.round ? `${prefix}-round` : '',
         this.iconPosition ? `icon-${this.iconPosition}` : '',
         this.loading ? 'loading' : ''

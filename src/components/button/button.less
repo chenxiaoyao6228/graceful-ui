@@ -5,7 +5,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: @button-padding;
   vertical-align: middle;
   text-align: center;
   font-size: @font-size;
@@ -24,27 +23,32 @@
 
   .icon {
     order: 1;
+    margin-right: 6px;
   }
 
   .content {
     order: 2;
   }
-  // type =>
-  // .button-type();
-  &-size {
-    &-default {
-      height: @button-height;
-      padding: @button-padding;
-    }
 
-    &-small {
-      height: @button-height-small;
-      padding: @button-padding-small;
+  &-size {
+    &-medium {
+      padding: @button-padding;
+      font-size: @button-font-size;
     }
 
     &-large {
-      height: @button-height-large;
       padding: @button-padding-large;
+      font-size: @button-font-size-large;
+    }
+
+    &-small {
+      padding: @button-padding-small;
+      font-size: @button-font-size-small;
+    }
+
+    &-extra-small {
+      padding: @button-padding-extra-small;
+      font-size: @button-font-size-extra-small;
     }
   }
 
@@ -81,10 +85,20 @@
   &-disabled {
     background-color: @color-disabled;
     color: rgba(255, 255, 255, 0.8);
+    border: none;
 
     &:hover {
       cursor: not-allowed;
     }
+  }
+
+  &-long {
+    display: block;
+    width: 100%;
+  }
+
+  &-text {
+    color: @button-font-color;
   }
 
   &-round {
