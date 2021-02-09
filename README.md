@@ -112,32 +112,15 @@ plugins: [
 <script src="https://at.alicdn.com/t/font_1763207_sc60ungf6d.js"></script>
 ```
 
-## 🍅 Done/Todo
+## 🚧 开发
 
-**通用**
+首先确保你安装了`yarn`
 
-- [x] Button
-- [x] Icon
+安装好依赖之后运行`yarn dev`即可开启storybook, 项目使用的是mdx的格式, 具体可以参考`Alert`组件
 
-**反馈**
+### storybooK注意事项
 
-- [x] Alert
-
-**数据展示**
-
-- [x] Collapse
-- [x] Popover
-- [x] Tab
-
-**布局**
-
-- [x] Grid
-- [x] Layout
-
-**数据录入**
-
-- [x] Input
-- [x] Switch
+- mdx的template中不要出现空格行
 
 ## 更新日志
 
@@ -150,6 +133,8 @@ plugins: [
 ## 🔖 参考轮子
 
 [Gulu](https://yuyuye958.github.io/GuLu-UI/)
+
+[Cuke-ui](https://github.com/cuke-ui/cuke-ui)
 
 [iview](https://www.iviewui.com/docs/introduce)
 
