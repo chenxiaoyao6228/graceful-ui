@@ -66,18 +66,32 @@
     >
       <Icon type="arrow-right" />
     </div>
+    <div
+      v-if="showElevator"
+      class="g-pagination-elevator"
+    >
+      跳至
+      <Input
+        v-model="current"
+        type="text"
+        size="small"
+      />
+      页
+    </div>
   </div>
 </template>
 
 <script>
+import Input from '../input/input.vue';
 import Icon from '../icon/icon.vue';
 
 export default {
   name: 'Pagination',
-  components: { Icon },
+  components: { Icon, Input },
   props: {
     total: { type: Number, required: true },
-    current: { type: Number, default: 1 }
+    current: { type: Number, default: 1 },
+    showElevator: { type: Boolean, default: false }
   },
   data() {
     return {
@@ -98,7 +112,6 @@ export default {
         });
         return res;
       }
-
       let res = [this.current - 2, this.current - 1,
         this.current, this.current + 1, this.current + 2];
       res = unique(res.filter((item) => (item > 1 && item < this.total)));
