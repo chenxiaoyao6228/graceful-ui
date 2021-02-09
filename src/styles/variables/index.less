@@ -1,1 +1,159 @@
-@import "var.less";
+@padding: 0.5em;
+
+// global config
+@css-prefix: g;
+
+//-------- constants --------
+
+// == colors ==
+
+@B000: #fff;
+@B050: #f7f7fa;
+@B100: #f2f2f5;
+@B200: #e5e5ea;
+@B300: #d9d9d9;
+@B400: #c5c6c7;
+@B500: #a6a6a6;
+@B600: #8e8e93;
+@B700: #7a7a7a;
+@B800: #575757;
+@B900: #272c36;
+
+// primary color
+@color-primary: #2ca9fa;
+
+// sub color
+@color: #fff;
+@color-warning: #fca130;
+@color-error: #f93e3e;
+@color-success: #35c613;
+@color-info: #31c27c;
+@color-disabled: #d8d8d8;
+@color-inverted: #000;
+
+// == fonts ==
+
+// font-family
+@font-family-base: Apple-System, Arial, Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', STXihei, sans-serif;
+
+// size
+@font-size-large: 16px;
+@font-size: 14px;
+@font-size-small: 14px;
+@font-size-extra-small: 12px;
+
+// text-color, text-shadow
+@text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+@font-color: #8E8E93 ;
+@font-color-primary: @color-primary;
+
+// line-height
+@line-height-primary: 1;
+@line-height-secondary: 1.5;
+
+
+// border
+@border-color: #999;
+@border-color-hover: #999;
+@border-radius: 6px;
+@border-radius-round: 20px;
+
+// padding
+@padding-vertical-large: 10px;
+@padding-horizontal-large: 16px;
+
+@padding-vertical: 8px;
+@padding-horizontal: 12px;
+
+@padding-vertical-small: 5px;
+@padding-horizontal-small: 10px;
+
+@padding-vertical-extra-small: 4px;
+@padding-horizontal-extra-small: 8px;
+
+
+// animations
+@animation-time: 0.5s;
+@animation-type: cubic-bezier(0.08, 0.82, 0.17, 1);
+
+// -------- components -----------
+
+// button
+@button-font-size: @font-size;
+@button-font-size-large: @font-size-large;
+@button-font-size-small: @font-size-small;
+@button-font-size-extra-small: @font-size-extra-small;
+
+@button-padding-large: @padding-vertical-large @padding-horizontal-large;
+@button-padding: @padding-vertical @padding-horizontal;
+@button-padding-small: @padding-vertical-small @padding-horizontal-small;
+@button-padding-extra-small: @padding-vertical-extra-small @padding-horizontal-extra-small;
+
+@button-bg: #fff;
+@button-bg-active: #eee;
+@button-bg-disabled: #d8d8d8;
+
+@button-font-color: @font-color;
+
+@button-border-radius: @border-radius;
+
+// input
+@input-font-size: @font-size;
+@input-font-size-large: @font-size-large;
+@input-font-size-small: @font-size-small;
+@input-font-size-extra-small: @font-size-extra-small;
+
+@input-padding-large: @padding-vertical-large @padding-horizontal-large;
+@input-padding: @padding-vertical @padding-horizontal;
+@input-padding-small: @padding-vertical-small @padding-horizontal-small;
+@input-padding-extra-small: @padding-vertical-extra-small @padding-horizontal-extra-small;
+
+@input-font-color: @font-color;
+
+// switch
+@switch-height: 22px;
+@switch-width: 44px;
+@switch-inner-radius: 20px;
+@switch-offset-left: (@switch-height - @switch-inner-radius);
+
+@switch-height-small: 16px;
+@switch-width-small: 32px;
+@switch-inner-radius-small: 14px;
+
+@switch-height-large: 30px;
+@switch-width-large: 60px;
+@switch-inner-radius-large: 28px;
+
+@switch-border-radius: 44px;
+@switch-border-radius-small: 50%;
+
+@switch-color-checked: @color-primary;
+@switch-color-disabled: @color-disabled;
+
+// grid
+@max-col-num: 24;
+
+// alert
+@alert-info-color: @color-primary;
+@alert-error-color: @color-error;
+@alert-warning-color: @color-warning;
+@alert-success-color: @color-success;
+
+// tab
+@tab-active-color: @color-primary;
+@tab-disabled-color: @color-disabled;
+
+// collapse
+@collapse-title-bg: #f7f7f7;
+@collapse-title-color: #666;
+@collapse-content-bg: #fff;
+@collapse-content-color: #515a6e;
+@collapse-border-color: @border-color;
+
+
+// carousel
+@carousel-dot-size: 7px;
+@carousel-dot-bg: #bbbbbe;
+@carousel-dot-bg-hover: #fff;
+@carousel-dot-bg-active: @color-primary;

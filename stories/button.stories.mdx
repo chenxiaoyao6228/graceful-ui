@@ -14,6 +14,8 @@ import { Button } from 'graceful-ui';
 
 ### 类别
 
+通过设置`type`为`primary`、`dashed`、 `text`、`info`、`success`、`warning`、`error`创建不同样式的按钮，不设置为默认样式。
+
 <Preview>
   <Story name="type 类别">
     {{
@@ -25,8 +27,9 @@ import { Button } from 'graceful-ui';
             <Button type="error">错误</Button> 
             <Button type="success">成功</Button> 
             <Button type="info">信息</Button> 
-            <Button type="disabled">禁用</Button> 
+            <Button disabled>禁用</Button> 
             <Button type="dashed">虚线框</Button> 
+            <Button type="text">文本按钮</Button> 
             <Button>默认</Button> 
         </div>
       `,
@@ -36,7 +39,7 @@ import { Button } from 'graceful-ui';
 
 ### 大小
 
-`size`参数可以用来指定按钮形状,可选参数为`large`,`small`, 默认为`default`
+`size`参数可以用来指定按钮形状,可选参数为`large`,`medium`, `small`, `extra-small`, 默认为`medium`
 
 <Preview>
   <Story name="size 大小">
@@ -47,9 +50,10 @@ import { Button } from 'graceful-ui';
             <Button type="primary" size="large">主色</Button> 
             <Button type="warning">警告</Button> 
             <Button type="error" size="small">错误</Button> 
+            <Button type="info" size="extra-small">信息</Button> 
             <Button type="success" size="large">成功</Button> 
             <Button type="info">信息</Button> 
-            <Button type="disabled" size="small">禁用</Button> 
+            <Button disabled size="small">禁用</Button> 
             <Button type="dashed">虚线框</Button> 
             <Button>默认</Button> 
         </div>
@@ -58,17 +62,32 @@ import { Button } from 'graceful-ui';
   </Story>
 </Preview>
 
-### 图标类型
+### 长按钮
+<Preview>
+  <Story name="long">
+    {{
+      components: { Button },
+      template: `
+        <div>
+            <Button type="success" size="large" long>成功</Button> 
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
 
+### 图标类型
+通过`icon`可以设置图标, 类型为`Icon`组件中的图标
 <Preview>
   <Story name="icon 图标">
     {{
       components: { Button },
       template: `
         <div>
-          <Button icon="setting">设置</Button>
-          <Button icon="download">下载</Button>
-          <Button icon="loading">加载</Button>
+          <Button type="success" size="large" icon="success">成功</Button> 
+            <Button type="warning" icon="warning">警告</Button> 
+            <Button type="error" size="small" icon="error">错误</Button> 
+            <Button type="info" size="extra-small" icon="info">信息</Button>
         </div>
       `,
     }}
@@ -76,7 +95,7 @@ import { Button } from 'graceful-ui';
 </Preview>
 
 ### 图标位置
-
+在设置了`icon`的情况下,可以通过`iconPosition`来设置图标位置
 <Preview>
   <Story name="iconPosition 图标位置">
     {{
@@ -92,7 +111,7 @@ import { Button } from 'graceful-ui';
 </Preview>
 
 ### 加载状态
-
+可通过`loading`参数来改变按钮的状态
 <Preview>
   <Story name="loading 加载状态">
     {{
@@ -106,15 +125,15 @@ import { Button } from 'graceful-ui';
 </Preview>
 
 ### 按钮组
-
+`ButtonGroup`里面可以放置多个`button`
 <Preview>
   <Story name="buttonGroup 按钮组">
     {{
       components: { Button, ButtonGroup },
       template: ` 
         <ButtonGroup>
-          <Button icon="left">上一页</Button> 
-          <Button icon="right" iconPosition="right">下一页</Button>
+          <Button icon="arrow-left">上一页</Button> 
+          <Button icon="arrow-right" iconPosition="right">下一页</Button>
         </ButtonGroup>`,
     }}
   </Story>
