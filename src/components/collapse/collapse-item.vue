@@ -74,5 +74,5 @@ export default {
 </template>
 
 <style lang="less" scoped>
-@import './collapse.less';
+@import "./collapse.less";
 </style>

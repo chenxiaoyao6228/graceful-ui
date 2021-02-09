@@ -1,0 +1,132 @@
+<template>
+  <div class="g-pagination">
+    <div
+      class="g-pagination-item g-pagination-prev"
+      :class="{disabled: current === 1}"
+      @click="goToPage(current-1)"
+    >
+      <Icon type="arrow-left" />
+    </div>
+    <template
+      v-for="item in range"
+    >
+      <template v-if="item === '<<'">
+        <div
+          :key="item"
+          class="g-pagination-item g-pagination-jump-prev"
+          :class="{active: isLeftStepHover}"
+          @mouseenter="isLeftStepHover = true"
+          @mouseleave="isLeftStepHover = false"
+          @click="goToPage(current-5)"
+        >
+          <Icon
+            v-if="isLeftStepHover"
+            type="double-arrow-left"
+          />
+          <Icon
+            v-else
+            type="dots"
+          />
+        </div>
+      </template>
+      <template v-else-if="item === '>>'">
+        <div
+          :key="item"
+          class="g-pagination-item g-pagination-jump-next"
+          :class="{active: isRightStepHover}"
+          @mouseenter="isRightStepHover = true"
+          @mouseleave="isRightStepHover = false"
+          @click="goToPage(current+5)"
+        >
+          <Icon
+            v-if="isRightStepHover"
+            type="double-arrow-right"
+          />
+          <Icon
+            v-else
+            type="dots"
+          />
+        </div>
+      </template>
+      <template v-else>
+        <div
+          :key="item"
+          class="g-pagination-item"
+          :class="{ active: current === item }"
+          @click="goToPage(item)"
+        >
+          {{ item }}
+        </div>
+      </template>
+    </template>
+    <div
+      class="g-pagination-item g-pagination-next"
+      :class="{disabled: current === total}"
+      @click="goToPage(current+1)"
+    >
+      <Icon type="arrow-right" />
+    </div>
+  </div>
+</template>
+
+<script>
+import Icon from '../icon/icon.vue';
+
+export default {
+  name: 'Pagination',
+  components: { Icon },
+  props: {
+    total: { type: Number, required: true },
+    current: { type: Number, default: 1 }
+  },
+  data() {
+    return {
+      isLeftStepHover: false,
+      isRightStepHover: false
+    };
+  },
+  computed: {
+    range() {
+      function unique(array) {
+        const res = [];
+        const map = Object.create(null);
+        array.forEach((item) => {
+          if (!map[item]) {
+            res.push(item);
+            map[item] = true;
+          }
+        });
+        return res;
+      }
+
+      let res = [this.current - 2, this.current - 1,
+        this.current, this.current + 1, this.current + 2];
+      res = unique(res.filter((item) => (item > 1 && item < this.total)));
+
+      if (this.current >= 6) {
+        res.unshift('<<');
+      }
+      if (this.total >= 1) {
+        res.unshift(1);
+      }
+      if (this.total - this.current >= 5) {
+        res.push('>>');
+      }
+      if (this.total >= 1) {
+        res.push(this.total);
+      }
+      return res;
+    }
+  },
+  methods: {
+    goToPage(item) {
+      this.$emit('update:current', item);
+      this.$emit('on-change', item);
+    }
+  }
+};
+</script>
+
+<style lang="less" scoped>
+@import './pagination.less';
+</style>
