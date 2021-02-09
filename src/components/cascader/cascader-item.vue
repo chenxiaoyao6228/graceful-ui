@@ -1,6 +1,7 @@
 <script>
 import Icon from '../icon/icon.vue';
 
+const prefixCls = 'g-cascader';
 export default {
   name: 'CascaderItem',
   components: { Icon },
@@ -20,6 +21,7 @@ export default {
   },
   data() {
     return {
+      prefixCls,
       currentSelected: {}
     };
   },
@@ -57,26 +59,31 @@ export default {
 </script>
 
 <template>
-  <div class="g-cascader-item">
-    <div class="g-cascader-item-left">
+  <div :class="[`${prefixCls}-item`]">
+    <div :class="[`${prefixCls}-item-left`]">
       <div
         v-for="item in source"
         :key="item.name"
-        class="g-cascader-item-left-label"
-        :class="selected[level] === item.name ? 'g-cascader-item-left-label-active': ''"
+        :class="[
+          `${prefixCls}-item-left-label`,
+          selected[level] === item.name && `${prefixCls}-item-left-label-active`
+        ]"
         @click="onLeftClick(item)"
       >
-        <div class="g-cascader-item-left-name">
+        <div
+
+          :class="[`${prefixCls}-item-left-name`]"
+        >
           {{ item.name }}
         </div>
-        <span class="g-cascader-item-left-icon">
+        <span :class="[`${prefixCls}-item-left-icon`]">
           <Icon type="arrow-right" />
         </span>
       </div>
     </div>
     <div
       v-if="rightItem"
-      class="g-cascader-item-right"
+      :class="[`${prefixCls}-item-right`]"
     >
       <CascaderItem
         :source="rightItem"
@@ -88,6 +95,7 @@ export default {
     </div>
   </div>
 </template>
+
 
 <style lang="less" scoped>
 @import './cascader.less';

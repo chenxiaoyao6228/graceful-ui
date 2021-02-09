@@ -1,8 +1,13 @@
 <template>
-  <div class="g-pagination">
+  <div
+    :class="[`${prefixCls}`]"
+  >
     <div
-      class="g-pagination-item g-pagination-prev"
-      :class="{disabled: current === 1}"
+      :class="[
+        `${prefixCls}-item`,
+        `${prefixCls}-prev`,
+        current === 1 && disabled
+      ]"
       @click="goToPage(current-1)"
     >
       <Icon type="arrow-left" />
@@ -13,8 +18,11 @@
       <template v-if="item === '<<'">
         <div
           :key="item"
-          class="g-pagination-item g-pagination-jump-prev"
-          :class="{active: isLeftStepHover}"
+          :class="[
+            `${prefixCls}-item`,
+            `${prefixCls}-jump-prev`,
+            isLeftStepHover && 'active'
+          ]"
           @mouseenter="isLeftStepHover = true"
           @mouseleave="isLeftStepHover = false"
           @click="goToPage(current-5)"
@@ -85,6 +93,7 @@
 import Input from '../input/input.vue';
 import Icon from '../icon/icon.vue';
 
+const prefixCls = 'g-pagination';
 export default {
   name: 'Pagination',
   components: { Icon, Input },
@@ -95,6 +104,7 @@ export default {
   },
   data() {
     return {
+      prefixCls,
       isLeftStepHover: false,
       isRightStepHover: false
     };

@@ -3,7 +3,7 @@
 exports[`Switch should match snapshots 1`] = `
 <div>
   <label
-    class="g-switch g-switch g-switch-default"
+    class="g-switch g-switch-medium"
     data-testid="test"
   >
     <input

@@ -1,4 +1,5 @@
 <script>
+const prefixCls = 'g-icon';
 export default {
   name: 'Icon',
   props: {
@@ -8,14 +9,16 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      prefixCls
+    };
   }
 };
 </script>
 
 <template>
   <svg
-    class="g-icon"
+    :class="[`${prefixCls}`]"
     @click="$emit('click', $event)"
   >
     <use
@@ -26,10 +29,5 @@ export default {
 </template>
 
 <style lang="less" scoped>
-.g-icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-}
+@import './icon.less';
 </style>

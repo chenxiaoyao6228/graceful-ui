@@ -2,6 +2,8 @@
 import CascaderItem from './cascader-item.vue';
 import Icon from '../icon/icon.vue';
 
+
+const prefixCls = 'g-cascader';
 export default {
   name: 'Cascader',
   components: {
@@ -19,6 +21,7 @@ export default {
   },
   data() {
     return {
+      prefixCls,
       popoverVisible: false
     };
   },
@@ -39,42 +42,42 @@ export default {
 
 <template>
   <div
-    class="g-cascader"
+    :class="[`${prefixCls}`]"
     @close-popover="handlePopoverClose"
   >
     <div
-      class="g-cascader-trigger"
-      :class="popoverVisible ?'active': ''"
+      :class="[
+        `${prefixCls}-trigger`,
+        popoverVisible ?'active': '']"
       @click="popoverVisible = !popoverVisible"
     >
       <div
-        class="g-cascader-select"
+        :class="[`${prefixCls}-select`]"
       >
         <div
           v-if="value.length"
-          class="g-cascader-select-content"
+          :class="[`${prefixCls}-select-content`]"
         >
           {{ value.join('/') }}
         </div>
         <div
           v-else
-          class="g-cascader-select-placeholder"
+          :class="[`${prefixCls}-select-placeholder`]"
         >
           请选择
         </div>
         <div
           v-if="(!popoverVisible && value.length)"
-          class="g-cascader-select-clear"
+          :class="[`${prefixCls}-select-clear`]"
           @click.stop="handleClear"
         >
           <Icon
-            type="error"
+            type="cross"
           />
         </div>
         <div
           v-else
-          class="g-cascader-select-caret"
-          :class="popoverVisible ? 'active':''"
+          :class="[`${prefixCls}-select-caret`,popoverVisible ? 'active':'']"
         >
           <Icon
             type="arrow-down"
@@ -85,7 +88,7 @@ export default {
     <transition name="fade">
       <div
         v-if="popoverVisible"
-        class="g-cascader-popover"
+        :class="[`${prefixCls}-popover`]"
       >
         <CascaderItem
           :source="source"

@@ -1,7 +1,7 @@
 <script>
 import Icon from '../icon/icon.vue';
 
-const prefix = 'g-input';
+const prefixCls = 'g-input';
 export default {
   name: 'Input',
   components: { Icon },
@@ -16,7 +16,10 @@ export default {
     },
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
+      validator(value) {
+        return ['text', 'password'].indexOf(value) > -1;
+      }
     },
     placeholder: {
       type: String,
@@ -24,9 +27,16 @@ export default {
     },
     size: {
       type: String,
-      default: 'default'
+      default: 'medium',
+      validator(value) {
+        return ['large', 'medium', 'small', 'extra-small'].indexOf(value) > -1;
+      }
     },
     clearable: {
+      type: Boolean,
+      default: false
+    },
+    showPassword: {
       type: Boolean,
       default: false
     }
@@ -37,17 +47,25 @@ export default {
   computed: {
     wrapperClasses() {
       return [
-        `${prefix}-wrapper`,
-        this.clearable && this.value.length > 0 ? `${prefix}-wrapper-clearable` : ''
+        `${prefixCls}-wrapper`,
+        this.clearable && this.value.length > 0 ? `${prefixCls}-wrapper-clearable` : ''
       ];
     },
     classes() {
-      return [`${prefix}`, `${prefix}-${this.size}`];
+      return [
+        `${prefixCls}`,
+        `${prefixCls}-${this.size}`,
+        '.has-icon'
+      ];
     }
   },
   methods: {
     handleClear() {
       this.$emit('input', '');
+    },
+    handleEnter() {
+      // eslint-disable-next-line
+      window.alert(1111);
     }
   }
 };
@@ -55,22 +73,29 @@ export default {
 
 <template>
   <div
-    class="g-input-wrapper"
     :class="wrapperClasses"
   >
-    <Icon
-      type="clear"
-      class="g-input-icon-clearable"
-      :class="[clearable && value.length > 0 ? `g-input-icon-clearable-show` : '']"
-      @click="handleClear"
-    />
     <input
       :type="type"
       :placeholder="placeholder"
       :value="value"
       :class="classes"
       @input="$emit('input', $event.target.value)"
+      @keyup.enter="handleEnter"
     >
+    <Icon
+      v-if="type === 'text'"
+      type="cross"
+      class="g-input-icon clear"
+      :class="[clearable && value.length > 0 ? `g-input-icon-clearable-show` : '']"
+      @click="handleClear"
+    />
+    <Icon
+      v-if="type === 'password' && showPassword"
+      type="eye"
+      class="g-input-icon eye"
+      @click="handleClear"
+    />
   </div>
 </template>
 

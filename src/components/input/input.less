@@ -1,13 +1,13 @@
 @import '../../styles/index.less';
 
 .g-input {
+  font-size: @font-size;
+  color: @font-color;
+
   &-wrapper {
     position: relative;
-    font-size: @font-size;
   }
 
-  height: @input-height;
-  padding: @input-padding;
   border: 1px solid @border-color;
   border-radius: @border-radius;
 
@@ -16,30 +16,46 @@
   &:active {
     border-color: @color-primary;
     outline: none;
-    // box-shadow: @input-box-shadow;
   }
 
   &-large {
-    height: @input-height-large;
+    padding: @input-padding-large;
+    font-size: @input-font-size-large;
+  }
+
+  &-medium {
+    padding: @input-padding;
+    font-size: @input-font-size;
   }
 
   &-small {
-    height: @input-height-small;
+    padding: @input-padding-small;
+    font-size: @input-font-size-small;
   }
 
-  &-icon-clearable {
+  &-extra-small {
+    padding: @input-padding-extra-small;
+    font-size: @input-font-size-extra-small;
+  }
+
+  &-icon {
     position: absolute;
-    display: none;
-    width: @input-height / 2;
-    height: @input-height / 2;
     right: 6px;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    color: #808695;
+    color: @font-color;
+
+    &.clear {
+      display: none;
+    }
 
     &-show {
       display: block;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

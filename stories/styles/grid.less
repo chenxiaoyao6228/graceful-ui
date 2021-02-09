@@ -1,11 +1,13 @@
-@import '../variables/var.less';
+@import '../../src/styles/index.less';
 
-.g-grid-demo {
-  .g-row {
+@prefixCls: ~'@{css-prefix}-grid';
+
+.@{prefixCls}-demo {
+  .@{css-prefix}-row {
     margin-bottom: 5px;
   }
 
-  .g-col {
+  .@{css-prefix}-col {
     height: 40px;
     line-height: 40px;
     text-align: center;

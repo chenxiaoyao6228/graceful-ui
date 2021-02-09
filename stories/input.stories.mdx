@@ -1,7 +1,6 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 
 import Input from "../src/components/input/input.vue";
-import "../src/styles/storybook/index.less";
 
 <Meta title="数据录入|Input 输入框" component={Input} />
 
@@ -14,7 +13,7 @@ import "../src/styles/storybook/index.less";
 可以使用`v-model`来实现数据的双向绑定
 
 <Preview>
-  <Story name="type 类型">
+  <Story name="基础用法">
     {{
       components: { Input },
       template: `
@@ -33,7 +32,7 @@ import "../src/styles/storybook/index.less";
 
 ### 尺寸
 
-可以通过`size`参数来设置输入框的大小, 可选参数为`large`,`default`,`small`, 默认为 `default`
+可以通过`size`参数来设置输入框的大小, 可选参数为`large`,`medium`,`small`, `extral-small`, 默认为 `medium`
 
 <Preview>
   <Story name="size 尺寸">
@@ -43,7 +42,8 @@ import "../src/styles/storybook/index.less";
             <form style="display:flex">
                 <Input v-model="value1" size="large" placeholder="请输入内容..." class="mr10"></Input>
                 <Input v-model="value2"  placeholder="请输入内容..." class="mr10"></Input>
-                <Input v-model="value3" size="small" placeholder="请输入内容..." ></Input>
+                <Input v-model="value3" size="small" placeholder="请输入内容..." class="mr10"></Input>
+                <Input v-model="value4" size="extra-small" placeholder="请输入内容..." ></Input>
             </form>
       `,
       data() {
@@ -51,6 +51,7 @@ import "../src/styles/storybook/index.less";
           value1: "",
           value2: "",
           value3: "",
+          value4: ""
         };
       },
     }}
@@ -78,6 +79,29 @@ import "../src/styles/storybook/index.less";
     }}
   </Story>
 </Preview>
+
+### 密码框
+
+在`type="password"`的情况下, 可以开启`show-password`可以切换密码的显示和隐藏
+
+<Preview>
+  <Story name="密码框">
+    {{
+      components: { Input },
+      template: `
+            <form style="display:flex">
+                <Input v-model="value" type="password" show-password placeholder="请输入银行卡密码..."></Input>
+            </form>
+      `,
+      data() {
+        return {
+          value: "",
+        };
+      },
+    }}
+  </Story>
+</Preview>
+
 
 ## API
 

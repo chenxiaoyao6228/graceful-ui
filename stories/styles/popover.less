@@ -1,4 +1,4 @@
-@import '../../styles/variables/var.less';
+@import '../../src/styles/index.less';
 
 @prefixCls: ~'@{css-prefix}-popover';
 
@@ -7,16 +7,19 @@
     &.basic {
       display: flex;
       justify-content: center;
+
       & > div {
         &:first-of-type {
           margin-right: 50px;
         }
       }
     }
+
     &.position {
       display: flex;
       justify-content: center;
       font-size: 0;
+
       .top,
       .left,
       .bottom,

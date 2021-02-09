@@ -1,0 +1,46 @@
+@import '../../src/styles/index.less';
+
+@prefixCls: ~'@{css-prefix}-layout';
+
+.@{prefixCls} {
+  color: #fff;
+  .@{prefixCls}-header {
+
+    .flex-align-center();
+
+    background: @color-primary;
+    height: 60px;
+  }
+  .@{prefixCls}-content {
+    .flex-align-center();
+
+    background: @color-info;
+    height: 120px;
+  }
+  .@{prefixCls}-sider {
+    .flex-align-center();
+
+    background: @color-disabled;
+    width: 30%;
+    height: 120px;
+  }
+  .@{prefixCls}-footer {
+    .flex-align-center();
+
+    margin-bottom: 20px;
+    background: @color-primary;
+    height: 60px;
+  }
+
+  &:last-child {
+    .@{prefixCls}-sider {
+      height: 240px;
+    }
+  }
+}
+
+.flex-align-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -18,18 +18,20 @@ export default {
 </script>
 
 <template>
-  <div class="g-button-group">
+  <div :class="[`${prefix}-group`]">
     <slot />
   </div>
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables/index';
+@import '../../styles/index';
+@prefixCls: ~'@{css-prefix}-button';
 
-.g-button-group {
+
+.@{prefixCls}-group {
   display: inline-flex;
   vertical-align: middle;
-  > .g-button {
+  > .@{prefixCls} {
     border-radius: 0;
     &:first-of-type {
       border-top-left-radius: @border-radius;

@@ -2,7 +2,6 @@
 // see: https://storybook.js.org/docs/configurations/overview/
 
 import "../src/styles/index.less";
-import "../src/styles/storybook/index.less";
 
 // 全局注册组件
 import Vue from 'vue'

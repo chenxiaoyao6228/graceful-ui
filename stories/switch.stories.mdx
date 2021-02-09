@@ -45,7 +45,7 @@ import { Switch } from "graceful-ui";
 
 ### 不同尺寸
 
-使用 size 来确定尺寸, 可选值为`large`, `default`, `small`, 默认为`default`
+使用 size 来确定尺寸, 可选值为`large`, `medium`, `small`, 默认为`meduim`
 
 <Preview>
   <Story name="size 尺寸">
@@ -53,7 +53,7 @@ import { Switch } from "graceful-ui";
       template: `
         <div>
           <GSwitch v-model="value1" size="large"></GSwitch>
-          <GSwitch v-model="value2" size="default"></GSwitch>
+          <GSwitch v-model="value2"></GSwitch>
           <GSwitch v-model="value3" size="small"></GSwitch>
         </div>
       `,

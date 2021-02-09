@@ -29,7 +29,7 @@ export default {
 </template>
 
 <style lang="less" scoped>
-@import "../../styles/variables/var.less";
+@import "../../styles/index.less";
 
 @prefixCls: ~"@{css-prefix}-layout";
 
