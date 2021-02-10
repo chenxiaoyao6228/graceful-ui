@@ -45,7 +45,7 @@ import Input from "../src/components/input/input.vue";
     {{
       components: { Input },
       template: `
-            <form style="display:flex">
+            <form style="display:flex; align-items: center">
                 <Input v-model="value1" size="large" placeholder="请输入内容..." clearable class="mr10" ></Input>
                 <Input v-model="value2"  placeholder="请输入内容..." clearable class="mr10" ></Input>
                 <Input v-model="value3" size="small" placeholder="请输入内容..." clearable class="mr10"></Input>
@@ -141,7 +141,7 @@ import Input from "../src/components/input/input.vue";
       template: `
             <form style="display:flex">
                 <Input v-model="value" type="textarea" placeholder="请输入..." class="mr10"></Input>
-                <Input v-model="value" type="textarea" rows="10" placeholder="请输入..."></Input>
+                <Input v-model="value" type="textarea" :rows="10" placeholder="请输入..."></Input>
             </form>
       `,
       data() {
