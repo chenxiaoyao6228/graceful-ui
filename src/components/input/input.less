@@ -1,41 +1,72 @@
 @import '../../styles/index.less';
 
-.g-input {
-  font-size: @font-size;
-  color: @font-color;
+@prefixCls: ~'@{css-prefix}-input';
 
+.@{prefixCls} {
   &-wrapper {
     position: relative;
+    display: inline-block;
+    color: @input-font-color;
+    font-size: @input-font-size;
   }
 
-  border: 1px solid @border-color;
-  border-radius: @border-radius;
+  &-textarea {
+    line-height: @input-textarea-line-height;
+    color: inherit;
+  }
+
+  &[disabled],
+  &[readonly] {
+    border: none;
+    cursor: not-allowed;
+    background-color: @input-bg-color-disabled;
+  }
+  // g-input
+  color: inherit;
+  border-radius: @input-border-radius;
+  border: 1px solid @input-border-color;
 
   &:hover,
   &:focus,
   &:active {
-    border-color: @color-primary;
+    border-color: @input-border-color-active;
     outline: none;
   }
 
   &-large {
     padding: @input-padding-large;
     font-size: @input-font-size-large;
+
+    &.has-icon {
+      padding: @input-padding-large-with-icon;
+    }
   }
 
   &-medium {
     padding: @input-padding;
-    font-size: @input-font-size;
+    font-size: inherit;
+
+    &.has-icon {
+      padding: @input-padding-with-icon;
+    }
   }
 
   &-small {
     padding: @input-padding-small;
     font-size: @input-font-size-small;
+
+    &.has-icon {
+      padding: @input-padding-small-with-icon;
+    }
   }
 
   &-extra-small {
     padding: @input-padding-extra-small;
     font-size: @input-font-size-extra-small;
+
+    &.has-icon {
+      padding: @input-padding-extra-small-with-icon;
+    }
   }
 
   &-icon {
@@ -43,18 +74,22 @@
     right: 6px;
     top: 0;
     bottom: 0;
+    height: 100%;
     margin: auto 0;
-    color: @font-color;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &.clear {
-      display: none;
+    &:hover {
+      cursor: pointer;
     }
 
-    &-show {
-      display: block;
+    &-clear {
+      display: none;
 
-      &:hover {
-        cursor: pointer;
+      &-show {
+        display: inline;
       }
     }
   }
