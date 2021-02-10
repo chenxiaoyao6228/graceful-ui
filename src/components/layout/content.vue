@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-layout-content';
 export default {
-  name: 'Content',
+  name: 'GContent',
   computed: {
     classes() {
       return [`${prefixCls}`];

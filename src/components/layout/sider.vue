@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-layout-sider';
 export default {
-  name: 'Sider',
+  name: 'GSider',
   computed: {
     classes() {
       return [`${prefixCls}`];

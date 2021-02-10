@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-layout-header';
 export default {
-  name: 'Header',
+  name: 'GHeader',
   computed: {
     classes() {
       return [`${prefixCls}`];

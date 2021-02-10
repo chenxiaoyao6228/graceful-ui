@@ -3,7 +3,7 @@ import Vue from 'vue';
 
 const prefixCls = 'g-tab';
 export default {
-  name: 'Tab',
+  name: 'GTab',
   provide() {
     return {
       eventBus: this.eventBus,

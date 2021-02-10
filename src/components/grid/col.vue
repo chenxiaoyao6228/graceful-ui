@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-col';
 export default {
-  name: 'Col',
+  name: 'GCol',
   props: {
     span: {
       type: [String, Number],

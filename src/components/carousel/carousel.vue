@@ -52,7 +52,7 @@ import Icon from '../icon';
 
 const prefixCls = 'g-carousel';
 export default {
-  name: 'Carousel',
+  name: 'GCarousel',
   components: { Icon },
   props: {
     value: {

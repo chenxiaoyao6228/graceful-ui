@@ -1,6 +1,7 @@
 <script>
 const prefixCls = 'g-switch';
 export default {
+  name: 'GSwitch',
   model: {
     prop: 'isChecked',
     event: 'input'

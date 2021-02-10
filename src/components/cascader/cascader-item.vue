@@ -3,7 +3,7 @@ import Icon from '../icon/icon.vue';
 
 const prefixCls = 'g-cascader';
 export default {
-  name: 'CascaderItem',
+  name: 'GCascaderItem',
   components: { Icon },
   props: {
     source: {

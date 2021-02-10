@@ -15,7 +15,7 @@
 <script>
 const prefixCls = 'g-carousel';
 export default {
-  name: 'CarouselItem',
+  name: 'GCarouselItem',
   data() {
     return {
       prefixCls,

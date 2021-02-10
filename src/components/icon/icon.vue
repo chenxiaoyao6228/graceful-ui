@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-icon';
 export default {
-  name: 'Icon',
+  name: 'GIcon',
   props: {
     type: {
       type: String,

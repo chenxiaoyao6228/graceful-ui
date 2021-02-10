@@ -95,7 +95,7 @@ import Icon from '../icon/icon.vue';
 
 const prefixCls = 'g-pagination';
 export default {
-  name: 'Pagination',
+  name: 'GPagination',
   components: { Icon, Input },
   props: {
     total: { type: Number, required: true },

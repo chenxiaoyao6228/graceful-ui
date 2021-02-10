@@ -3,7 +3,7 @@ import Vue from 'vue';
 
 const prefixCls = 'g-collapse';
 export default {
-  name: 'Collpase',
+  name: 'GCollpase',
   props: {
     value: {
       type: [String, Number],
