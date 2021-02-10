@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-tab';
 export default {
-  name: 'TabItem',
+  name: 'GTabItem',
   inject: ['eventBus', 'selected'],
   props: {
     name: {

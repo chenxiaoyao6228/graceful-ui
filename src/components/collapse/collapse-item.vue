@@ -3,7 +3,7 @@ import Icon from '../icon/icon.vue';
 
 const prefixCls = 'g-collapse-item';
 export default {
-  name: 'CollpaseItem',
+  name: 'GCollpaseItem',
   components: { Icon },
   props: {
     name: {

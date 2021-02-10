@@ -2,7 +2,7 @@
 const prefixCls = 'g-layout-footer';
 
 export default {
-  name: 'Footer',
+  name: 'GFooter',
   computed: {
     classes() {
       return [`${prefixCls}`];

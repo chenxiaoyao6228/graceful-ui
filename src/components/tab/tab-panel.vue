@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-tab-panel';
 export default {
-  name: 'TabPanel',
+  name: 'GTabPanel',
   inject: ['selected'],
   props: {
     name: {

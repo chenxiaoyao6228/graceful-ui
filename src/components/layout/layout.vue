@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-layout';
 export default {
-  name: 'Layout',
+  name: 'GLayout',
   data() {
     return {
       hasSider: false

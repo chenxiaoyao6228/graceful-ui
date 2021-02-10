@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Row',
+  name: 'GRow',
   props: {
     gutter: {
       type: Number,

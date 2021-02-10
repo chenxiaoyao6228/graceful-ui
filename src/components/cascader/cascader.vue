@@ -5,7 +5,7 @@ import Icon from '../icon/icon.vue';
 
 const prefixCls = 'g-cascader';
 export default {
-  name: 'Cascader',
+  name: 'GCascader',
   components: {
     CascaderItem, Icon
   },

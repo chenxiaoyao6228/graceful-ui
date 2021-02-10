@@ -4,7 +4,7 @@ import Icon from '../icon';
 
 const prefix = 'g-button';
 export default {
-  name: 'Button',
+  name: 'GButton',
   components: {
     Icon
   },

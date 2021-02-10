@@ -1,7 +1,7 @@
 <script>
 const prefixCls = 'g-tab-head';
 export default {
-  name: 'TabHead',
+  name: 'GTabHead',
   inject: ['eventBus'],
   data() {
     return {

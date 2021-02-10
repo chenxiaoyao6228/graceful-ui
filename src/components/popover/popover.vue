@@ -4,7 +4,7 @@ import oneOf from '../../utils/tools';
 
 const prefixCls = 'g-popover';
 export default {
-  name: 'Popover',
+  name: 'GPopover',
   props: {
     trigger: {
       type: String,
