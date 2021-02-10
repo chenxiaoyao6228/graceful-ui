@@ -4,6 +4,12 @@ import Input from "../src/components/input/input.vue";
 
 <Meta title="数据录入|Input 输入框" component={Input} />
 
+<style>{`
+  .mr10{
+    margin-right: 10px;
+  }  
+`}</style>
+
 ## Input输入框
 
 基本表单组件
@@ -32,7 +38,7 @@ import Input from "../src/components/input/input.vue";
 
 ### 尺寸
 
-可以通过`size`参数来设置输入框的大小, 可选参数为`large`,`medium`,`small`, `extral-small`, 默认为 `medium`
+可以通过`size`参数来设置输入框的大小, 可选参数为`large`,`medium`,`small`, `extra-small`, 默认为 `medium`
 
 <Preview>
   <Story name="size 尺寸">
@@ -40,10 +46,10 @@ import Input from "../src/components/input/input.vue";
       components: { Input },
       template: `
             <form style="display:flex">
-                <Input v-model="value1" size="large" placeholder="请输入内容..." class="mr10"></Input>
-                <Input v-model="value2"  placeholder="请输入内容..." class="mr10"></Input>
-                <Input v-model="value3" size="small" placeholder="请输入内容..." class="mr10"></Input>
-                <Input v-model="value4" size="extra-small" placeholder="请输入内容..." ></Input>
+                <Input v-model="value1" size="large" placeholder="请输入内容..." clearable class="mr10" ></Input>
+                <Input v-model="value2"  placeholder="请输入内容..." clearable class="mr10" ></Input>
+                <Input v-model="value3" size="small" placeholder="请输入内容..." clearable class="mr10"></Input>
+                <Input v-model="value4" size="extra-small" placeholder="请输入内容..." clearable></Input>
             </form>
       `,
       data() {
@@ -80,6 +86,29 @@ import Input from "../src/components/input/input.vue";
   </Story>
 </Preview>
 
+### 禁用
+
+使用`disabled`或者`readonly`开启禁用或只读状态
+<Preview>
+  <Story name="禁用">
+    {{
+      components: { Input },
+      template: `
+            <form style="display:flex">
+                <Input v-model="value" placeholder="请输入内容..." disabled class="mr10"></Input>
+                <Input v-model="value" placeholder="请输入内容..." readonly></Input>
+            </form>
+      `,
+      data() {
+        return {
+          value: "",
+        };
+      },
+    }}
+  </Story>
+</Preview> 
+
+
 ### 密码框
 
 在`type="password"`的情况下, 可以开启`show-password`可以切换密码的显示和隐藏
@@ -90,7 +119,29 @@ import Input from "../src/components/input/input.vue";
       components: { Input },
       template: `
             <form style="display:flex">
-                <Input v-model="value" type="password" show-password placeholder="请输入银行卡密码..."></Input>
+                <Input v-model="value" type="password" show-password placeholder="请输入密码..."></Input>
+            </form>
+      `,
+      data() {
+        return {
+          value: "",
+        };
+      },
+    }}
+  </Story>
+</Preview>
+
+### 文本域
+
+可通过设置属性`type`为`textarea`来使用文本域，用于多行输入。通过设置属性 rows 控制文本域默认显示的行数。
+<Preview>
+  <Story name="文本域">
+    {{
+      components: { Input },
+      template: `
+            <form style="display:flex">
+                <Input v-model="value" type="textarea" placeholder="请输入..." class="mr10"></Input>
+                <Input v-model="value" type="textarea" rows="10" placeholder="请输入..."></Input>
             </form>
       `,
       data() {

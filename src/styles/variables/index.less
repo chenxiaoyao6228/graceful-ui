@@ -3,7 +3,7 @@
 // global config
 @css-prefix: g;
 
-//-------- constants --------
+//----------------- constants -----------------
 
 // == colors ==
 
@@ -56,8 +56,11 @@
 // border
 @border-color: #999;
 @border-color-hover: #999;
-@border-radius: 6px;
 @border-radius-round: 20px;
+// allow user to change
+@border-radius: 6px;
+@border-radius-large: @border-radius;
+@border-radius-small: @border-radius;
 
 // padding
 @padding-vertical-large: 10px;
@@ -77,9 +80,9 @@
 @animation-time: 0.5s;
 @animation-type: cubic-bezier(0.08, 0.82, 0.17, 1);
 
-// -------- components -----------
+// ----------------- components --------------------
 
-// button
+// ----------------- button start ------------------
 @button-font-size: @font-size;
 @button-font-size-large: @font-size-large;
 @button-font-size-small: @font-size-small;
@@ -98,20 +101,39 @@
 
 @button-border-radius: @border-radius;
 
-// input
+// ----------------- button end ------------------
+
+// ----------------- button start ------------------
 @input-font-size: @font-size;
 @input-font-size-large: @font-size-large;
 @input-font-size-small: @font-size-small;
 @input-font-size-extra-small: @font-size-extra-small;
 
 @input-padding-large: @padding-vertical-large @padding-horizontal-large;
+@input-padding-large-with-icon: @padding-vertical-large @padding-horizontal-large + @font-size-large / 2 @padding-vertical-large @padding-horizontal-large;
 @input-padding: @padding-vertical @padding-horizontal;
+@input-padding-with-icon: @padding-vertical-large @padding-horizontal-large + @font-size / 2 @padding-vertical @padding-horizontal;
 @input-padding-small: @padding-vertical-small @padding-horizontal-small;
+@input-padding-small-with-icon: @padding-vertical-small @padding-horizontal-small + @font-size-small / 2 @padding-vertical-small @padding-horizontal-small;
 @input-padding-extra-small: @padding-vertical-extra-small @padding-horizontal-extra-small;
+@input-padding-extra-small-with-icon: @padding-vertical-extra-small  @padding-horizontal-extra-small + @font-size-extra-small / 2 @padding-vertical-extra-small @padding-horizontal-extra-small;
 
 @input-font-color: @font-color;
 
-// switch
+@input-border-color: @border-color;
+@input-border-color-active: @color-primary;
+@input-border-radius: @border-radius;
+@input-border-radius-large: @border-radius-large;
+@input-border-radius-small: @border-radius-small;
+
+@input-bg-color: @B000;
+@input-bg-color-disabled: @B200;
+
+@input-textarea-line-height: @line-height-secondary;
+
+// ----------------- input end ------------------
+
+// ----------------- switch start ------------------
 @switch-height: 22px;
 @switch-width: 44px;
 @switch-inner-radius: 20px;
@@ -131,30 +153,47 @@
 @switch-color-checked: @color-primary;
 @switch-color-disabled: @color-disabled;
 
-// grid
+// ----------------- switch end ------------------
+
+// ----------------- grid start ------------------
+
 @max-col-num: 24;
 
-// alert
+// ----------------- grid end ------------------
+
+
+
+// ----------------- alert start ------------------
 @alert-padding: @padding-vertical @padding-horizontal;
 @alert-info-color: @color-primary;
 @alert-error-color: @color-error;
 @alert-warning-color: @color-warning;
 @alert-success-color: @color-success;
 
-// tab
+// ----------------- alert end ------------------
+
+// ----------------- tab start ------------------
+
 @tab-active-color: @color-primary;
 @tab-disabled-color: @color-disabled;
 
-// collapse
+// ----------------- tab end ------------------
+
+
+// ----------------- collapse start ------------------
+
 @collapse-title-bg: #f7f7f7;
 @collapse-title-color: #666;
 @collapse-content-bg: #fff;
 @collapse-content-color: #515a6e;
 @collapse-border-color: @border-color;
 
+// ----------------- collapse end ------------------
 
-// carousel
+// ----------------- carousel start ------------------
 @carousel-dot-size: 7px;
 @carousel-dot-bg: #bbbbbe;
 @carousel-dot-bg-hover: #fff;
 @carousel-dot-bg-active: @color-primary;
+
+// ----------------- carousel end ------------------
