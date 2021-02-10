@@ -5,10 +5,6 @@ const prefixCls = 'g-input';
 export default {
   name: 'GInput',
   components: { Icon },
-  model: {
-    prop: 'value',
-    event: 'input'
-  },
   props: {
     value: {
       type: String,
@@ -18,7 +14,7 @@ export default {
       type: String,
       default: 'text',
       validator(value) {
-        return ['text', 'password'].indexOf(value) > -1;
+        return ['text', 'password', 'textarea'].indexOf(value) > -1;
       }
     },
     placeholder: {
@@ -116,7 +112,7 @@ export default {
     <input
       v-show="passwordToTextMode || type === 'text'"
       ref="input-ref"
-      :type="text"
+      type="text"
       :placeholder="placeholder"
       :value="value"
       :class="inputClasses"
