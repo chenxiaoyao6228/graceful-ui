@@ -85,7 +85,7 @@ export default {
       v-if="rightItem"
       :class="[`${prefixCls}-item-right`]"
     >
-      <CascaderItem
+      <GCascaderItem
         :source="rightItem"
         :selected="selected"
         :level="level+1"
