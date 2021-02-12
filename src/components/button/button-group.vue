@@ -1,8 +1,11 @@
 <script>
+const prefixCls = 'g-button';
 export default {
   name: 'GButtonGroup',
   data() {
-    return {};
+    return {
+      prefixCls
+    };
   },
   mounted() {
     for (let i = 0, len = this.$el.children; i < len; i++) {
@@ -18,7 +21,7 @@ export default {
 </script>
 
 <template>
-  <div :class="[`${prefix}-group`]">
+  <div :class="[`${prefixCls}-group`]">
     <slot />
   </div>
 </template>
