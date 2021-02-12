@@ -7,7 +7,7 @@ export default {
   components: { Icon },
   props: {
     value: {
-      type: String,
+      type: [String, Number],
       default: ''
     },
     type: {
@@ -47,6 +47,10 @@ export default {
     rows: {
       type: Number,
       default: 2
+    },
+    number: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -79,7 +83,6 @@ export default {
       this.$emit('input', '');
     },
     togglePasswordVisible() {
-      // 明文状态
       this.passwordToTextMode = !this.passwordToTextMode;
       this.passwordVisible = !this.passwordVisible;
       if (this.passwordToTextMode) {
@@ -91,9 +94,6 @@ export default {
           this.$refs['input-pass-ref'].focus();
         });
       }
-    },
-    handleEnter(e) {
-      this.$emit('on-search', e.target.value);
     }
   }
 };
@@ -118,27 +118,28 @@ export default {
       :class="inputClasses"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('input', $event.target.value)"
-      @change="$emit('change', $event.target.value)"
-      @focus="$emit('focus', $event.target.value)"
-      @blur="$emit('blur', $event.target.value)"
-      @keyup.enter="handleEnter"
+      @input="$emit('input',number ? Number($event.target.value): event.target.value)"
+      @change="$emit('change', number ? Number($event.target.value): event.target.value)"
+      @focus="$emit('focus', number ? Number($event.target.value): event.target.value)"
+      @blur="$emit('blur', number ? Number($event.target.value): event.target.value)"
+      @keyup.enter="$emit('search', number ? Number($event.target.value): event.target.value)"
     >
     <!-- 密码切换 -->
     <input
       v-show="type === 'password' && !passwordToTextMode"
       ref="input-pass-ref"
       type="password"
+      size="1"
       :placeholder="placeholder"
       :value="value"
       :class="inputClasses"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('input', $event.target.value)"
-      @change="$emit('change', $event.target.value)"
-      @focus="$emit('focus', $event.target.value)"
-      @blur="$emit('blur', $event.target.value)"
-      @keyup.enter="handleEnter"
+      @input="$emit('input',number ? Number($event.target.value): event.target.value)"
+      @change="$emit('change', number ? Number($event.target.value): event.target.value)"
+      @focus="$emit('focus', number ? Number($event.target.value): event.target.value)"
+      @blur="$emit('blur', number ? Number($event.target.value): event.target.value)"
+      @keyup.enter="$emit('search', number ? Number($event.target.value): event.target.value)"
     >
     <div
       :class="[

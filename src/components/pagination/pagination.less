@@ -2,6 +2,7 @@
 @prefixCls: ~'@{css-prefix}-pagination';
 
 .@{prefixCls} {
+  line-height: @line-height-primary;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -15,9 +16,9 @@
   }
 
   &-item {
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
+    min-width: @pagination-item-width;
+    height: @pagination-item-height;
+    line-height: @pagination-item-height;
     text-align: center;
     font-size: @font-size;
     color: @font-color;
@@ -37,7 +38,7 @@
 
   &-jump-prev,
   &-jump-next {
-    font-size: 16px;
+    font-size: @font-size;
     border: none;
   }
 
@@ -62,14 +63,100 @@
   }
 
   &-elevator {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     margin-left: 10px;
+    display: inline-block;
 
-    &-input {
-      flex: 1;
-      margin: 0 10px;
+    & > input {
+      display: inline-block;
+      height: @pagination-item-height;
+      line-height: @pagination-item-height;
+      width: @pagination-item-width;
+      padding: 0  @padding-vertical;
+      outline: none;
+      color: inherit;
+      border-radius: @input-border-radius;
+      border: 1px solid @input-border-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: @input-border-color-active;
+        outline: none;
+      }
     }
   }
+
+  &-sizer {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    margin-left: 10px;
+    width: @pagination-sizer-width;
+    height: @pagination-sizer-height;
+    line-height: @pagination-sizer-height;
+    border-radius: @pagination-border-radius;
+    border: 1px solid @border-color;
+
+    &:hover {
+      border-color: @color-primary;
+      cursor: pointer;
+    }
+
+    &.active {
+      border-color: @color-primary;
+    }
+
+    &-icon {
+      font-size: 20px;
+      position: absolute;
+      right: 6px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      transition: all 0.3s;
+
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-dropdown {
+      position: absolute;
+      top: (@pagination-item-height+2px);
+      left: 0;
+      box-shadow: @text-shadow;
+      border: 1px solid @border-color;
+      border-radius: @border-radius;
+
+      &-item {
+        width: @pagination-sizer-width;
+        height: @pagination-sizer-height;
+        line-height: @pagination-sizer-height;
+        border-radius: @pagination-border-radius;
+        padding: 0 10px;
+        text-align: center;
+
+        &.active {
+          color: @color-primary;
+        }
+      }
+    }
+  }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: 0.2s ease-in-out;
+}
+
+.slide-enter-to,
+.slide-leave {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.slide-enter,
+.slide-leave-to {
+  overflow: hidden;
+  max-height: 0;
 }

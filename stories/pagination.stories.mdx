@@ -25,17 +25,17 @@ import { Pagination } from 'graceful-ui';
       data(){
           return { 
               current: 1,
-              total: 10
+              total: 100
           }
       }
     }}
   </Story>
 </Preview>
 
-### 每页数量
-
+### 快速跳转
+使用`show-elevator`参数,实现快速跳转
 <Preview>
-  <Story name="每页数量">
+  <Story name="快速跳转">
     {{
       components: { Pagination },
       template: `
@@ -46,8 +46,36 @@ import { Pagination } from 'graceful-ui';
       data(){
           return { 
               current: 1,
-              total: 10
+              total: 100
           }
+      }
+    }}
+  </Story>
+</Preview>
+
+### 每页数量
+使用`show-sizer`显示页数切换选项
+<Preview>
+  <Story name="每页数量">
+    {{
+      components: { Pagination },
+      template: `
+        <div style="height: 200px;">
+            <Pagination :current.sync="current" :total="total" show-sizer @on-page-size-change="handlePageSizeChange"></Pagination>
+        </div>
+      `,
+      data(){
+          return { 
+              current: 1,
+              total: 100
+          }
+      },
+      methods: {
+        handlePageSizeChange(pageSize){
+          this.$Alert({
+            content: `pageSize变为: ${pageSize}`
+          })
+        }
       }
     }}
   </Story>
