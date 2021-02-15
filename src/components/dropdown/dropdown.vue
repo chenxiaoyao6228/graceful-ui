@@ -1,33 +1,42 @@
 <script>
-const prefixCls = 'g-dropdown';
+import EventEmitter from '../../mixins/emitter';
+import clickOutside from '../../directives/clickoutside';
 
+const prefixCls = 'g-dropdown';
 export default {
   name: 'GDropdown',
-  props: {
-    visible: {
-      type: Boolean,
-      default: false
-    }
+  directives: { clickOutside },
+  mixins: [EventEmitter],
+  provide() {
+    return {
+      sharedState: this.sharedState
+    };
   },
   data() {
     return {
-      prefixCls
+      prefixCls,
+      sharedState: {
+        visible: false
+      }
     };
+  },
+  methods: {
+    toggleVisible() {
+      this.sharedState.visible = !this.sharedState.visible;
+    }
   }
 };
 </script>
 <template>
-  <ul :class="[`${prefixCls}`]">
-    <template>
+  <ul
+    v-click-outside="toggleVisible"
+    :class="[`${prefixCls}`]"
+    @click="toggleVisible"
+  >
+    <div :class="[`${prefixCls}-trigger`]">
       <slot />
-    </template>
-    <div
-      v-if="false"
-    >
-      <slot
-        name="list"
-      />
     </div>
+    <slot name="list" />
   </ul>
 </template>
 <style lang="less" scoped>

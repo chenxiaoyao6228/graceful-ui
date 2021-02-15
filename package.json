@@ -34,7 +34,8 @@
     "vue-template-compiler": ">=2.6.0"
   },
   "dependencies": {
-    "@ant-design/icons-vue": "^4.0.4"
+    "@ant-design/icons-vue": "^4.0.4",
+    "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

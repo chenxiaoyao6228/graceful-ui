@@ -4,7 +4,7 @@ function broadcast(componentName, eventName, params) {
     const { name } = child.$options;
 
     if (name === componentName) {
-      child.$emit.apply(child, ...[eventName].concat(params));
+      child.$emit(...[eventName].concat(params));
     } else {
       // todo 如果 params 是空数组，接收到的会是 undefined
       broadcast.apply(child, [componentName, eventName].concat([params]));
@@ -24,8 +24,9 @@ export default {
           name = parent.$options.name;
         }
       }
+      // 由接收到的父元素代理事件触发
       if (parent) {
-        parent.$emit.apply(parent, ...[eventName].concat(params));
+        parent.$emit(...[eventName].concat(params));
       }
     },
     broadcast(componentName, eventName, params) {
