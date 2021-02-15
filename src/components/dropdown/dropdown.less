@@ -2,7 +2,42 @@
 @prefixCls: ~'@{css-prefix}-dropdown';
 
 .@{prefixCls} {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: @font-size;
+
+  &-trigger {
+    padding: @dropdown-trigger-padding;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: @border-radius;
+    background-color: @dropdown-trigger-bg-color;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-menu {
+    position: absolute;
+    top: @dropdown-trigger-height;
+    left: 0;
+    box-shadow: @dropdown-box-shadow;
+    border-radius: @border-radius;
+  }
+
   &-item {
+    display: inline-block;
+    padding: @dropdown-item-padding;
     list-style: none;
+    white-space: nowrap;
+
+    &:hover {
+      cursor: pointer;
+      background-color: @dropdown-item-bg-color-hover;
+    }
   }
 }

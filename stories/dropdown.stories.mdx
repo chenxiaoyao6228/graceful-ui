@@ -11,7 +11,7 @@ import DropdownItem from '../src/components/dropdown/dropdown-item.vue';
 ### 引入组件
 
 ```js
-import { Dropdown } from 'graceful-ui';
+import { Dropdown, DropdownMenu, DropdownItem } from 'graceful-ui';
 ```
 
 ### 基本使用
@@ -21,13 +21,15 @@ import { Dropdown } from 'graceful-ui';
   <Story name="基本使用">
     {{
       template: `
-        <div>
-          </a>
-          <Dropdown>
-            <a href="javascript:void(0)">
-              下拉菜单<Icon type="arrow-down"></Icon>
-            </a>
-            <DropdownMenu name="list">
+        <div style="height: 200px;">
+          <Dropdown
+            @on-click="handleClick"
+          >
+            <span>
+              下拉菜单
+              <Icon type="arrow-down"></Icon>
+            </span>
+            <DropdownMenu slot="list">
               <DropdownItem>洛杉矶湖人</DropdownItem>
               <DropdownItem>纽约尼克斯</DropdownItem>
               <DropdownItem>费城76人</DropdownItem>
@@ -39,7 +41,13 @@ import { Dropdown } from 'graceful-ui';
       components: {
         Dropdown,DropdownMenu, DropdownItem, Icon
       },
-      methods: {},
+      methods: {
+        handleClick(options){
+          this.$Alert({
+            content: `被点击的item名称为: ${JSON.stringify(options)}`
+          })
+        }
+      },
     }}
   </Story>
 </Preview>
