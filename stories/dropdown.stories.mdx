@@ -1,0 +1,58 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Icon from '../src/components/icon/icon.vue';
+import Dropdown from '../src/components/dropdown/dropdown.vue';
+import DropdownMenu from '../src/components/dropdown/dropdown-menu.vue';
+import DropdownItem from '../src/components/dropdown/dropdown-item.vue';
+
+<Meta title="导航|Dropdown 下拉菜单" component={Dropdown} />
+
+# Dropdown 下拉组件
+
+### 引入组件
+
+```js
+import { Dropdown } from 'graceful-ui';
+```
+
+### 基本使用
+配合`DropdownMenu`和`DropdownItem`两个组件来使用，并且给列表设置具名`slot`为list。
+
+<Preview>
+  <Story name="基本使用">
+    {{
+      template: `
+        <div>
+          </a>
+          <Dropdown>
+            <a href="javascript:void(0)">
+              下拉菜单<Icon type="arrow-down"></Icon>
+            </a>
+            <DropdownMenu name="list">
+              <DropdownItem>洛杉矶湖人</DropdownItem>
+              <DropdownItem>纽约尼克斯</DropdownItem>
+              <DropdownItem>费城76人</DropdownItem>
+              <DropdownItem>芝加哥公牛</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </div>
+      `,
+      components: {
+        Dropdown,DropdownMenu, DropdownItem, Icon
+      },
+      methods: {},
+    }}
+  </Story>
+</Preview>
+
+## API
+
+Dropdown
+<Props of={Dropdown} />
+
+DropdownMenu
+
+<Props of={DropdownMenu} />
+
+DropdownItem
+
+<Props of={DropdownItem} />
