@@ -34,7 +34,7 @@
     "vue-template-compiler": ">=2.6.0"
   },
   "dependencies": {
-    "@ant-design/icons-vue": "^4.0.4",
+    "normalize-wheel": "^1.0.1",
     "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
@@ -62,11 +62,13 @@
     "babel-jest": "^25.3.0",
     "babel-loader": "^8.1.0",
     "babel-preset-vue": "^2.0.2",
+    "bootstrap-vue": "^2.21.2",
     "commitizen": "^4.2.3",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.2",
     "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^3.3.0",
+    "element-ui": "^2.15.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.11.0",

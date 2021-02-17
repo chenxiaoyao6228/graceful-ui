@@ -1,0 +1,57 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Sticky from '../src/components/sticky/sticky.vue';
+
+<Meta title="其他|Sticky 吸顶" component={Sticky} />
+
+# Sticky 吸顶
+
+滚动吸顶效果
+
+### 引入组件
+
+```js
+import { Sticky } from 'graceful-ui';
+```
+
+<style>{`
+  .demo{
+    padding: 0 300px;
+  }  
+  .header,.footer{
+    height: 600px;
+    line-height: 600px;
+    text-align: center;
+  }
+  .sticky-content{
+    text-align: center;
+    border: 1px solid red;
+  }
+
+`}</style>
+
+### 基本使用
+使用`distance`参数来设置吸顶元素距离顶部的触发距离, `distance`默认为`0`
+<Preview>
+  <Story name="基本使用">
+    {{
+      components: { Sticky },
+      template: `
+        <div class="demo">
+          <header class="header">
+            这里是顶部内容
+          </header>
+          <Sticky distance="100">
+            <div class="sticky-content">吸顶元素, distance为100时触发</div>
+          </Sticky>
+          <Footer class="footer">
+            这里是底部内容
+          </Footer>
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Sticky} />
