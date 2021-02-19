@@ -1,0 +1,70 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Uploader from '../src/components/uploader/uploader.vue';
+import Button from '../src/components/button/button.vue';
+
+<Meta title="数据录入|Uploader 上传" component={Uploader} />
+
+# Uploader 上传
+
+### 引入组件
+
+```js
+import { Uploader } from 'graceful-ui';
+```
+
+### 基本使用
+
+<Preview>
+  <Story name="基本使用">
+    {{
+      components: { Uploader, Button},
+      template: `
+        <div>
+          <Uploader action="https://jsonplaceholder.typicode.com/posts/">
+            <Button icon="upload">上传文件</Button>
+          </Uploader>
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+### 带缩略图
+
+设置`listType`为`picture`开启缩略图模式
+
+<Preview>
+  <Story name="带缩略图">
+    {{
+      components: { Uploader, Button},
+      template: `
+        <div>
+          <Uploader action="https://jsonplaceholder.typicode.com/posts/" listType="picture">
+            <Button icon="upload">上传文件</Button>
+          </Uploader>
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+### 禁用
+
+<Preview>
+  <Story name="禁用">
+    {{
+      components: { Uploader, Button},
+      template: `
+        <div>
+          <Uploader action="https://jsonplaceholder.typicode.com/posts/" disabled>
+            <Button icon="upload">上传文件</Button>
+          </Uploader>
+        </div>
+      `,
+    }}
+  </Story>
+</Preview>
+
+## API
+
+<Props of={Uploader} />
