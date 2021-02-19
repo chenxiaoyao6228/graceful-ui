@@ -118,28 +118,27 @@ export default {
       :class="inputClasses"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('input',number ? Number($event.target.value): event.target.value)"
-      @change="$emit('change', number ? Number($event.target.value): event.target.value)"
-      @focus="$emit('focus', number ? Number($event.target.value): event.target.value)"
-      @blur="$emit('blur', number ? Number($event.target.value): event.target.value)"
-      @keyup.enter="$emit('search', number ? Number($event.target.value): event.target.value)"
+      @input="$emit('input',number ? Number($event.target.value): $event.target.value)"
+      @change="$emit('change', number ? Number($event.target.value): $event.target.value)"
+      @focus="$emit('focus', number ? Number($event.target.value): $event.target.value)"
+      @blur="$emit('blur', number ? Number($event.target.value): $event.target.value)"
+      @keyup.enter="$emit('search', number ? Number($event.target.value): $event.target.value)"
     >
     <!-- 密码切换 -->
     <input
       v-show="type === 'password' && !passwordToTextMode"
       ref="input-pass-ref"
       type="password"
-      size="1"
       :placeholder="placeholder"
       :value="value"
       :class="inputClasses"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('input',number ? Number($event.target.value): event.target.value)"
-      @change="$emit('change', number ? Number($event.target.value): event.target.value)"
-      @focus="$emit('focus', number ? Number($event.target.value): event.target.value)"
-      @blur="$emit('blur', number ? Number($event.target.value): event.target.value)"
-      @keyup.enter="$emit('search', number ? Number($event.target.value): event.target.value)"
+      @input="$emit('input',number ? Number($event.target.value): $event.target.value)"
+      @change="$emit('change', number ? Number($event.target.value): $event.target.value)"
+      @focus="$emit('focus', number ? Number($event.target.value): $event.target.value)"
+      @blur="$emit('blur', number ? Number($event.target.value): $event.target.value)"
+      @keyup.enter="$emit('search', number ? Number($event.target.value): $event.target.value)"
     >
     <div
       :class="[

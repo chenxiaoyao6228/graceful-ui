@@ -3,7 +3,7 @@
 exports[`ButtonGroup match snapshots 1`] = `
 <div>
   <div
-    class="undefined-group"
+    class="g-button-group"
     data-testid="button-group"
   >
     <button

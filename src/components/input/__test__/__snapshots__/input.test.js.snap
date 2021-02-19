@@ -7,20 +7,33 @@ exports[`Input snapshots 1`] = `
       class="g-input-wrapper"
       data-testid="input"
     >
+      <!---->
+       
       <input
-        class="g-input g-input-medium .has-icon"
+        class="g-input g-input-medium has-icon"
         placeholder="请输入内容..."
         type="text"
       />
        
-      <svg
-        class="g-input-icon clear g-icon"
+      <input
+        class="g-input g-input-medium has-icon"
+        placeholder="请输入内容..."
+        style="display: none;"
+        type="password"
+      />
+       
+      <div
+        class="g-input-icon g-input-icon-clear"
       >
-        <use
-          aria-hidden="true"
-          xlink:href="#icon-cross"
-        />
-      </svg>
+        <svg
+          class="g-icon"
+        >
+          <use
+            aria-hidden="true"
+            xlink:href="#icon-cross"
+          />
+        </svg>
+      </div>
        
       <!---->
     </div>
