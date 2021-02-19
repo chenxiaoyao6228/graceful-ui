@@ -1,0 +1,183 @@
+@import '../../styles/index.less';
+@prefixCls: ~'@{css-prefix}-uploader';
+
+.@{prefixCls} {
+  font-size: @uploader-font-size;
+  color: @uploader-font-color;
+
+  &-trigger {
+    display: inline-block;
+
+    &-btn {
+      &:hover {
+        background-color: @uploader-bg-hover;
+        cursor: pointer;
+      }
+    }
+
+    &-disabled {
+      opacity: 0.3;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &-file-item {
+    position: relative;
+    margin-top: 10px;
+
+    &-icon-clear {
+      position: absolute;
+      font-size: 16px;
+    }
+
+    &-name {
+      width: 100%;
+      flex: 1 1 auto;
+      font-size: inherit;
+      .text-ellipsis();
+    }
+  }
+
+  &-text {
+    .@{prefixCls} {
+      &-file-item {
+        padding: 8px 30px 8px 36px;
+
+        &-disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
+
+        &:hover {
+          background-color: @uploader-bg-hover;
+          cursor: pointer;
+        }
+
+        &-icon {
+          &-wrapper {
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            width: 20px;
+            font-size: 16px;
+            text-align: center;
+          }
+        }
+
+        &-panel {
+          position: relative;
+        }
+
+        &-content {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &-size {
+          flex: 0 0 auto;
+        }
+
+        &-icon-clear {
+          position: absolute;
+          top: 8px;
+          right: 12px;
+          font-size: 16px;
+        }
+
+        &-error {
+          .@{prefixCls}-file-item {
+            &-name {
+              color: @uploader-color-error;
+            }
+
+            &-size {
+              color: @uploader-color-error;
+            }
+
+            &-error-tip {
+              flex: 0 0 auto;
+              color: @uploader-color-error;
+              font-size: @uploader-font-size;
+            }
+
+            &-icon-retry {
+              color: @font-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-picture {
+    .@{prefixCls} {
+      &-file-item {
+        height: 50px;
+        padding: 5px 30px 5px 65px;
+        border-radius: @border-radius;
+        box-shadow: @default-box-shadow;
+
+        &:hover {
+          cursor: pointer;
+          background-color: @uploader-bg-hover;
+        }
+
+        &-disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
+
+        &-icon {
+          &-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: @uploader-picture-width;
+            height: @uploader-picture-width;
+          }
+
+          &-img {
+            width: 100%;
+            height: 100%;
+            background-color: @uploader-bg-hover;
+            background-size: cover;
+          }
+
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          font-size: 16px;
+
+          &.loading {
+            animation: spin 1s infinite;
+          }
+        }
+
+        &-name {
+          height: 20px;
+        }
+
+        &-size {
+          height: 20px;
+        }
+
+        &-icon-clear {
+          top: 19px;
+          right: 12px;
+        }
+      }
+    }
+  }
+}

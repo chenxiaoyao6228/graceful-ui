@@ -75,6 +75,12 @@ export default {
         this.loading ? 'loading' : ''
       ];
     }
+  },
+  methods: {
+    handleClick(e) {
+      e.preventDefault();
+      this.$emit('click');
+    }
   }
 };
 </script>
@@ -82,7 +88,7 @@ export default {
 <template>
   <button
     :class="classes"
-    @click="$emit('click')"
+    @click="handleClick"
   >
     <Icon
       v-if="icon && !loading"
