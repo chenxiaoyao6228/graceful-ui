@@ -1,5 +1,6 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import Sticky from '../src/components/sticky/sticky.vue';
+import Button from '../src/components/button/button.vue'
 
 <Meta title="其他|Sticky 吸顶" component={Sticky} />
 
@@ -22,10 +23,6 @@ import { Sticky } from 'graceful-ui';
     line-height: 600px;
     text-align: center;
   }
-  .sticky-content{
-    text-align: center;
-    border: 1px solid red;
-  }
 
 `}</style>
 
@@ -34,14 +31,14 @@ import { Sticky } from 'graceful-ui';
 <Preview>
   <Story name="基本使用">
     {{
-      components: { Sticky },
+      components: { Sticky , Button},
       template: `
         <div class="demo">
           <header class="header">
             这里是顶部内容
           </header>
           <Sticky distance="100">
-            <div class="sticky-content">吸顶元素, distance为100时触发</div>
+            <Button type="primary" long>吸顶元素, distance为100时触发</Button>
           </Sticky>
           <Footer class="footer">
             这里是底部内容
