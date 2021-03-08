@@ -2,7 +2,7 @@
 import oneOf from '../../utils/tools';
 import Icon from '../icon';
 
-const prefix = 'g-button';
+const prefixCls = 'g-button';
 export default {
   name: 'GButton',
   components: {
@@ -60,17 +60,19 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      prefixCls
+    };
   },
   computed: {
     classes() {
       return [
-        `${prefix}`,
-        `${prefix}-${this.type}`,
-        `${prefix}-size-${this.size}`,
-        this.disabled ? `${prefix}-disabled` : '',
-        this.long ? `${prefix}-long` : '',
-        this.round ? `${prefix}-round` : '',
+        `${prefixCls}`,
+        `${prefixCls}-${this.type}`,
+        `${prefixCls}-size-${this.size}`,
+        this.disabled ? `${prefixCls}-disabled` : '',
+        this.long ? `${prefixCls}-long` : '',
+        this.round ? `${prefixCls}-round` : '',
         this.iconPosition ? `icon-${this.iconPosition}` : '',
         this.loading ? 'loading' : ''
       ];
@@ -100,12 +102,12 @@ export default {
       class="icon loading"
       type="loading"
     />
-    <div class="content">
+    <div :class="[`${prefixCls}-content`]">
       <slot />
     </div>
   </button>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 @import './button.less';
 </style>

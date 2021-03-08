@@ -1,11 +1,11 @@
 <script>
-import { SlideYUpTransition } from 'vue2-transitions';
+import SlideDownTransition from '../transition/slide-down-transition.vue';
 
 const prefixCls = 'g-dropdown';
 export default {
   name: 'GDropdownMenu',
   components: {
-    SlideYUpTransition
+    SlideDownTransition
   },
   inject: ['sharedState'],
   props: {},
@@ -22,14 +22,14 @@ export default {
 };
 </script>
 <template>
-  <SlideYUpTransition>
+  <SlideDownTransition>
     <div
       v-show="visible"
       :class="[`${prefixCls}-menu`]"
     >
       <slot />
     </div>
-  </SlideYUpTransition>
+  </SlideDownTransition>
 </template>
 <style lang="less" scoped>
 @import './dropdown.less';

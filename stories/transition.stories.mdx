@@ -1,0 +1,119 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Button from '../src/components/button/button.vue';
+import FadeTransition from '../src/components/transition/fade-transition.vue';
+import SlideDownTransition from '../src/components/transition/slide-down-transition.vue';
+import SlideUpTransition from '../src/components/transition/slide-up-transition.vue';
+
+import "./styles/transition.less";
+
+
+<Meta title="其他| Transition 动画" component={FadeTransition} />
+
+# Transition 动画
+
+`graceful-ui`内置了常用的简单动画可供使用, 支持`transition`和`transition-group`, 使用`group`参数指定`transition-group`模式
+
+
+```js
+import { FadeTransition } from 'graceful-ui';
+```
+
+### slidedown 下拉
+
+<Preview>
+  <Story name="slide-down 下拉">
+    {{
+      components: { Button, SlideDownTransition, SlideUpTransition },
+      template: `
+        <div class="demo slide-down">
+            <Button @click="visible=!visible">点击切换</Button>
+            <SlideDownTransition>
+              <div v-if="visible" class="content">
+                SlideDownTransition
+              </div>
+            </SlideDownTransition>
+        </div>
+      `,
+      data(){
+        return { 
+          visible: false,
+        }
+      }
+    }}
+  </Story>
+</Preview>
+
+
+### fade 淡入淡出
+
+<Preview>
+  <Story name="fade 淡入淡出">
+    {{
+      components: { Button,FadeTransition},
+      template: `
+        <div class="demo fade">
+            <Button @click="visible=!visible">点击切换</Button>
+           <FadeTransition>
+            <div key="blue" v-if="visible" class="content">
+              FadeTransition
+            </div>
+            </FadeTransition>
+        </div>
+      `,
+      data(){
+        return { 
+          visible: false,
+        }
+      }
+    }}
+  </Story>
+</Preview>
+
+`transition-group`支持
+
+<Preview>
+  <Story name="fade transitiongroup">
+    {{
+      components: { Button,FadeTransition },
+      template: `
+        <div class="fade">
+            <Button @click="add">点击添加元素</Button> 
+            <p>tip: 点击元素移除 </p>
+            <fade-transition group :duration="300">
+              <div class="box" 
+                  v-for="(item, index) in list" 
+                  @click="remove(index)"
+                  :key="item"
+              >
+              </div>
+            </fade-transition>
+        </div>
+      `,
+      data(){
+        return { 
+          list: [0],
+          visible: false,
+        }
+      },
+      methods: { 
+        add(){
+          this.list.push(this.list.length+1)
+        },
+        remove(index){
+          this.list.splice(index, 1)
+        }
+      }
+    }}
+  </Story>
+</Preview>
+
+
+## API
+
+### FadeTransition
+
+<Props of={FadeTransition} />
+
+### SlideDownTransition
+
+<Props of={SlideDownTransition} />

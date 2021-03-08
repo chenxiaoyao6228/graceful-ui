@@ -1,3 +1,5 @@
+// 基本
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -8,31 +10,86 @@
   }
 }
 
-@keyframes slide-up {
+@keyframes slideUpIn {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-15px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0%);
   }
 }
 
-@keyframes slide-down {
+@keyframes slideUpOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes slideDownIn {
   0% {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-15px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(0);
   }
 }
 
-@keyframes fade-in {
+@keyframes slideDownOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes slideLeftIn {
+  0% {
+    transform-origin: 0% 0%;
+    transform: scaleX(0.8);
+  }
+
+  100% {
+    transform-origin: 0% 0%;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slideRightIn {
+  0% {
+    transform-origin: 100% 100%;
+    transform: scaleX(0.8);
+  }
+
+  100% {
+    transform-origin: 100% 100%;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
   0% {
     opacity: 0;
   }
