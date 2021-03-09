@@ -19,6 +19,10 @@ export default {
   name: 'SlideDownTransition',
   mixins: [baseTransition],
   props: {
+    duration: {
+      type: Number,
+      default: 300
+    },
     styles: {
       type: Object,
       default: () => ({

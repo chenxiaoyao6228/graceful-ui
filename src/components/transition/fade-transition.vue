@@ -18,7 +18,13 @@ import baseTransition from './base-transition.vue';
 
 export default {
   name: 'FadeTransition',
-  mixins: [baseTransition]
+  mixins: [baseTransition],
+  props: {
+    duration: {
+      type: Number,
+      default: 2000
+    }
+  }
 };
 </script>
 

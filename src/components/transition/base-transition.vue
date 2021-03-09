@@ -5,7 +5,7 @@ export default {
   props: {
     duration: {
       type: Number,
-      default: 300
+      default: 3000
     },
     tag: {
       type: String,

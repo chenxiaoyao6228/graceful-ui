@@ -20,6 +20,8 @@ import { FadeTransition } from 'graceful-ui';
 
 ### slidedown 下拉
 
+默认动画时间为`300ms`可使用`duration`参数改变
+
 <Preview>
   <Story name="slide-down 下拉">
     {{
@@ -46,6 +48,8 @@ import { FadeTransition } from 'graceful-ui';
 
 ### fade 淡入淡出
 
+默认动画时间为`2000ms`可使用`duration`参数改变
+
 <Preview>
   <Story name="fade 淡入淡出">
     {{
@@ -53,7 +57,7 @@ import { FadeTransition } from 'graceful-ui';
       template: `
         <div class="demo fade">
             <Button @click="visible=!visible">点击切换</Button>
-           <FadeTransition>
+           <FadeTransition :duration="3000">
             <div key="blue" v-if="visible" class="content">
               FadeTransition
             </div>
@@ -69,7 +73,9 @@ import { FadeTransition } from 'graceful-ui';
   </Story>
 </Preview>
 
-`transition-group`支持
+### transition-group 支持
+
+给相应的动画添加`group`参数可以实现`transition-group`效果
 
 <Preview>
   <Story name="fade transitiongroup">
@@ -79,14 +85,13 @@ import { FadeTransition } from 'graceful-ui';
         <div class="fade">
             <Button @click="add">点击添加元素</Button> 
             <p>tip: 点击元素移除 </p>
-            <fade-transition group :duration="300">
-              <div class="box" 
+            <FadeTransition group>
+              <span class="box size50" 
                   v-for="(item, index) in list" 
-                  @click="remove(index)"
                   :key="item"
-              >
-              </div>
-            </fade-transition>
+                  @click="remove(index)"
+              ></span>
+            </FadeTransition>
         </div>
       `,
       data(){
@@ -96,8 +101,11 @@ import { FadeTransition } from 'graceful-ui';
         }
       },
       methods: { 
+        uuid(){
+          return Math.random().toString(16).slice(2)
+        },
         add(){
-          this.list.push(this.list.length+1)
+          this.list.push(this.uuid())
         },
         remove(index){
           this.list.splice(index, 1)
