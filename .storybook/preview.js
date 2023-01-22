@@ -4,9 +4,9 @@
 import "../src/styles/index.less";
 
 // 全局注册组件
-import Vue from 'vue'
-import alert from '../src/components/alert/alert.js';
-Vue.prototype.$Alert = alert
+import Vue from "vue";
+import alert from "../src/components/alert/alert.js";
+Vue.prototype.$Alert = alert;
 
 import { addParameters, addDecorator } from "@storybook/vue";
 import { configureActions } from "@storybook/addon-actions";
@@ -23,7 +23,8 @@ addParameters({
   options: {
     brandTitle: `${name} v${version}`,
     brandUrl: repository,
-    brandImage: Logo,
+    brandImage:
+      "https://cdn.jsdelivr.net/gh/chenxiaoyao6228/cloudimg@main/2023/graceful-ui-logo.png",
     sidebarAnimations: true,
   },
   docs: {

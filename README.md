@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    <img width="200" src="https://github.com/chenxiaoyao6228/graceful-ui/blob/master/assets/logo.png?raw=true" alt="logo.png" type="image/png">
+    <img width="200" src="https://cdn.jsdelivr.net/gh/chenxiaoyao6228/cloudimg@main/2023/graceful-ui-logo.png" alt="logo.png" type="image/png">
   </a>
 </p>
 
@@ -16,8 +16,6 @@
 ## 📺 在线演示
 
 项目托管在 👉 [Github Page](https://chenxiaoyao6228.github.io/graceful-ui)
-
-国内无法科学上网的用户请点击 👉 [这里](https://chenxiaoyao6228.gitee.io/graceful-ui)
 
 ## 👋 快速上手
 
@@ -91,17 +89,18 @@ npm install babel-plugin-import -D
 
 编辑项目的config文件
 
-```json
-// .babelrc or babel.config.js
-plugins: [
-    [
-      "component",
-      {
-        "libraryName": "graceful-ui",
-        "styleLibraryName": "theme"
-      }
-    ]
+```js
+{
+  plugins: [
+      [
+        "component",
+        {
+          "libraryName": "graceful-ui",
+          "styleLibraryName": "theme"
+        }
+      ]
   ]
+}
 ```
 
 ### cdn 字体
