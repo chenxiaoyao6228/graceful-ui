@@ -1,5 +1,5 @@
 @import "../../styles/index.less";
-@prefixCls: ~'@{css-prefix}-pagination';
+@prefixCls: ~"@{css-prefix}-pagination";
 
 .@{prefixCls} {
   line-height: @line-height-primary;
@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: flex-start;
   color: @font-color;
+  user-select: none;
 
   &-prev,
   &-item,
@@ -71,7 +72,7 @@
       height: @pagination-item-height;
       line-height: @pagination-item-height;
       width: @pagination-item-width;
-      padding: 0  @padding-vertical;
+      padding: 0 @padding-vertical;
       outline: none;
       color: inherit;
       border-radius: @input-border-radius;

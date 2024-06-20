@@ -14,14 +14,14 @@
     "test:update": "yarn test -u",
     "stylelint": "stylelint --syntax less --fix",
     "lint": "eslint --ext .js,.vue src --fix",
-    "dev": "start-storybook -p 6006 ",
-    "dev:docs": "start-storybook -p 6006 --docs",
-    "build:storybook": "build-storybook -c .storybook -o dist --docs",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider  start-storybook -p 6006 ",
+    "dev:docs": "NODE_OPTIONS=--openssl-legacy-provider  start-storybook -p 6006 --docs",
+    "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook -c .storybook -o dist --docs",
     "deploy:storybook": "chmod +x ./deploy.sh && sh ./deploy.sh",
-    "build": "rimraf lib && yarn build:web && yarn build:com && rimraf lib/base",
-    "build:web": "webpack --mode production --config build/webpack.config.js",
-    "build:com": "webpack --mode production --config build/webpack.component.js",
-    "build:com:dev": "webpack --mode development --config build/webpack.component.js"
+    "build": "rimraf lib && yarn build:storybook && yarn build:web && yarn build:com && rimraf lib/base",
+    "build:web": "NODE_OPTIONS=--openssl-legacy-provider   webpack --mode production --config build/webpack.config.js",
+    "build:com": "NODE_OPTIONS=--openssl-legacy-provider   webpack --mode production --config build/webpack.component.js",
+    "build:com:dev": "NODE_OPTIONS=--openssl-legacy-provider   webpack --mode development --config build/webpack.component.js"
   },
   "keywords": [
     "Vue",

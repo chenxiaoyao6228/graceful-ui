@@ -24,7 +24,7 @@ addParameters({
     brandTitle: `${name} v${version}`,
     brandUrl: repository,
     brandImage:
-      "https://cdn.jsdelivr.net/gh/chenxiaoyao6228/cloudimg@main/2023/graceful-ui-logo.png",
+      "https://graceful-ui.chenxiaoyao.cn/static/media/logo.7b08ad57.png",
     sidebarAnimations: true,
   },
   docs: {

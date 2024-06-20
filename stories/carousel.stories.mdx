@@ -1,6 +1,12 @@
-import { Meta, Story, Props, Preview, style} from '@storybook/addon-docs/blocks';
-import Carousel  from '../src/components/carousel/carousel.vue';
-import CarouselItem  from '../src/components/carousel/carousel-item.vue';
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  style,
+} from "@storybook/addon-docs/blocks";
+import Carousel from "../src/components/carousel/carousel.vue";
+import CarouselItem from "../src/components/carousel/carousel-item.vue";
 
 <Meta title="数据展示|Carousel 轮播" component={Carousel} />
 
@@ -9,11 +15,14 @@ import CarouselItem  from '../src/components/carousel/carousel-item.vue';
 ### 引入组件
 
 ```js
-import { Carousel,CarouselItem } from 'graceful-ui';
+import { Carousel, CarouselItem } from "graceful-ui";
 ```
-<style>{`
+
+<style>
+  {`
     .demo{
       text-align: center;
+      height: 200px;
     }
     .box{ 
         background: #8f8e94;
@@ -21,13 +30,15 @@ import { Carousel,CarouselItem } from 'graceful-ui';
         width: 600px;
         font-size: 30px;
         line-height: 200px;
+        height: 200px;
     }
 `}
 </style>
 
-
 ### 直接调用
+
 使用`v-model`绑定当前轮播元素的索引, 默认从`0`开始, 点击下标可以进行切换
+
 <Preview>
   <Story name="基本使用">
     {{
@@ -41,16 +52,15 @@ import { Carousel,CarouselItem } from 'graceful-ui';
             </carousel>
         </div>
       `,
-      data(){
+      data() {
         return {
-          value: 2, 
-          list: [0,1,2, 3]
-         } 
-      }
+          value: 2,
+          list: [0, 1, 2, 3],
+        };
+      },
     }}
   </Story>
 </Preview>
-
 
 ### 自动播放
 
@@ -69,18 +79,20 @@ import { Carousel,CarouselItem } from 'graceful-ui';
             </carousel>
         </div>
       `,
-      data(){
+      data() {
         return {
-          value: 1, 
-          list: [0,1,2,3]
-         } 
-      }
+          value: 1,
+          list: [0, 1, 2, 3],
+        };
+      },
     }}
   </Story>
 </Preview>
 
 ### 指示器
+
 使用`dots`来控制底部指示器的显示,提供`inside`,`outside`,`none`三种方式, 默认为`inside`
+
 <Preview>
   <Story name="指示器">
     {{
@@ -94,16 +106,15 @@ import { Carousel,CarouselItem } from 'graceful-ui';
             </carousel>
         </div>
       `,
-      data(){
+      data() {
         return {
-          value: 0, 
-          list: [0,1,2, 3]
-         } 
-      }
+          value: 0,
+          list: [0, 1, 2, 3],
+        };
+      },
     }}
   </Story>
 </Preview>
-
 
 ## API
 

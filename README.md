@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    <img width="200" src="https://cdn.jsdelivr.net/gh/chenxiaoyao6228/cloudimg@main/2023/graceful-ui-logo.png" alt="logo.png" type="image/png">
+    <img width="200" src="https://graceful-ui.chenxiaoyao.cn/static/media/logo.7b08ad57.png" alt="logo.png" type="image/png">
   </a>
 </p>
 
@@ -11,11 +11,9 @@
 
 ## 🎸 前言
 
-💃 `Graceful UI`是一款基于Vue的 UI 库, 秉着造轮子驱动学习的理念, 开发了这一套组件库.
+💃 `Graceful UI`是一款基于 Vue 的 UI 库, 秉着造轮子驱动学习的理念, 开发了这一套组件库.
 
-## 📺 在线演示
-
-项目托管在 👉 [Github Page](https://chenxiaoyao6228.github.io/graceful-ui)
+[在线演示 👉](https://graceful-ui.chenxiaoyao.cn)
 
 ## 👋 快速上手
 
@@ -23,13 +21,13 @@
 
 **Npm**
 
-```js
+```sh
 npm install graceful-ui --save
 ```
 
 **Yarn**
 
-```js
+```sh
 yarn add graceful-ui --save
 ```
 
@@ -43,10 +41,11 @@ yarn add graceful-ui --save
 ### 📖 使用
 
 **全量引入**
+
 你可以通过下面的方式引入`graceful-ui`的所有组件
 
 ```js
-import { GracefulUI } from 'graceful-ui';
+import { GracefulUI } from "graceful-ui";
 
 Vue.use(GracefulUI);
 ```
@@ -56,58 +55,58 @@ Vue.use(GracefulUI);
 [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-component)插件允许你引入项目中需要的组件
 
 ```js
-import { Button } from 'graceful-ui';
+import { Button } from "graceful-ui";
 
 Vue.use(Button);
 ```
 
 也可以直接在组件中引入使用
 
-```html
+```vue
 <template>
   <button type="primary" icon="download"></button>
 </template>
 <script>
-  import { Button } from 'graceful-ui';
-  export default {
-    name: 'myComponent',
-    components: {
-      Button,
-    },
-  };
+import { Button } from "graceful-ui";
+export default {
+  name: "myComponent",
+  components: {
+    Button,
+  },
+};
 </script>
 ```
 
 安装插件`babel-plugin-import`
 
-```js
+```sh
 yarn add babel-plugin-import -D
 
 // Or
 npm install babel-plugin-import -D
 ```
 
-编辑项目的config文件
+编辑项目的 config 文件
 
 ```js
 {
   plugins: [
-      [
-        "component",
-        {
-          "libraryName": "graceful-ui",
-          "styleLibraryName": "theme"
-        }
-      ]
-  ]
+    [
+      "component",
+      {
+        libraryName: "graceful-ui",
+        styleLibraryName: "theme",
+      },
+    ],
+  ];
 }
 ```
 
 ### cdn 字体
 
-`Graceful-ui`使用的是`icon-font`,  使用的时候需要在index.html中引入相关的字体文件
+`Graceful-ui`使用的是`icon-font`, 使用的时候需要在 index.html 中引入相关的字体文件
 
-```js
+```html
 <script src="https://at.alicdn.com/t/font_1763207_sc60ungf6d.js"></script>
 ```
 
@@ -115,11 +114,11 @@ npm install babel-plugin-import -D
 
 首先确保你安装了`yarn`
 
-安装好依赖之后运行`yarn dev`即可开启storybook, 项目使用的是mdx的格式, 具体可以参考`Alert`组件
+安装好依赖之后运行`yarn dev`即可开启 storybook, 项目使用的是 mdx 的格式, 具体可以参考`Alert`组件
 
-### storybooK注意事项
+### storybooK 注意事项
 
-- mdx的template中不要出现空格行
+- mdx 的 template 中不要出现空格行
 
 ## 更新日志
 
