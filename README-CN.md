@@ -9,17 +9,17 @@
 
 [![](https://circleci.com/gh/chenxiaoyao6228/graceful-ui.svg?style=shield)]() [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-**[中文文档](./README-CN.md)**
+**[English Docs](./README.md)**
 
-## 🎸 Introduction
+## 🎸 前言
 
-💃 `Graceful UI` is a UI library based on Vue, developed with the idea of learning by creating components.
+💃 `Graceful UI`是一款基于 Vue 的 UI 库, 秉着造轮子驱动学习的理念, 开发了这一套组件库.
 
-[Online Demo 👉](https://graceful-ui.chenxiaoyao.cn)
+[在线演示 👉](https://graceful-ui.chenxiaoyao.cn)
 
-## 👋 Quick Start
+## 👋 快速上手
 
-### ⌛ Installation
+### ⌛ 安装
 
 **Npm**
 
@@ -33,18 +33,18 @@ npm install graceful-ui --save
 yarn add graceful-ui --save
 ```
 
-**Script Import**
+**Script 引入**
 
 ```html
 <script type="text/javascript" src="graceful-ui.min.js"></script>
 <link rel="stylesheet" href="lib/theme/index.css" />
 ```
 
-### 📖 Usage
+### 📖 使用
 
-**Full Import**
+**全量引入**
 
-You can import all components of `graceful-ui` using the following method
+你可以通过下面的方式引入`graceful-ui`的所有组件
 
 ```js
 import { GracefulUI } from "graceful-ui";
@@ -52,9 +52,9 @@ import { GracefulUI } from "graceful-ui";
 Vue.use(GracefulUI);
 ```
 
-**Partial Import**
+**局部引入**
 
-The [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-component) plugin allows you to import only the components you need
+[babel-plugin-import](https://www.npmjs.com/package/babel-plugin-component)插件允许你引入项目中需要的组件
 
 ```js
 import { Button } from "graceful-ui";
@@ -62,7 +62,7 @@ import { Button } from "graceful-ui";
 Vue.use(Button);
 ```
 
-You can also directly import and use it in a component
+也可以直接在组件中引入使用
 
 ```vue
 <template>
@@ -79,7 +79,7 @@ export default {
 </script>
 ```
 
-Install the `babel-plugin-import` plugin
+安装插件`babel-plugin-import`
 
 ```sh
 yarn add babel-plugin-import -D
@@ -88,7 +88,7 @@ yarn add babel-plugin-import -D
 npm install babel-plugin-import -D
 ```
 
-Edit the config file of the project
+编辑项目的 config 文件
 
 ```js
 {
@@ -104,33 +104,33 @@ Edit the config file of the project
 }
 ```
 
-### CDN Fonts
+### cdn 字体
 
-`Graceful-ui` uses `icon-font`, you need to include the related font file in the index.html when using it
+`Graceful-ui`使用的是`icon-font`, 使用的时候需要在 index.html 中引入相关的字体文件
 
 ```html
 <script src="https://at.alicdn.com/t/font_1763207_sc60ungf6d.js"></script>
 ```
 
-## 🚧 Development
+## 🚧 开发
 
-First, make sure you have installed `yarn`
+首先确保你安装了`yarn`
 
-After installing dependencies, run `yarn dev` to start storybook. The project uses mdx format, you can refer to the `Alert` component for details.
+安装好依赖之后运行`yarn dev`即可开启 storybook, 项目使用的是 mdx 的格式, 具体可以参考`Alert`组件
 
-### Storybook Notes
+### storybooK 注意事项
 
-- Do not include blank lines in the mdx template
+- mdx 的 template 中不要出现空格行
 
-## Changelog
+## 更新日志
 
 [CHANGELOG](https://github.com/chenxiaoyao6228/graceful-ui/blob/master/CHANGELOG.md)
 
-## Design Guidelines
+## 设计规范
 
-Refer to [react-suite](https://rsuitejs.com/design/default/)
+参考 [react-suite](https://rsuitejs.com/design/default/)
 
-## 🔖 Reference Components
+## 🔖 参考轮子
 
 [Gulu](https://yuyuye958.github.io/GuLu-UI/),[lulu-ui](https://www.zhangxinxu.com/sp/lulu/mockup/),[iview](https://www.iviewui.com/docs/introduce),[elementui](https://element.eleme.cn/#/zh-CN/component),[react-suite](https://rsuitejs.com/components),[ant-design-vue](https://www.antdv.com/docs/vue/introduce-cn/),[cuke-ui](https://github.com/cuke-ui/cuke-ui)
 

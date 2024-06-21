@@ -1,6 +1,6 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
-import Sticky from '../src/components/sticky/sticky.vue';
-import Button from '../src/components/button/button.vue'
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Sticky from "../src/components/sticky/sticky.vue";
+import Button from "../src/components/button/button.vue";
 
 <Meta title="其他|Sticky 吸顶" component={Sticky} />
 
@@ -11,38 +11,76 @@ import Button from '../src/components/button/button.vue'
 ### 引入组件
 
 ```js
-import { Sticky } from 'graceful-ui';
+import { Sticky } from "graceful-ui";
 ```
 
-<style>{`
-  .demo{
-    padding: 0 300px;
+<style>
+  {`
+  .demo {
+    height: 800px;
+    overflow-y: auto; /* 使容器可以滚动 */
+    padding: 2px;
+    padding-top: 200px;
+    position: absolute;
+    border: 2px solid #fca130;
   }  
-  .header,.footer{
-    height: 600px;
-    line-height: 600px;
+  .header, .footer {
+    background: #31c27c;
+    color: #fff;
+    width: calc(100%);
+    height: 40px;
+    line-height: 40px;
     text-align: center;
+    position: fixed;
+    left: 0;
+  }
+  .header {
+    top: 0;
+  }
+  .footer {
+    bottom: 0;
+  }
+  .content {
+    height: 2000px; /* 添加足够的高度以便滚动 */
+    background-color: #f0f0f0;
+    width: 100%;
+    padding-top: 60px;
+  }
+  .sticky-wrapper {
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+
+  }
+  .g-sticky-fixed {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-`}</style>
+`}
+</style>
 
 ### 基本使用
-使用`distance`参数来设置吸顶元素距离顶部的触发距离, `distance`默认为`0`
+
+使用 `distance` 参数来设置吸顶元素距离顶部的触发距离，`distance` 默认为 `0`
+
 <Preview>
   <Story name="基本使用">
     {{
-      components: { Sticky , Button},
+      components: { Sticky, Button },
       template: `
         <div class="demo">
           <header class="header">
             这里是顶部内容
           </header>
-          <Sticky distance="100">
-            <Button type="primary" long>吸顶元素, distance为100时触发</Button>
+          <Sticky class="sticky-wrapper" distance="40">
+               <Button type="primary" long>吸顶元素，distance 为 40 时触发</Button>
           </Sticky>
-          <Footer class="footer">
+          <main class="content"> content</main>
+          <footer class="footer">
             这里是底部内容
-          </Footer>
+          </footer>
         </div>
       `,
     }}

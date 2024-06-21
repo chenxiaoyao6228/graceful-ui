@@ -50,6 +50,9 @@ export default {
     } else {
       this.show = false;
       document.removeEventListener('click', this.handleClick);
+      if (this.$refs.contentWrapper) {
+        document.body.removeChild(this.$refs.contentWrapper);
+      }
     }
   },
   methods: {

@@ -14,6 +14,7 @@
     "test:update": "yarn test -u",
     "stylelint": "stylelint --syntax less --fix",
     "lint": "eslint --ext .js,.vue src --fix",
+    "start": "yarn dev:docs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider  start-storybook -p 6006 ",
     "dev:docs": "NODE_OPTIONS=--openssl-legacy-provider  start-storybook -p 6006 --docs",
     "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook -c .storybook -o dist --docs",
